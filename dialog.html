@@ -1,0 +1,1544 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>对话框 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="dialog.html" class="mdui-typo-title">对话框</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple mdui-list-item-active">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">对话框</h1>
+  <div class="doc-intro mdui-typo">
+    <p>MDUI 中的对话框是一个用途非常广的组件，经常被用来向用户询问信息，通知或警告用户。</p>
+    <p>同一时间只会有一个对话框处于显示状态。若当前对话框还未关闭就打开下一个对话框，那么下一个对话框会被加入队列，等当前对话框关闭后再打开。</p>
+
+    <div class="doc-intro-module">
+      <h3>调用方式</h3>
+      <ol>
+        <li>通过自定义属性调用</li>
+        <li>通过 JavaScript 调用</li>
+      </ol>
+    </div>
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/components/dialogs.html" target="_blank">Material Design 设计指南：组件 - 对话框</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="dialog.html#style">样式</a>
+        <ul>
+          <li><a data-scroll href="dialog.html#basic">标准对话框</a></li>
+          <li><a data-scroll href="dialog.html#no-title">不含标题栏</a></li>
+          <li><a data-scroll href="dialog.html#stacked">竖排按钮</a></li>
+          <li><a data-scroll href="dialog.html#fixed">固定标题和按钮</a></li>
+          <li><a data-scroll href="dialog.html#custom">自定义内容</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="dialog.html#call">调用方式</a>
+        <ul>
+          <li><a data-scroll href="dialog.html#attr">通过自定义属性调用</a></li>
+          <li><a data-scroll href="dialog.html#js">通过 JavaScript 调用</a></li>
+          <li><a data-scroll href="dialog.html#option">参数</a></li>
+          <li><a data-scroll href="dialog.html#method">方法</a></li>
+          <li><a data-scroll href="dialog.html#event">事件</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="dialog.html#predefined">预定义对话框</a>
+        <ul>
+          <li><a data-scroll href="dialog.html#dialog">mdui.dialog()</a></li>
+          <li><a data-scroll href="dialog.html#alert">mdui.alert()</a></li>
+          <li><a data-scroll href="dialog.html#confirm">mdui.confirm()</a></li>
+          <li><a data-scroll href="dialog.html#prompt">mdui.prompt()</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="dialog.html#class">CSS 类名列表</a></li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">标准对话框 <a class="doc-anchor" id="basic"></a></h4>
+      <p>这是一个标准的对话框。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-1'}">open</button>
+
+        <div class="mdui-dialog" id="example-1">
+          <div class="mdui-dialog-title">Are you sure?</div>
+          <div class="mdui-dialog-content">You'll lose all photos and media!</div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>erase</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-title&quot;&gt;Are you sure?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;You'll lose all photos and media!&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;erase&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">不含标题栏 <a class="doc-anchor" id="no-title"></a></h4>
+      <p>这个对话框不含标题栏。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#exampleNoTitle'}">open</button>
+
+        <div class="mdui-dialog" id="exampleNoTitle">
+          <div class="mdui-dialog-content">Discard draft?</div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>discard</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;Discard draft?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;discard&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">竖排按钮 <a class="doc-anchor" id="stacked"></a></h4>
+      <p>对话框底部的按钮默认水平排列。只需在 <code>&lt;div class=&quot;mdui-dialog-actions&quot;&gt;&lt;/div&gt;</code> 上添加类 <code>.mdui-dialog-actions-stacked</code> 即可将按钮设置为竖直排列。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-2'}">open</button>
+
+        <div class="mdui-dialog" id="example-2">
+          <div class="mdui-dialog-title">Use Google's location service?</div>
+          <div class="mdui-dialog-content">Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</div>
+          <div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>turn on speed boost</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>no thanks</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-title&quot;&gt;Use Google's location service?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions mdui-dialog-actions-stacked&quot;&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;turn on speed boost&lt;/button&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;no thanks&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">固定标题和按钮 <a class="doc-anchor" id="fixed"></a></h4>
+      <p>在对话框内容超出对话框高度时，<code>.mdui-dialog-content</code> 中的内容会产生滚动条。</p>
+      <p>如果将
+        <code>.mdui-dialog-title</code> 和 <code>.mdui-dialog-actions</code> 放到 <code>.mdui-dialog-content</code> 内部，
+        标题和底部按钮就会随着滚动条滚动；反之标题和按钮将分别固定在顶部和底部，不随滚动条滚动。
+      </p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-3'}">open</button>
+
+        <div class="mdui-dialog" id="example-3">
+          <div class="mdui-dialog-content">
+            <div class="mdui-dialog-title">Use Google's location service?</div>
+            Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+            <br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test
+          </div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>no thanks</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>turn on speeboost</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+    &lt;div class=&quot;mdui-dialog-content&quot;&gt;
+      &lt;div class=&quot;mdui-dialog-title&quot;&gt;Use Google's location service?&lt;/div&gt;
+      Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+      &lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+      &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;no thanks&lt;/button&gt;
+      &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;turn on speeboost&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">自定义内容 <a class="doc-anchor" id="custom"></a></h4>
+      <p>对话框中只有 <code>&lt;div class=&quot;mdui-dialog&quot;&gt;&lt;/div&gt;</code> 是必须的，该元素内的内容可以替换为任意 HTML。</p>
+      <p>下面例子中在对话框中放了一个 Tab 选项卡：</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-4'}">open</button>
+
+        <div class="mdui-dialog" id="example-4">
+          <div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+            <a href="dialog.html#example4-tab1" class="mdui-ripple">web</a>
+            <a href="dialog.html#example4-tab2" class="mdui-ripple">shopping</a>
+            <a href="dialog.html#example4-tab3" class="mdui-ripple">videos</a>
+          </div>
+          <div id="example4-tab1" class="mdui-p-a-2">
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+          </div>
+          <div id="example4-tab2" class="mdui-p-a-2">
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+          </div>
+          <div id="example4-tab3" class="mdui-p-a-2">
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot; id=&quot;example-4&quot;&gt;
+  &lt;div class=&quot;mdui-tab mdui-tab-full-width&quot; id=&quot;example4-tab&quot;&gt;
+    &lt;a href=&quot;#example4-tab1&quot; class=&quot;mdui-ripple&quot;&gt;web&lt;/a&gt;
+    &lt;a href=&quot;#example4-tab2&quot; class=&quot;mdui-ripple&quot;&gt;shopping&lt;/a&gt;
+    &lt;a href=&quot;#example4-tab3&quot; class=&quot;mdui-ripple&quot;&gt;videos&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;example4-tab1&quot; class=&quot;mdui-p-a-2&quot;&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;example4-tab2&quot; class=&quot;mdui-p-a-2&quot;&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;example4-tab3&quot; class=&quot;mdui-p-a-2&quot;&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var tab = new mdui.Tab('#example4-tab');
+  document.getElementById('example-4').addEventListener('open.mdui.dialog', function () {
+    tab.handleUpdate();
+  });
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">调用方式 <a class="doc-anchor" id="call"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通过自定义属性调用 <a class="doc-anchor" id="attr"></a></h4>
+      <p><p>使用该方式无需编写 JavaScript 代码。只需在一个起控制作用的元素<small>（例如：按钮）</small>上添加 <code>mdui-dialog="<a href="dialog.html#option" data-scroll>options</a>"</code> 属性即可。通过自定义属性调用时，需要额外添加一个 <code>target</code> 参数，用于指定被控制的对话框，它的值为被控制的对话框的 CSS 选择器。</p></p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-dialog="{target: '#exampleDialog'}">open</button>
+
+        <div class="mdui-dialog" id="exampleDialog">
+          <div class="mdui-dialog-title">Are you sure?</div>
+          <div class="mdui-dialog-content">You'll lose all photos and media!</div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>erase</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;button class=&quot;mdui-btn mdui-ripple mdui-color-theme-accent&quot; mdui-dialog=&quot;{target: '#exampleDialog'}&quot;&gt;open&lt;/button&gt;
+
+&lt;div class=&quot;mdui-dialog&quot; id=&quot;exampleDialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-title&quot;&gt;Are you sure?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;You'll lose all photos and media!&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+    &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-dialog-close&gt;cancel&lt;/button&gt;
+    &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-dialog-confirm&gt;erase&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>在对话框内的元素上可以添加一些属性来绑定事件，这些属性在使用 JavaScript 调用时也可以使用。</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>属性</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>mdui-dialog-close</code></td>
+            <td>点击该元素会触发 <code>close.mdui.dialog</code> 事件，并关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>mdui-dialog-cancle</code></td>
+            <td>点击该元素会触发 <code>cancel.mdui.dialog</code> 事件。</td>
+          </tr>
+          <tr>
+            <td><code>mdui-dialog-confirm</code></td>
+            <td>点击该元素会触发 <code>confirm.mdui.dialog</code> 事件。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通过 JavaScript 调用 <a class="doc-anchor" id="js"></a></h4>
+      <p>实例化组件：</p>
+      <pre><code class="lang-js">// selector 为对话框的 CSS 选择器或 DOM 元素或 HTML 字符串
+// options 为配置参数，见下面的参数列表
+var inst = new mdui.Dialog(selector, options);</code></pre>
+    </div>
+    <a href="demo/dialog/demo1.html" target="_blank" class="mdui-btn mdui-color-theme-accent">demo</a>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>overlay</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>打开对话框时是否显示遮罩。</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>打开对话框时是否添加 url hash，若为 true，则打开对话框后可用过浏览器的后退按钮或 Android 的返回键关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>是否模态化对话框。为 false 时点击对话框外面的区域时关闭对话框，否则不关闭。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下 Esc 键时是否关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnCancel</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下取消按钮时是否关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnConfirm</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下确认按钮时是否关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>destroyOnClosed</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>关闭对话框后是否自动销毁对话框。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">方法 <a class="doc-anchor" id="method"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>方法名</th>
+            <th>描述</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>open()</code></td>
+            <td>打开对话框。</td>
+          </tr>
+          <tr>
+            <td><code>close()</code></td>
+            <td>关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>toggle()</code></td>
+            <td>切换对话框的打开状态。</td>
+          </tr>
+          <tr>
+            <td><code>getState()</code></td>
+            <td>获取对话框状态。共包含四种状态（<code>opening</code>、<code>opened</code>、<code>closing</code>、<code>closed</code>）。</td>
+          </tr>
+          <tr>
+            <td><code>destroy()</code></td>
+            <td>销毁对话框。</td>
+          </tr>
+          <tr>
+            <td><code>handleUpdate()</code></td>
+            <td>重新调整对话框位置和滚动条高度。在打开对话框后，如果修改了对话框内容，需要调用该方法。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">事件 <a class="doc-anchor" id="event"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>事件</th>
+            <th>描述</th>
+            <th>目标</th>
+            <th>参数</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>open.mdui.dialog</code></td>
+            <td>对话框开始打开动画时，事件将被触发。</td>
+            <td rowspan="6"><code>&lt;div class=&quot;mdui-dialog&quot;&gt;&lt;/div&gt;</code></td>
+            <td rowspan="6">
+              <code>event.detail.inst</code>：实例
+            </td>
+          </tr>
+          <tr>
+            <td><code>opened.mdui.dialog</code></td>
+            <td>对话框结束打开动画时，事件将被触发。</td>
+          </tr>
+          <tr>
+            <td><code>close.mdui.dialog</code></td>
+            <td>对话框开始关闭动画时，事件将被触发。</td>
+          </tr>
+          <tr>
+            <td><code>closed.mdui.dialog</code></td>
+            <td>对话框结束关闭动画时，事件将被触发。</td>
+          </tr>
+          <tr>
+            <td><code>cancel.mdui.dialog</code></td>
+            <td>按下取消按钮时，事件将被触发。</td>
+          </tr>
+          <tr>
+            <td><code>confirm.mdui.dialog</code></td>
+            <td>按下确认按钮时，事件将被触发。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">预定义对话框 <a class="doc-anchor" id="predefined"></a></h2>
+      <p>MDUI 针对常用场景封装了几个预定义的对话框函数，这些预定义的对话框只通过 JavaScript 调用，无需编写 HTML 代码。</p>
+      <p>这些函数都返回对话框实例。</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.dialog() <a class="doc-anchor" id="dialog"></a></h4>
+      <p>打开一个对话框，标题、内容、按钮等都可以自定义。该方法比较通用，后面的 <code>mdui.alert()</code>、<code>mdui.confirm()</code>、<code>mdui.prompt()</code> 都是使用该方法进行的封装。</p>
+      <pre><code class="lang-js">mdui.dialog(options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-dialog">open</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">mdui.dialog({
+  title: 'title',
+  content: 'content',
+  buttons: [
+    {
+      text: '取消'
+    },
+    {
+      text: '确认',
+      onClick: function(inst){
+        mdui.alert('点击确认按钮的回调');
+      }
+    }
+  ]
+});</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>参数：</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>title</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>对话框的标题。</td>
+          </tr>
+          <tr>
+            <td><code>content</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>对话框的内容。</td>
+          </tr>
+          <tr>
+            <td><code>buttons</code></td>
+            <td><code>array</code></td>
+            <td></td>
+            <td>按钮数组，每个按钮都是一个带按钮参数的对象（见下面表格）。</td>
+          </tr>
+          <tr>
+            <td><code>stackedButtons</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>按钮是否垂直排列。</td>
+          </tr>
+          <tr>
+            <td><code>cssClass</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>添加到 <code>.mdui-dialog</code> 上的 CSS 类。</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>是否监听 <code>hashchange</code> 事件，为 true 时可以通过 Android 的返回键或浏览器后退按钮关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>overlay</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>打开对话框后是否显示遮罩层。</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>是否模态化对话框。为 false 时点击对话框外面的区域时关闭对话框，否则不关闭。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下 Esc 键时是否关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>destroyOnClosed</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>关闭对话框后是否自动销毁对话框。</td>
+          </tr>
+          <tr>
+            <td><code>onOpen</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>打开动画开始时的回调。参数是对话框的实例。</td>
+          </tr>
+          <tr>
+            <td><code>onOpened</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>打开动画结束时的回调。参数是对话框的实例。</td>
+          </tr>
+          <tr>
+            <td><code>onClose</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>关闭动画开始时的回调。参数是对话框的实例。</td>
+          </tr>
+          <tr>
+            <td><code>onClosed</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>关闭动画结束时的回调。参数是对话框的实例。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>按钮的参数：</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>text</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>按钮文本。</td>
+          </tr>
+          <tr>
+            <td><code>bold</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>按钮文本是否加粗。</td>
+          </tr>
+          <tr>
+            <td><code>close</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>点击按钮后是否关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>onClick</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>点击按钮的回调函数。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.alert() <a class="doc-anchor" id="alert"></a></h4>
+      <p>打开一个警告框，可以包含标题、内容和一个确认按钮：</p>
+      <pre><code class="lang-js">mdui.alert(text, onConfirm, options)</code></pre>
+      <pre><code class="lang-js">mdui.alert(text, title, onConfirm, options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-1">demo1</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-2">demo2</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-3">demo3</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-4">demo4</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">// 仅含文本
+mdui.alert('content');
+
+// 含标题和文本
+mdui.alert('content', 'title');
+
+// 含回调
+mdui.alert('content', 'title', function(){
+  mdui.alert('点击了确认按钮');
+});
+
+// 含文本和回调
+mdui.alert('content', function(){
+  mdui.alert('点击了确认按钮');
+});</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <ul>
+        <li><code>text</code>: 文本</li>
+        <li><code>title</code>: （可选）标题</li>
+        <li><code>onConfirm</code>: （可选）点击确认按钮的回调。参数是对话框的实例。</li>
+        <li><code>options</code>: （可选）参数，见下表。</li>
+      </ul>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>confirmText</code></td>
+            <td><code>string</code></td>
+            <td><code>ok</code></td>
+            <td>确认按钮的文本。</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>是否监听 <code>hashchange</code> 事件，为 true 时可以通过 Android 的返回键或浏览器后退按钮关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>是否模态化对话框。为 false 时点击对话框外面的区域时关闭对话框，否则不关闭。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下 Esc 键时是否关闭对话框。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.configm() <a class="doc-anchor" id="confirm"></a></h4>
+      <p>打开一个确认框，可以包含标题、内容、一个确认按钮和一个取消按钮：</p>
+      <pre><code class="lang-js">mdui.confirm(text, onConfirm, onCancel, options)</code></pre>
+      <pre><code class="lang-js">mdui.confirm(text, title, onConfirm, onCancel, options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-1">demo1</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-2">demo2</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-3">demo3</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-4">demo4</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">// 含文本和确认回调
+mdui.confirm('content', function(){
+  mdui.alert('点击了确认按钮');
+});
+
+// 含文本、确认按钮和取消按钮回调
+mdui.confirm('content',
+  function(){
+    mdui.alert('点击了确认按钮');
+  },
+  function(){
+    mdui.alert('点击了取消按钮');
+  }
+);
+
+// 含文本、标题和确认按钮回调
+mdui.confirm('content', 'title', function(){
+  mdui.alert('点击了确认按钮');
+});
+
+// 含文本、标题确认按钮和取消按钮回调
+mdui.confirm('content', 'title',
+  function(){
+    mdui.alert('点击了确认按钮');
+  },
+  function(){
+    mdui.alert('点击了取消按钮');
+  }
+);</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <ul>
+        <li><code>text</code>: 文本</li>
+        <li><code>title</code>: （可选）标题</li>
+        <li><code>onConfirm</code>: （可选）点击确认按钮的回调。参数为对话框的实例。</li>
+        <li><code>onCancel</code>: （可选）点击取消按钮的回调。参数为对话框的实例。</li>
+        <li><code>options</code>: （可选）参数，见下表。</li>
+      </ul>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>confirmText</code></td>
+            <td><code>string</code></td>
+            <td><code>ok</code></td>
+            <td>确认按钮的文本。</td>
+          </tr>
+          <tr>
+            <td><code>cancelText</code></td>
+            <td><code>string</code></td>
+            <td><code>cancel</code></td>
+            <td>取消按钮的文本。</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>是否监听 <code>hashchange</code> 事件，为 true 时可以通过 Android 的返回键或浏览器后退按钮关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>是否模态化对话框。为 false 时点击对话框外面的区域时关闭对话框，否则不关闭。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下 Esc 键时是否关闭对话框。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.prompt() <a class="doc-anchor" id="prompt"></a></h4>
+      <p>打开一个提示用户输入的对话框，可以包含标题、内容、文本框、一个确认按钮和一个取消按钮：</p>
+      <pre><code class="lang-js">mdui.prompt(label, onConfirm, onCancel, options)</code></pre>
+      <pre><code class="lang-js">mdui.prompt(label, title, onConfirm, onCancel, options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-1">demo1</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-2">demo2</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-3">demo3</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">// 单行文本框
+mdui.prompt('这是一个单行文本框',
+  function (value) {
+    mdui.alert('你输入了：' + value + '，点击了确认按钮');
+  },
+  function (value) {
+    mdui.alert('你输入了：' + value + '，点击了取消按钮');
+  }
+);
+
+// 多行文本框
+mdui.prompt('这是一个多行文本框',
+  function (value) {
+    mdui.alert('你输入了：' + value + '，点击了确认按钮');
+  },
+  function (value) {
+    mdui.alert('你输入了：' + value + '，点击了取消按钮');
+  },
+  {
+    type: 'textarea'
+  }
+);
+
+// 含标题
+mdui.prompt('请输入文本', 'title',
+  function (value) {
+    mdui.alert('你输入了：' + value + '，点击了确认按钮');
+  },
+  function (value) {
+    mdui.alert('你输入了：' + value + '，点击了取消按钮');
+  }
+);</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <ul>
+        <li><code>label</code>: 文本框浮动标签的文本</li>
+        <li><code>title</code>: （可选）标题</li>
+        <li><code>onConfirm</code>: （可选）点击确认按钮的回调。含两个参数，分别为文本框的值和对话框的实例。</li>
+        <li><code>onCancel</code>: （可选）点击取消按钮的回调。含两个参数，分别人文本框的值和对话框的实例。</li>
+        <li><code>options</code>: （可选）参数，见下表</li>
+      </ul>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>说明</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>confirmText</code></td>
+            <td><code>string</code></td>
+            <td><code>ok</code></td>
+            <td>确认按钮的文本</td>
+          </tr>
+          <tr>
+            <td><code>cancelText</code></td>
+            <td><code>string</code></td>
+            <td><code>cancel</code></td>
+            <td>取消按钮的文本</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>是否监听 <code>hashchange</code> 事件，为 true 时可以通过 Android 的返回键或浏览器后退按钮关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>是否模态化对话框。为 false 时点击对话框外面的区域时关闭对话框，否则不关闭。</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>按下 Esc 键时是否关闭对话框。</td>
+          </tr>
+          <tr>
+            <td><code>type</code></td>
+            <td><code>string</code></td>
+            <td><code>text</code></td>
+            <td>文本框的类型。
+              <ul>
+                <li><code>text</code>: 单行文本框</li>
+                <li><code>textarea</code>: 多行文本框</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><code>maxlength</code></td>
+            <td><code>int</code></td>
+            <td></td>
+            <td>最大输入字符数量</td>
+          </tr>
+          <tr>
+            <td><code>defaultValue</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>文本框的默认值</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-dialog</code></td>
+              <td>定义一个对话框组件。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-title</code></td>
+              <td>定义对话框的标题。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-content</code></td>
+              <td>定义对话框的内容。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-actions</code></td>
+              <td>定义对话框的操作栏。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-actions-stacked</code></td>
+              <td>使对话框操作栏的按钮竖直排列。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="table.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">表格</div>
+        </div>
+      </a>
+      
+            <a href="menu.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">菜单</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>
+<script>
+
+  // 自定义内容的示例
+  var tab = new mdui.Tab('#example4-tab');
+  $('#example-4').on('open.mdui.dialog', function () {
+    tab.handleUpdate();
+  });
+
+  // mdui.dialog() 示例
+  $('#example-dialog').on('click', function(){
+    mdui.dialog({
+      title: 'title',
+      content: 'content',
+      buttons: [
+        {
+          text: '取消'
+        },
+        {
+          text: '确认',
+          onClick: function(inst){
+            mdui.alert('点击确认按钮的回调');
+          }
+        }
+      ]
+    });
+  });
+
+  // mdui.alert() 示例
+  $('#example-alert-1').on('click', function(){
+    mdui.alert('content');
+  });
+  $('#example-alert-2').on('click', function(){
+    mdui.alert('content', 'title');
+  });
+  $('#example-alert-3').on('click', function(){
+    mdui.alert('content', 'title', function(inst){
+      mdui.alert('点击了确认按钮');
+    });
+  });
+  $('#example-alert-4').on('click', function(){
+    mdui.alert('content', function(){
+      mdui.alert('点击了确认按钮');
+    });
+  });
+
+  // mdui.confirm() 示例
+  $('#example-confirm-1').on('click', function(){
+    mdui.confirm('content', function(){
+      mdui.alert('点击了确认按钮');
+    });
+  });
+  $('#example-confirm-2').on('click', function(){
+    mdui.confirm('content',
+      function(){
+        mdui.alert('点击了确认按钮');
+      },
+      function(){
+        mdui.alert('点击了取消按钮');
+      }
+    );
+  });
+  $('#example-confirm-3').on('click', function(){
+    mdui.confirm('content', 'title', function(){
+      mdui.alert('点击了确认按钮');
+    });
+  });
+  $('#example-confirm-4').on('click', function(){
+    mdui.confirm('content', 'title',
+      function(){
+        mdui.alert('点击了确认按钮');
+      },
+      function(){
+        mdui.alert('点击了取消按钮');
+      }
+    );
+  });
+
+  // mdui.prompt 实例
+  $('#example-prompt-1').on('click', function () {
+    mdui.prompt('这是一个单行文本框',
+      function (value) {
+        mdui.alert('你输入了：' + value + '，点击了确认按钮');
+      },
+      function (value) {
+        mdui.alert('你输入了：' + value + '，点击了取消按钮');
+      }
+    );
+  });
+  $('#example-prompt-2').on('click', function () {
+    mdui.prompt('这是一个多行文本框',
+      function (value) {
+        mdui.alert('你输入了：' + value + '，点击了确认按钮');
+      },
+      function (value) {
+        mdui.alert('你输入了：' + value + '，点击了取消按钮');
+      },
+      {
+        type: 'textarea'
+      }
+    );
+  });
+  $('#example-prompt-3').on('click', function () {
+    mdui.prompt('请输入文本', 'title',
+      function (value) {
+        mdui.alert('你输入了：' + value + '，点击了确认按钮');
+      },
+      function (value) {
+        mdui.alert('你输入了：' + value + '，点击了取消按钮');
+      }
+    );
+  });
+</script>

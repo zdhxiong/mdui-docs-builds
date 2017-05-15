@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>文本框 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="textfield.html" class="mdui-typo-title">文本框</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple mdui-list-item-active">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">文本框</h1>
+  <div class="doc-intro mdui-typo">
+    <p>文本框一般使用在表单中。MDUI 的文本框拥有字数统计、表单验证等功能。</p>
+    <p>可以配合<a href="grid.html">网格布局系统</a>进行表单布局。</p>
+    <div class="doc-intro-module">
+      <h3>调用方式</h3>
+      <p>在页面加载完后会自动初始化。对于动态生成的文本框，需要调用 <code>mdui.updateTextFields()</code> 进行初始化。</p>
+    </div>
+    <div class="doc-intro-module">
+      <h3>色彩</h3>
+      <p>使用强调色。</p>
+    </div>
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/components/text-fields.html" target="_blank">Material Design 设计指南：组件 - 文本框</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="textfield.html#style">样式</a>
+        <ul>
+          <li><a data-scroll href="textfield.html#basic">单行文本框</a></li>
+          <li><a data-scroll href="textfield.html#fixed-label">固定标签</a></li>
+          <li><a data-scroll href="textfield.html#float-label">浮动标签</a></li>
+          <li><a data-scroll href="textfield.html#disabled">禁用状态</a></li>
+          <li><a data-scroll href="textfield.html#multiline">多行文本框</a></li>
+          <li><a data-scroll href="textfield.html#icon">含图标</a></li>
+          <li><a data-scroll href="textfield.html#expandable">可展开文本框</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="textfield.html#func">功能</a>
+        <ul>
+          <li><a data-scroll href="textfield.html#valid">表单验证</a></li>
+          <li><a data-scroll href="textfield.html#counter">字数统计</a></li>
+          <li><a data-scroll href="textfield.html#dynamic">动态生成的文本框</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="textfield.html#class">CSS 类名列表</a></li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">单行文本框 <a class="doc-anchor" id="basic"></a></h4>
+      <p>这是一个最简单的文本框的例子：</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield">
+          <input class="mdui-textfield-input" type="text" placeholder="User Name"/>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield</span>&quot;&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; placeholder=&quot;User Name&quot;/&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">固定标签 <a class="doc-anchor" id="fixed-label"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield">
+          <label class="mdui-textfield-label">User Name</label>
+          <input class="mdui-textfield-input" type="text"/>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;label class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-label</span>&quot;&gt;User Name&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot;/&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">浮动标签 <a class="doc-anchor" id="float-label"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Email</label>
+          <input class="mdui-textfield-input" type="email"/>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-floating-label</span>&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Email&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;email&quot;/&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">禁用状态 <a class="doc-anchor" id="disabled"></a></h4>
+      <p>在 <code>.mdui-textfield-input</code> 元素上添加 <code>disabled</code> 属性，即可禁用文本框。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield">
+          <input class="mdui-textfield-input" type="text" disabled placeholder="User Name"/>
+        </div>
+
+        <!-- 固定标签 -->
+        <div class="mdui-textfield">
+          <label class="mdui-textfield-label">User Name</label>
+          <input class="mdui-textfield-input" type="text" disabled/>
+        </div>
+
+        <!-- 浮动标签 -->
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Email</label>
+          <input class="mdui-textfield-input" type="email" disabled/>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">disabled</span> placeholder=&quot;User Name&quot;/&gt;
+&lt;/div&gt;
+
+&lt;!-- 固定标签 --&gt;
+&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;User Name&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">disabled</span>/&gt;
+&lt;/div&gt;
+
+&lt;!-- 浮动标签 --&gt;
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Email&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;email&quot; <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">disabled</span>/&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">多行文本框 <a class="doc-anchor" id="multiline"></a></h4>
+      <p>把单行文本框的 <code>input</code> 标签替换为 <code>textarea</code> 标签，即为多行文本框。多行文本框会根据内容的高度自动调整文本框的高度。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield">
+          <textarea class="mdui-textfield-input" placeholder="Description"></textarea>
+        </div>
+
+        <!-- 固定标签 -->
+        <div class="mdui-textfield">
+          <label class="mdui-textfield-label">Subject</label>
+          <textarea class="mdui-textfield-input"></textarea>
+        </div>
+
+        <!-- 浮动标签 -->
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Message</label>
+          <textarea class="mdui-textfield-input"></textarea>
+        </div>
+
+        <!-- 禁用状态 -->
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Disabled</label>
+          <textarea class="mdui-textfield-input" disabled></textarea>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;textarea class=&quot;mdui-textfield-input&quot; placeholder=&quot;Description&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- 固定标签 --&gt;
+&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Subject&lt;/label&gt;
+  &lt;textarea class=&quot;mdui-textfield-input&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- 浮动标签 --&gt;
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Message&lt;/label&gt;
+  &lt;textarea class=&quot;mdui-textfield-input&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- 禁用状态 --&gt;
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Disabled&lt;/label&gt;
+  &lt;textarea class=&quot;mdui-textfield-input&quot; disabled&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">含图标 <a class="doc-anchor" id="icon"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield">
+          <i class="mdui-icon material-icons">&#xe0be;</i>
+          <input class="mdui-textfield-input" type="email" placeholder="Email"/>
+        </div>
+        <div class="mdui-textfield">
+          <i class="mdui-icon material-icons">&#xe853;</i>
+          <label class="mdui-textfield-label">User name</label>
+          <input class="mdui-textfield-input" type="text"/>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <i class="mdui-icon material-icons">&#xe0d8;</i>
+          <label class="mdui-textfield-label">Message</label>
+          <textarea class="mdui-textfield-input"></textarea>
+        </div>
+        <div class="mdui-textfield">
+          <i class="mdui-icon material-icons">&#xe897;</i>
+          <input class="mdui-textfield-input" type="text" placeholder="Disabled" disabled/>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0be;&lt;/i&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;email&quot; placeholder=&quot;Email&quot;/&gt;
+&lt;/div&gt;
+
+&lt;!-- 固定标签 --&gt;
+&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe853;&lt;/i&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;User name&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot;/&gt;
+&lt;/div&gt;
+
+&lt;!-- 浮动标签、多行文本框 --&gt;
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0d8;&lt;/i&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Message&lt;/label&gt;
+  &lt;textarea class=&quot;mdui-textfield-input&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- 禁用状态 --&gt;
+&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe897;&lt;/i&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; placeholder=&quot;Disabled&quot; disabled/&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">可展开文本框 <a class="doc-anchor" id="expandable"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-row-xs-1 mdui-row-sm-2">
+          <div class="mdui-col">
+            <div class="mdui-textfield mdui-textfield-expandable">
+              <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
+              <input class="mdui-textfield-input" type="text" placeholder="Search"/>
+              <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
+            </div>
+          </div>
+          <div class="mdui-col">
+            <div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
+              <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
+              <input class="mdui-textfield-input" type="text" placeholder="Search"/>
+              <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-expandable</span>&quot;&gt;
+  &lt;button class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-icon</span> mdui-btn mdui-btn-icon&quot;&gt;&lt;i class=&quot;mdui-icon material-icons&quot;&gt;&amp;#xe8b6;&lt;/i&gt;&lt;/button&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; placeholder=&quot;Search&quot;/&gt;
+  &lt;button class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-close</span> mdui-btn mdui-btn-icon&quot;&gt;&lt;i class=&quot;mdui-icon material-icons&quot;&gt;&amp;#xe5cd;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mdui-textfield <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-expandable</span> mdui-float-right&quot;&gt;
+  &lt;button class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-icon</span> mdui-btn mdui-btn-icon&quot;&gt;&lt;i class=&quot;mdui-icon material-icons&quot;&gt;&amp;#xe8b6;&lt;/i&gt;&lt;/button&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; placeholder=&quot;Search&quot;/&gt;
+  &lt;button class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-close</span> mdui-btn mdui-btn-icon&quot;&gt;&lt;i class=&quot;mdui-icon material-icons&quot;&gt;&amp;#xe5cd;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">功能 <a class="doc-anchor" id="func"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">表单验证 <a class="doc-anchor" id="valid"></a></h4>
+      <p>MDUI 使用 HTML5 进行表单验证，在 <code>&lt;div class=&quot;mdui-textfield&quot;&gt;&lt;/div&gt;</code> 内部的最后添加元素 <code>&lt;div class=&quot;mdui-textfield-error&quot;&gt;&lt;/div&gt;</code>，可以添加错误信息。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">User name</label>
+          <input class="mdui-textfield-input" type="text" required/>
+          <div class="mdui-textfield-error">用户名不能为空</div>
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Email</label>
+          <input class="mdui-textfield-input" type="email" required/>
+          <div class="mdui-textfield-error">邮箱格式错误</div>
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Password</label>
+          <input class="mdui-textfield-input" type="text" pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$" required/>
+          <div class="mdui-textfield-error">密码至少 6 位，且包含大小写字母</div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;User name&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; required/&gt;
+  &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-error</span>&quot;&gt;用户名不能为空&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Email&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;email&quot; required/&gt;
+  &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-error</span>&quot;&gt;邮箱格式错误&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Password&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; pattern=&quot;^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$&quot; required/&gt;
+  &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-textfield-error</span>&quot;&gt;密码至少 6 位，且包含大小写字母&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">字数统计 <a class="doc-anchor" id="counter"></a></h4>
+      <p>在 <code>input</code> 元素上添加属性 <code>maxlength=""</code> 即可限制输入的字符长度，MDUI 会自动添加实时字数统计显示到文本框右下角。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-textfield">
+          <label class="mdui-textfield-label">User name</label>
+          <input class="mdui-textfield-input" type="text" maxlength="20"/>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Email</label>
+          <input class="mdui-textfield-input" type="email" maxlength="60"/>
+          <div class="mdui-textfield-error">邮箱格式错误</div>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">Message</label>
+          <textarea class="mdui-textfield-input" maxlength="140"></textarea>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-textfield&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;User name&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;text&quot; <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">maxlength</span>=&quot;20&quot;/&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Email&lt;/label&gt;
+  &lt;input class=&quot;mdui-textfield-input&quot; type=&quot;email&quot; <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">maxlength</span>=&quot;60&quot;/&gt;
+  &lt;div class=&quot;mdui-textfield-error&quot;&gt;邮箱格式错误&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mdui-textfield mdui-textfield-floating-label&quot;&gt;
+  &lt;label class=&quot;mdui-textfield-label&quot;&gt;Message&lt;/label&gt;
+  &lt;textarea class=&quot;mdui-textfield-input&quot; <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">maxlength</span>=&quot;140&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">动态生成的文本框 <a class="doc-anchor" id="dynamic"></a></h4>
+      <p>如果你的文本框是动态生成的，或者动态修改了文本框内容，则需要调用 <code>mdui.updateTextFields()</code> 方法来重新初始化文本框。</p>
+      <p>该方法可以接受一个含 <code>.mdui-textfield</code> 类的 CSS 选择器、或者 DOM 元素、或者 DOM 元素组成的数组作为参数，表示只重新初始化指定文本框。如果没有传入参数，将重新初始化页面中的所有文本框。</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表</h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-textfield</code></td>
+              <td>定义一个文本框。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-textfield-floating-label</code></td>
+              <td>定义浮动标签文本框。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-textfield-label</code></td>
+              <td>定义文本框的标签。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-textfield-input</code></td>
+              <td>定义文本框的输入框。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-textfield-error</code></td>
+              <td>定义表单验证的错误信息。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="panel.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">可扩展面板</div>
+        </div>
+      </a>
+      
+            <a href="selection_control.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">选择控件</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>

@@ -1,0 +1,1376 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>可扩展面板 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="panel.html" class="mdui-typo-title">可扩展面板</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple mdui-list-item-active">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">可扩展面板</h1>
+  <div class="doc-intro mdui-typo">
+    <div class="doc-intro-module">
+      <h3>调用方式</h3>
+      <ol>
+        <li>通过自定义属性调用</li>
+        <li>通过 JavaScript 调用</li>
+      </ol>
+    </div>
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/components/expansion-panels.html" target="_blank">Material Design 设计指南：组件 - 扩展面板</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="panel.html#style">样式</a>
+        <ul>
+          <li><a data-scroll href="panel.html#complete">完整 HTML 结构</a></li>
+          <li><a data-scroll href="panel.html#simple">最简 HTML 结构</a></li>
+          <li><a data-scroll href="panel.html#open">默认打开的面板项</a></li>
+          <li><a data-scroll href="panel.html#gapless">移除面板间距</a></li>
+          <li><a data-scroll href="panel.html#popout">弹出面板</a></li>
+          <li><a data-scroll href="panel.html#nest">面板嵌套</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="panel.html#call">调用方式</a>
+        <ul>
+          <li><a data-scroll href="panel.html#attr">通过自定义属性调用</a></li>
+          <li><a data-scroll href="panel.html#js">通过 JavaScript 调用</a></li>
+          <li><a data-scroll href="panel.html#option">参数</a></li>
+          <li><a data-scroll href="panel.html#method">方法</a></li>
+          <li><a data-scroll href="panel.html#event">事件</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="panel.html#class">CSS 类名列表</a></li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">完整 HTML 结构 <a class="doc-anchor" id="complete"></a></h4>
+      <p>这个示例包含了所有可以包含的 HTML 元素。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">
+              <div class="mdui-panel-item-title">Trip name</div>
+              <div class="mdui-panel-item-summary">Carribean cruise</div>
+              <i class="mdui-panel-item-arrow mdui-icon material-icons">&#xe313;</i>
+            </div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <div class="mdui-panel-item-actions">
+                <button class="mdui-btn mdui-ripple">cancel</button>
+                <button class="mdui-btn mdui-ripple">save</button>
+              </div>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">
+              <div class="mdui-panel-item-title">Location</div>
+              <i class="mdui-panel-item-arrow mdui-icon material-icons">&#xe313;</i>
+            </div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <div class="mdui-panel-item-actions">
+                <button class="mdui-btn mdui-ripple">cancel</button>
+                <button class="mdui-btn mdui-ripple">save</button>
+              </div>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">
+              <div class="mdui-panel-item-title">Start and end dates</div>
+              <div class="mdui-panel-item-summary">Start date: Feb 29, 2016</div>
+              <div class="mdui-panel-item-summary">End date: Not set</div>
+              <i class="mdui-panel-item-arrow mdui-icon material-icons">&#xe313;</i>
+            </div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <div class="mdui-panel-item-actions">
+                <button class="mdui-btn mdui-ripple">cancel</button>
+                <button class="mdui-btn mdui-ripple">save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;
+      &lt;div class=&quot;mdui-panel-item-title&quot;&gt;Trip name&lt;/div&gt;
+      &lt;div class=&quot;mdui-panel-item-summary&quot;&gt;Carribean cruise&lt;/div&gt;
+      &lt;i class=&quot;mdui-panel-item-arrow <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe313;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;div class=&quot;mdui-panel-item-actions&quot;&gt;
+        &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+        &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;
+      &lt;div class=&quot;mdui-panel-item-title&quot;&gt;Location&lt;/div&gt;
+      &lt;i class=&quot;mdui-panel-item-arrow <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe313;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;div class=&quot;mdui-panel-item-actions&quot;&gt;
+        &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+        &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;
+      &lt;div class=&quot;mdui-panel-item-title&quot;&gt;Start and end dates&lt;/div&gt;
+      &lt;div class=&quot;mdui-panel-item-summary&quot;&gt;Start date: Feb 29, 2016&lt;/div&gt;
+      &lt;div class=&quot;mdui-panel-item-summary&quot;&gt;End date: Not set&lt;/div&gt;
+      &lt;i class=&quot;mdui-panel-item-arrow <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe313;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;div class=&quot;mdui-panel-item-actions&quot;&gt;
+        &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+        &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">最简 HTML 结构 <a class="doc-anchor" id="simple"></a></h4>
+      <p>上例中的部分元素并不是必须的，下面的示例只包含必须的 HTML 元素。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">First</div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Second</div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Third</div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">默认打开的面板项 <a class="doc-anchor" id="open"></a></h4>
+      <p>在 <code>&lt;div class=&quot;mdui-panel-item&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-item-open</code> 即可使该面板项处于默认打开状态。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">First</div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item mdui-panel-item-open">
+            <div class="mdui-panel-item-header">Second</div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Third</div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-panel-item-open</span>&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">移除面板间距 <a class="doc-anchor" id="gapless"></a></h4>
+      <p>在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-gapless</code> 即可移除打开的面板和其他面板之间的间距。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel mdui-panel-gapless" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">First</div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Second</div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Third</div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-panel-gapless</span>&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">弹出面板 <a class="doc-anchor" id="popout"></a></h4>
+      <p>在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-popout</code> 即可使打开的面板有弹出效果。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel mdui-panel-popout" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">First</div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Second</div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Third</div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-panel-popout</span>&quot; mdui-panel&gt;
+
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">面板嵌套 <a class="doc-anchor" id="nest"></a></h4>
+      <p>可扩展面板可以互相嵌套。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel" mdui-panel>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">First</div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+
+              <div class="mdui-panel" mdui-panel>
+                <div class="mdui-panel-item">
+                  <div class="mdui-panel-item-header">First</div>
+                  <div class="mdui-panel-item-body">
+                    <p>First content</p>
+                    <p>First content</p>
+                    <p>First content</p>
+
+                    <div class="mdui-panel" mdui-panel>
+                      <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">First</div>
+                        <div class="mdui-panel-item-body">
+                          <p>First content</p>
+                          <p>First content</p>
+                          <p>First content</p>
+                        </div>
+                      </div>
+                      <div class="mdui-panel-item">
+                        <div class="mdui-panel-item-header">Second</div>
+                        <div class="mdui-panel-item-body">
+                          <p>Second content</p>
+                          <p>Second content</p>
+                          <p>Second content</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="mdui-panel-item">
+                  <div class="mdui-panel-item-header">Second</div>
+                  <div class="mdui-panel-item-body">
+                    <p>Second content</p>
+                    <p>Second content</p>
+                    <p>Second content</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Second</div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Third</div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+
+      &lt;!-- 第一个嵌套的可扩展列表 --&gt;
+      &lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+        &lt;div class=&quot;mdui-panel-item&quot;&gt;
+          &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+          &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+            &lt;p&gt;First content&lt;/p&gt;
+            &lt;p&gt;First content&lt;/p&gt;
+            &lt;p&gt;First content&lt;/p&gt;
+
+            &lt;!-- 第二个嵌套的可扩展列表 --&gt;
+            &lt;div class=&quot;mdui-panel&quot; mdui-panel&gt;
+              &lt;div class=&quot;mdui-panel-item&quot;&gt;
+                &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+                &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+                  &lt;p&gt;First content&lt;/p&gt;
+                  &lt;p&gt;First content&lt;/p&gt;
+                  &lt;p&gt;First content&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;mdui-panel-item&quot;&gt;
+                &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+                &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+                  &lt;p&gt;Second content&lt;/p&gt;
+                  &lt;p&gt;Second content&lt;/p&gt;
+                  &lt;p&gt;Second content&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;mdui-panel-item&quot;&gt;
+          &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+          &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+            &lt;p&gt;Second content&lt;/p&gt;
+            &lt;p&gt;Second content&lt;/p&gt;
+            &lt;p&gt;Second content&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">调用方式 <a class="doc-anchor" id="call"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通过自定义属性调用 <a class="doc-anchor" id="attr"></a></h4>
+      <p>使用该方式无需编写 JavaScript 代码。只需在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加 <code>mdui-panel="<a data-scroll href="panel.html#option">options</a>"</code> 属性即可激活该插件。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-panel" mdui-panel="{accordion: true}">
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">First</div>
+            <div class="mdui-panel-item-body">
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+              <p>First content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Second</div>
+            <div class="mdui-panel-item-body">
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+              <p>Second content</p>
+            </div>
+          </div>
+          <div class="mdui-panel-item">
+            <div class="mdui-panel-item-header">Third</div>
+            <div class="mdui-panel-item-body">
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+              <p>Third content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-panel&quot; mdui-panel=&quot;{accordion: true}&quot;&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;First&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+      &lt;p&gt;First content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Second&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+      &lt;p&gt;Second content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;mdui-panel-item&quot;&gt;
+    &lt;div class=&quot;mdui-panel-item-header&quot;&gt;Third&lt;/div&gt;
+    &lt;div class=&quot;mdui-panel-item-body&quot;&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+      &lt;p&gt;Third content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通过 JavaScript 调用 <a class="doc-anchor" id="js"></a></h4>
+      <p>实例化组件：</p>
+      <pre><code class="lang-js">// selector 为 .mdui-panel 元素的 CSS 选择器或 DOM 元素
+// options 为插件的参数，见下面的参数列表
+var inst = new mdui.Panel(selector, options);</code></pre>
+    </div>
+    <a href="demo/panel/demo1.html" target="_blank" class="mdui-btn mdui-color-theme-accent">DEMO</a>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>参数名</th>
+              <th>类型</th>
+              <th>默认值</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>accordion</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>是否启用手风琴效果。
+                <ul>
+                  <li>为 <code>true</code> 时，最多只能有一个面板项处于打开状态，打开一个面板项时会关闭其他面板项。</li>
+                  <li>为 <code>false</code> 时，可同时打开多个面板项。</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">方法 <a class="doc-anchor" id="method"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>方法名</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>open(item)</code></td>
+              <td>打开面板项。
+                <ul>
+                  <li><code>item</code>：面板项的索引号、或者 DOM 元素、或者 CSS 选择器。</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><code>close(item)</code></td>
+              <td>关闭面板项。
+                <ul>
+                  <li><code>item</code>：面板项的索引号、或者 DOM 元素、或者 CSS 选择器。</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><code>toggle(item)</code></td>
+              <td>切换面板项状态。
+                <ul>
+                  <li><code>item</code>：面板项的索引号、或者 DOM 元素、或者 CSS 选择器。</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><code>openAll()</code></td>
+              <td>打开所有面板项。该方法仅在 <code>accordion</code> 为 <code>false</code> 时有效。</td>
+            </tr>
+            <tr>
+              <td><code>closeAll()</code></td>
+              <td>关闭所有面板项。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">事件 <a class="doc-anchor" id="event"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>事件</th>
+              <th>描述</th>
+              <th>目标</th>
+              <th>参数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>open.mdui.panel</code></td>
+              <td>面板项开始打开动画时，事件将被触发。</td>
+              <td rowspan="4"><code>&lt;div class=&quot;mdui-panel-item&quot;&gt;&lt;/div&gt;</code></td>
+              <td rowspan="4">
+                <code>event.detail.inst</code>：实例
+              </td>
+            </tr>
+            <tr>
+              <td><code>opened.mdui.panel</code></td>
+              <td>面板项结束打开动画时，事件将被触发。</td>
+            </tr>
+            <tr>
+              <td><code>close.mdui.panel</code></td>
+              <td>面板项开始关闭动画时，事件将被触发。</td>
+            </tr>
+            <tr>
+              <td><code>closed.mdui.panel</code></td>
+              <td>面板项结束关闭动画时，事件将被触发。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-panel</code></td>
+              <td>定义一个可扩展面板。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-gapless</code></td>
+              <td>移除打开的面板和其他面板之间的间距。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-popout</code></td>
+              <td>使打开的面板具有弹出效果。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item</code></td>
+              <td>定义一个可扩展面板的面板项。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-open</code></td>
+              <td>使面板项默认打开。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-header</code></td>
+              <td>定义一个面板项的头部。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-title</code></td>
+              <td>定义面板项头部的标题。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-summary</code></td>
+              <td>定义面板项头部的概要。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-arrow</code></td>
+              <td>定义面板项的展开收起图标。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-body</code></td>
+              <td>定义面板项内容。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-panel-item-actions</code></td>
+              <td>定义面板项的操作栏。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="divider.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">分隔线</div>
+        </div>
+      </a>
+      
+            <a href="textfield.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">文本框</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>

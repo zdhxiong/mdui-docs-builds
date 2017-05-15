@@ -1,0 +1,2654 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>颜色和主题 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="color.html" class="mdui-typo-title">颜色和主题</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple mdui-list-item-active">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<style>
+  .color-palette{
+    position: relative;
+    padding: 0 0 36px 0;
+    margin: 0;
+    list-style: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .color-palette li {
+    padding: 15px;
+  }
+  .color-palette .color-divider {
+    margin-top: 8px;
+  }
+  .color-palette .main-color {
+  }
+  .color-palette .main-color .color-name {
+    display: block;
+    margin-bottom: 60px;
+  }
+  .color-palette .color-hex {
+    float: right;
+    text-transform: uppercase;
+  }
+  .color-palette .anchor-primary-color {
+    position: absolute;
+    top: -72px;
+  }
+  .color-palette .anchor-accent-color {
+    position: absolute;
+    top: 520px;
+  }
+</style>
+
+<div class="mdui-container doc-container doc-no-cover">
+  <h1 class="doc-title mdui-text-color-theme">颜色与主题</h1>
+  <div class="doc-intro mdui-typo">
+    <p>MDUI 内置了 Material Design 的 19 组主色和 16 组强调色，所有颜色（包括背景色中的文本颜色、文本不透明度）均与 Material Design 官方文档保持一致。</p>
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/style/color.html" target="_blank">Material Design 设计指南：样式 - 颜色</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="color.html#color">主色和强调色</a>
+        <ul>
+          <li><a data-scroll href="color.html#color-primary">主色</a></li>
+          <li><a data-scroll href="color.html#color-accent">强调色</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="color.html#background">背景颜色</a></li>
+      <li><a data-scroll href="color.html#text">文本颜色</a></li>
+      <li>
+        <a data-scroll href="color.html#theme">颜色主题</a>
+        <ul>
+          <li><a data-scroll href="color.html#theme-primary">主色</a></li>
+          <li><a data-scroll href="color.html#theme-accent">强调色</a></li>
+          <li><a data-scroll href="color.html#theme-layout">深色背景主题</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="color.html#palette">颜色参考表</a></li>
+      <li>
+        <a data-scroll href="color.html#class">CSS 类名列表</a>
+        <ul>
+          <li><a data-scroll href="color.html#class-theme">设置主题</a></li>
+          <li><a data-scroll href="color.html#class-background">背景色</a></li>
+          <li><a data-scroll href="color.html#class-text">文本色</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">主色和强调色 <a class="doc-anchor" id="color"></a></h2>
+      <p>Material Design 中的颜色分为主色（Primary）和强调色（Accent）。</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">主色 <a class="doc-anchor" id="color-primary"></a></h4>
+      <p>主色共有 19 种颜色，包括：</p>
+      <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-red mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-red">red</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-pink mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-pink">pink</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-purple mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-purple">purple</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-deep-purple mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-deep-purple">deep-purple</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-indigo mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-indigo">indigo</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-blue mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-blue">blue</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-light-blue mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-light-blue">light-blue</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-cyan mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-cyan">cyan</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-teal mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-teal">teal</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-green mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-green">green</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-light-green mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-light-green">light-green</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-lime mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-lime">lime</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-yellow mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-yellow">yellow</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-amber mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-amber">amber</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-orange mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-orange">orange</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-deep-orange mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-deep-orange">deep-orange</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-brown mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-brown">brown</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-grey mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-grey">grey</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-blue-grey mdui-m-r-1"></span>
+          <a data-scroll href="color.html#primary-color-blue-grey">blue-grey</a>
+        </div>
+      </div>
+      <p></p>
+      <p>主色每种颜色都有 10 种饱和度：</p>
+      <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-50 mdui-m-r-2"></span>50
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-100 mdui-m-r-2"></span>100
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-200 mdui-m-r-2"></span>200
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-300 mdui-m-r-2"></span>300
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-400 mdui-m-r-2"></span>400
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-500 mdui-m-r-2"></span>500
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-600 mdui-m-r-2"></span>600
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-700 mdui-m-r-2"></span>700
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-800 mdui-m-r-2"></span>800
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-900 mdui-m-r-2"></span>900
+        </div>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">强调色 <a class="doc-anchor" id="color-accent"></a></h4>
+      <p>强调色共有 16 种颜色，包括：</p>
+      <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-red-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-red">red</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-pink-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-pink">pink</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-purple-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-purple">purple</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-deep-purple-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-deep-purple">deep-purple</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-indigo-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-indigo">indigo</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-blue-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-blue">blue</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-light-blue-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-light-blue">light-blue</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-cyan-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-cyan">cyan</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-teal-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-teal">teal</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-green-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-green">green</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-light-green-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-light-green">light-green</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-lime-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-lime">lime</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-yellow-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-yellow">yellow</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-amber-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-amber">amber</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-orange-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-orange">orange</a>
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-deep-orange-accent mdui-m-r-1"></span>
+          <a data-scroll href="color.html#accent-color-deep-orange">deep-orange</a>
+        </div>
+      </div>
+      <p></p>
+      <p>强调色每种颜色都有 4 中饱和度：</p>
+      <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-a100 mdui-m-r-2"></span>a100
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-a200 mdui-m-r-2"></span>a200
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-a400 mdui-m-r-2"></span>a400
+        </div>
+        <div class="mdui-col">
+          <span class="doc-color-circle mdui-color-theme-a700 mdui-m-r-2"></span>a700
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">背景颜色 <a class="doc-anchor" id="background"></a></h2>
+      <p>背景颜色类名为 <code>.mdui-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-<span mdui-tooltip="{content: '颜色饱和度'}">[degree]</span></code>。它在设置背景色的同时，还设置了背景色中的文本颜色和文本不透明度。</p>
+      <p>此外主色和强调色都有一个默认的背景颜色类：
+      <ul>
+        <li><code>.mdui-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span></code> 和 <code>.mdui-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-500</code> 等效。</li>
+        <li><code>.mdui-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-accent</code> 和 <code>.mdui-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-a200</code> 等效。</li>
+      </ul>
+      </p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-lg-4">
+          <div class="mdui-col">
+            <div class="mdui-color-blue-200 doc-box-padding">mdui-color-blue-200</div>
+          </div>
+          <div class="mdui-col">
+            <div class="mdui-color-blue doc-box-padding">mdui-color-blue</div>
+          </div>
+          <div class="mdui-col">
+            <div class="mdui-color-pink-accent doc-box-padding">mdui-color-pink-accent</div>
+          </div>
+          <div class="mdui-col">
+            <div class="mdui-color-pink-a200 doc-box-padding">mdui-color-pink-a200</div>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-color-blue-200&quot;&gt;mdui-color-blue-200&lt;/div&gt;
+&lt;div class=&quot;mdui-color-blue&quot;&gt;mdui-color-blue&lt;/div&gt;
+&lt;div class=&quot;mdui-color-pink-accent&quot;&gt;mdui-color-pink-accent&lt;/div&gt;
+&lt;div class=&quot;mdui-color-pink-a200&quot;&gt;mdui-color-pink-a200&lt;/div&gt;</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>所有可用的背景色类名全部列在下方的 <a data-scroll href="color.html#palette">颜色参考表</a> 中。</p>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">文本颜色 <a class="doc-anchor" id="text"></a></h2>
+      <p>文本颜色类名为 <code>mdui-text-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-<span mdui-tooltip="{content: '颜色饱和度'}">[degree]</span></code> 。</p>
+      <p>此外主色和强调色都有一个默认的文本颜色类：</p>
+      <ul>
+        <li><code>.mdui-text-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span></code> 和 <code>.mdui-text-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-500</code> 等效。</li>
+        <li><code>.mdui-text-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-accent</code> 和 <code>.mdui-text-color-<span mdui-tooltip="{content: '颜色名'}">[color]</span>-a200</code> 等效。</li>
+      </ul>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-text-color-blue-900 doc-box-padding">mdui-text-color-blue-900</div>
+        <div class="mdui-text-color-blue doc-box-padding">mdui-text-color-blue</div>
+        <div class="mdui-text-color-blue-a200 doc-box-padding">mdui-text-color-blue-a200</div>
+        <div class="mdui-text-color-blue-accent doc-box-padding">mdui-text-color-blue-accent</div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-text-color-blue-900&quot;&gt;mdui-text-color-blue-900&lt;/div&gt;
+&lt;div class=&quot;mdui-text-color-blue&quot;&gt;mdui-text-color-blue&lt;/div&gt;
+&lt;div class=&quot;mdui-text-color-blue-a200&quot;&gt;mdui-text-color-blue-a200&lt;/div&gt;
+&lt;div class=&quot;mdui-text-color-blue-accent&quot;&gt;mdui-text-color-blue-accent&lt;/div&gt;</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>此外，MDUI 还提供了带不透明度的黑色和白色的文本和图标颜色。</p>
+      <ul>
+        <li><code>.mdui-text-color-black-*</code> 用于浅色背景。</li>
+        <li><code>.mdui-text-color-white-*</code> 用于深色背景。</li>
+      </ul>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-demo">
+        <div class="mdui-row-xs-1 mdui-row-md-2">
+          <div class="mdui-col">
+            <ul class="color-palette">
+              <li class="mdui-color-grey-100 mdui-text-color-black-text">
+                <span>mdui-text-color-black-text</span>
+                <span class="color-hex">87%</span>
+              </li>
+              <li class="mdui-color-grey-100 mdui-text-color-black-secondary">
+                <span>mdui-text-color-black-secondary</span>
+                <span class="color-hex">54%</span>
+              </li>
+              <li class="mdui-color-grey-100 mdui-text-color-black-disabled">
+                <span>mdui-text-color-black-disabled</span>
+                <span class="color-hex">38%</span>
+              </li>
+              <li class="mdui-color-grey-100 mdui-text-color-black-divider">
+                <span>mdui-text-color-black-divider</span>
+                <span class="color-hex">12%</span>
+              </li>
+              <li class="mdui-color-grey-100 mdui-text-color-black-icon">
+                <span>mdui-text-color-black-icon</span>
+                <span class="color-hex">54%</span>
+              </li>
+              <li class="mdui-color-grey-100 mdui-text-color-black-icon-disabled">
+                <span>mdui-text-color-black-icon-disabled</span>
+                <span class="color-hex">26%</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mdui-col">
+            <ul class="color-palette">
+              <li class="mdui-color-grey-900 mdui-text-color-white-text">
+                <span>mdui-text-color-white-text</span>
+                <span class="color-hex">100%</span>
+              </li>
+              <li class="mdui-color-grey-900 mdui-text-color-white-secondary">
+                <span>mdui-text-color-white-secondary</span>
+                <span class="color-hex">70%</span>
+              </li>
+              <li class="mdui-color-grey-900 mdui-text-color-white-disabled">
+                <span>mdui-text-color-white-disabled</span>
+                <span class="color-hex">50%</span>
+              </li>
+              <li class="mdui-color-grey-900 mdui-text-color-white-divider">
+                <span>mdui-text-color-white-divider</span>
+                <span class="color-hex">12%</span>
+              </li>
+              <li class="mdui-color-grey-900 mdui-text-color-white-icon">
+                <span>mdui-text-color-white-icon</span>
+                <span class="color-hex">100%</span>
+              </li>
+              <li class="mdui-color-grey-900 mdui-text-color-white-icon-disabled">
+                <span>mdui-text-color-white-icon-disabled</span>
+                <span class="color-hex">30%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html"></code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">主题颜色 <a class="doc-anchor" id="theme"></a></h2>
+      <p>MDUI 提供了主题功能，只需在 body 中加几个类即可实现主题切换功能，可切换的包括主色、强调色和背景色。</p>
+      <p>MDUI 的大部分组件都有默认颜色，设置了主题颜色后，这些组件也将用主题颜色替换默认颜色。</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">主色 <a class="doc-anchor" id="theme-primary"></a></h4>
+      <p>在 body 中添加类 <code>.mdui-theme-primary-<span mdui-tooltip="{content: '颜色名'}">[color]</span></code> 来设置主色。</p>
+      <p>在页面中使用下列类，这些类的颜色会随着 body 中的主题颜色的变化而变化：</p>
+      <ul>
+        <li><code>.mdui-color-theme</code></li>
+        <li><code>.mdui-color-theme-<span mdui-tooltip="{content: '主色的颜色饱和度'}">[degree]</span></code></li>
+        <li><code>.mdui-text-color-theme</code></li>
+        <li><code>.mdui-text-color-theme-<span mdui-tooltip="{content: '主色的颜色饱和度'}">[degree]</span></code></li>
+      </ul>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">强调色 <a class="doc-anchor" id="theme-accent"></a></h4>
+      <p>在 body 中添加类 <code>.mdui-theme-accent-<span mdui-tooltip="{content: '颜色名'}">[color]</span></code> 来设置强调色</p>
+      <p>在页面中使用下列类，这些类的颜色会随着 body 中的主题颜色的变化而变化：</p>
+      <ul>
+        <li><code>.mdui-color-theme-accent</code></li>
+        <li><code>.mdui-color-theme-<span mdui-tooltip="{content: '强调色的颜色饱和度'}">[degree]</span></code></li>
+        <li><code>.mdui-text-color-theme-accent</code></li>
+        <li><code>.mdui-text-color-theme-<span mdui-tooltip="{content: '强调色的颜色饱和度'}">[degree]</span></code></li>
+      </ul>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">主题色 <a class="doc-anchor" id="theme-layout"></a></h4>
+      <p>在 body 中添加类 <code>.mdui-theme-layout-dark</code> 即可把整个页面包括组件设置为深色背景。</p>
+      <p>此外，在页面中使用下列类，这些类的颜色会根据主题色进行变化，浅色主题时显示为深色，深色主题时显示为浅色。</p>
+      <ul>
+        <li><code>.mdui-text-color-theme-text</code></li>
+        <li><code>.mdui-text-color-theme-secondary</code></li>
+        <li><code>.mdui-text-color-theme-disabled</code></li>
+        <li><code>.mdui-text-color-theme-divider</code></li>
+        <li><code>.mdui-text-color-theme-icon</code></li>
+        <li><code>.mdui-text-color-theme-icon-disabled</code></li>
+      </ul>
+    </div>
+
+    <div class="mdui-typo mdui-m-t-5">
+      <p class="mdui-p-t-2">你可以点击页面右上角的 <i class="mdui-icon material-icons">&#xe3b7;</i> 图标来设置主题颜色，下面的颜色表的主色、强调色、主题色都会随之发生变化。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-demo">
+        <div class="mdui-row-xs-1 mdui-row-md-2">
+          <div class="mdui-col">
+            <ul class="color-palette">
+              <li class="mdui-color-theme main-color">
+                <span class="color-name">Primary（主色）</span>
+                <span class="color-class">mdui-color-theme</span>
+              </li>
+              <li class="mdui-color-theme-50">
+                <span class="color-class">mdui-color-theme-50</span>
+              </li>
+              <li class="mdui-color-theme-100">
+                <span class="color-class">mdui-color-theme-100</span>
+              </li>
+              <li class="mdui-color-theme-200">
+                <span class="color-class">mdui-color-theme-200</span>
+              </li>
+              <li class="mdui-color-theme-300">
+                <span class="color-class">mdui-color-theme-300</span>
+              </li>
+              <li class="mdui-color-theme-400">
+                <span class="color-class">mdui-color-theme-400</span>
+              </li>
+              <li class="mdui-color-theme-500">
+                <span class="color-class">mdui-color-theme-500</span>
+              </li>
+              <li class="mdui-color-theme-600">
+                <span class="color-class">mdui-color-theme-600</span>
+              </li>
+              <li class="mdui-color-theme-700">
+                <span class="color-class">mdui-color-theme-700</span>
+              </li>
+              <li class="mdui-color-theme-800">
+                <span class="color-class">mdui-color-theme-800</span>
+              </li>
+              <li class="mdui-color-theme-900">
+                <span class="color-class">mdui-color-theme-900</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mdui-col">
+            <ul class="color-palette">
+              <li class="mdui-color-theme-accent main-color">
+                <span class="color-name">Accent（强调色）</span>
+                <span class="color-class">mdui-color-theme-accent</span>
+              </li>
+              <li class="mdui-color-theme-a100">
+                <span class="color-class">mdui-color-theme-a100</span>
+              </li>
+              <li class="mdui-color-theme-a200">
+                <span class="color-class">mdui-color-theme-a200</span>
+              </li>
+              <li class="mdui-color-theme-a400">
+                <span class="color-class">mdui-color-theme-a400</span>
+              </li>
+              <li class="mdui-color-theme-a700">
+                <span class="color-class">mdui-color-theme-a700</span>
+              </li>
+
+              <li class="mdui-text-color-theme-text">
+                <span>mdui-text-color-theme-text</span>
+                <span class="color-hex doc-visible-light-theme">87%</span>
+                <span class="color-hex doc-visible-dark-theme">100%</span>
+              </li>
+              <li class="mdui-text-color-theme-secondary">
+                <span>mdui-text-color-theme-secondary</span>
+                <span class="color-hex doc-visible-light-theme">54%</span>
+                <span class="color-hex doc-visible-dark-theme">70%</span>
+              </li>
+              <li class="mdui-text-color-theme-disabled">
+                <span>mdui-text-color-theme-disabled</span>
+                <span class="color-hex doc-visible-light-theme">38%</span>
+                <span class="color-hex doc-visible-dark-theme">50%</span>
+              </li>
+              <li class="mdui-text-color-theme-divider">
+                <span>mdui-text-color-theme-divider</span>
+                <span class="color-hex doc-visible-light-theme">12%</span>
+                <span class="color-hex doc-visible-dark-theme">12%</span>
+              </li>
+              <li class="mdui-text-color-theme-icon">
+                <span>mdui-text-color-theme-icon</span>
+                <span class="color-hex doc-visible-light-theme">54%</span>
+                <span class="color-hex doc-visible-dark-theme">100%</span>
+              </li>
+              <li class="mdui-text-color-theme-icon-disabled">
+                <span>mdui-text-color-theme-icon-disabled</span>
+                <span class="color-hex doc-visible-light-theme">26%</span>
+                <span class="color-hex doc-visible-dark-theme">30%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">颜色参考表 <a class="doc-anchor" id="palette"></a></h2>
+    </div>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-xl-4 mdui-m-t-5">
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-red" class="anchor-primary-color"></a>
+          <li class="mdui-color-red main-color">
+            <span class="color-name">red（主色）</span>
+            <span class="color-class">mdui-color-red</span>
+            <span class="color-hex">#F44336</span>
+          </li>
+          <li class="mdui-color-red-50">
+            <span class="color-class">mdui-color-red-50</span>
+            <span class="color-hex">#FFEBEE</span>
+          </li>
+          <li class="mdui-color-red-100">
+            <span class="color-class">mdui-color-red-100</span>
+            <span class="color-hex">#FFCDD2</span>
+          </li>
+          <li class="mdui-color-red-200">
+            <span class="color-class">mdui-color-red-200</span>
+            <span class="color-hex">#EF9A9A</span>
+          </li>
+          <li class="mdui-color-red-300">
+            <span class="color-class">mdui-color-red-300</span>
+            <span class="color-hex">#E57373</span>
+          </li>
+          <li class="mdui-color-red-400">
+            <span class="color-class">mdui-color-red-400</span>
+            <span class="color-hex">#EF5350</span>
+          </li>
+          <li class="mdui-color-red-500">
+            <span class="color-class">mdui-color-red-500</span>
+            <span class="color-hex">#F44336</span>
+          </li>
+          <li class="mdui-color-red-600">
+            <span class="color-class">mdui-color-red-600</span>
+            <span class="color-hex">#E53935</span>
+          </li>
+          <li class="mdui-color-red-700">
+            <span class="color-class">mdui-color-red-700</span>
+            <span class="color-hex">#D32F2F</span>
+          </li>
+          <li class="mdui-color-red-800">
+            <span class="color-class">mdui-color-red-800</span>
+            <span class="color-hex">#C62828</span>
+          </li>
+          <li class="mdui-color-red-900">
+            <span class="color-class">mdui-color-red-900</span>
+            <span class="color-hex">#B71C1C</span>
+          </li>
+          <a id="accent-color-red" class="anchor-accent-color"></a>
+          <li class="mdui-color-red-accent main-color color-divider">
+            <span class="color-name">red（强调色）</span>
+            <span class="color-class">mdui-color-red-accent</span>
+            <span class="color-hex">#FF5252</span>
+          </li>
+          <li class="mdui-color-red-a100">
+            <span class="color-class">mdui-color-red-a100</span>
+            <span class="color-hex">#FF8A80</span>
+          </li>
+          <li class="mdui-color-red-a200">
+            <span class="color-class">mdui-color-red-a200</span>
+            <span class="color-hex">#FF5252</span>
+          </li>
+          <li class="mdui-color-red-a400">
+            <span class="color-class">mdui-color-red-a400</span>
+            <span class="color-hex">#FF1744</span>
+          </li>
+          <li class="mdui-color-red-a700">
+            <span class="color-class">mdui-color-red-a700</span>
+            <span class="color-hex">#D50000</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-pink" class="anchor-primary-color"></a>
+          <li class="mdui-color-pink main-color">
+            <span class="color-name">pink（主色）</span>
+            <span class="color-class">mdui-color-pink</span>
+            <span class="color-hex">#E91E63</span>
+          </li>
+          <li class="mdui-color-pink-50">
+            <span class="color-class">mdui-color-pink-50</span>
+            <span class="color-hex">#FCE4EC</span>
+          </li>
+          <li class="mdui-color-pink-100">
+            <span class="color-class">mdui-color-pink-100</span>
+            <span class="color-hex">#F8BBD0</span>
+          </li>
+          <li class="mdui-color-pink-200">
+            <span class="color-class">mdui-color-pink-200</span>
+            <span class="color-hex">#F48FB1</span>
+          </li>
+          <li class="mdui-color-pink-300">
+            <span class="color-class">mdui-color-pink-300</span>
+            <span class="color-hex">#F06292</span>
+          </li>
+          <li class="mdui-color-pink-400">
+            <span class="color-class">mdui-color-pink-400</span>
+            <span class="color-hex">#EC407A</span>
+          </li>
+          <li class="mdui-color-pink-500">
+            <span class="color-class">mdui-color-pink-500</span>
+            <span class="color-hex">#E91E63</span>
+          </li>
+          <li class="mdui-color-pink-600">
+            <span class="color-class">mdui-color-pink-600</span>
+            <span class="color-hex">#D81B60</span>
+          </li>
+          <li class="mdui-color-pink-700">
+            <span class="color-class">mdui-color-pink-700</span>
+            <span class="color-hex">#C2185B</span>
+          </li>
+          <li class="mdui-color-pink-800">
+            <span class="color-class">mdui-color-pink-800</span>
+            <span class="color-hex">#AD1457</span>
+          </li>
+          <li class="mdui-color-pink-900">
+            <span class="color-class">mdui-color-pink-900</span>
+            <span class="color-hex">#880E4F</span>
+          </li>
+          <a id="accent-color-pink" class="anchor-accent-color"></a>
+          <li class="mdui-color-pink-accent main-color color-divider">
+            <span class="color-name">pink（强调色）</span>
+            <span class="color-class">mdui-color-pink-accent</span>
+            <span class="color-hex">#FF4081</span>
+          </li>
+          <li class="mdui-color-pink-a100">
+            <span class="color-class">mdui-color-pink-a100</span>
+            <span class="color-hex">#FF80AB</span>
+          </li>
+          <li class="mdui-color-pink-a200">
+            <span class="color-class">mdui-color-pink-a200</span>
+            <span class="color-hex">#FF4081</span>
+          </li>
+          <li class="mdui-color-pink-a400">
+            <span class="color-class">mdui-color-pink-a400</span>
+            <span class="color-hex">#F50057</span>
+          </li>
+          <li class="mdui-color-pink-a700">
+            <span class="color-class">mdui-color-pink-a700</span>
+            <span class="color-hex">#C51162</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-purple" class="anchor-primary-color"></a>
+          <li class="mdui-color-purple main-color">
+            <span class="color-name">purple（主色）</span>
+            <span class="color-class">mdui-color-purple</span>
+            <span class="color-hex">#9C27B0</span>
+          </li>
+          <li class="mdui-color-purple-50">
+            <span class="color-class">mdui-color-purple-50</span>
+            <span class="color-hex">#F3E5F5</span>
+          </li>
+          <li class="mdui-color-purple-100">
+            <span class="color-class">mdui-color-purple-100</span>
+            <span class="color-hex">#E1BEE7</span>
+          </li>
+          <li class="mdui-color-purple-200">
+            <span class="color-class">mdui-color-purple-200</span>
+            <span class="color-hex">#CE93D8</span>
+          </li>
+          <li class="mdui-color-purple-300">
+            <span class="color-class">mdui-color-purple-300</span>
+            <span class="color-hex">#BA68C8</span>
+          </li>
+          <li class="mdui-color-purple-400">
+            <span class="color-class">mdui-color-purple-400</span>
+            <span class="color-hex">#AB47BC</span>
+          </li>
+          <li class="mdui-color-purple-500">
+            <span class="color-class">mdui-color-purple-500</span>
+            <span class="color-hex">#9C27B0</span>
+          </li>
+          <li class="mdui-color-purple-600">
+            <span class="color-class">mdui-color-purple-600</span>
+            <span class="color-hex">#8E24AA</span>
+          </li>
+          <li class="mdui-color-purple-700">
+            <span class="color-class">mdui-color-purple-700</span>
+            <span class="color-hex">#7B1FA2</span>
+          </li>
+          <li class="mdui-color-purple-800">
+            <span class="color-class">mdui-color-purple-800</span>
+            <span class="color-hex">#6A1B9A</span>
+          </li>
+          <li class="mdui-color-purple-900">
+            <span class="color-class">mdui-color-purple-900</span>
+            <span class="color-hex">#4A148C</span>
+          </li>
+          <a id="accent-color-purple" class="anchor-accent-color"></a>
+          <li class="mdui-color-purple-accent main-color color-divider">
+            <span class="color-name">purple（强调色）</span>
+            <span class="color-class">mdui-color-purple-accent</span>
+            <span class="color-hex">#E040FB</span>
+          </li>
+          <li class="mdui-color-purple-a100">
+            <span class="color-class">mdui-color-purple-a100</span>
+            <span class="color-hex">#EA80FC</span>
+          </li>
+          <li class="mdui-color-purple-a200">
+            <span class="color-class">mdui-color-purple-a200</span>
+            <span class="color-hex">#E040FB</span>
+          </li>
+          <li class="mdui-color-purple-a400">
+            <span class="color-class">mdui-color-purple-a400</span>
+            <span class="color-hex">#D500F9</span>
+          </li>
+          <li class="mdui-color-purple-a700">
+            <span class="color-class">mdui-color-purple-a700</span>
+            <span class="color-hex">#AA00FF</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-deep-purple" class="anchor-primary-color"></a>
+          <li class="mdui-color-deep-purple main-color">
+            <span class="color-name">deep-purple（主色）</span>
+            <span class="color-class">mdui-color-deep-purple</span>
+            <span class="color-hex">#673AB7</span>
+          </li>
+          <li class="mdui-color-deep-purple-50">
+            <span class="color-class">mdui-color-deep-purple-50</span>
+            <span class="color-hex">#EDE7F6</span>
+          </li>
+          <li class="mdui-color-deep-purple-100">
+            <span class="color-class">mdui-color-deep-purple-100</span>
+            <span class="color-hex">#D1C4E9</span>
+          </li>
+          <li class="mdui-color-deep-purple-200">
+            <span class="color-class">mdui-color-deep-purple-200</span>
+            <span class="color-hex">#B39DDB</span>
+          </li>
+          <li class="mdui-color-deep-purple-300">
+            <span class="color-class">mdui-color-deep-purple-300</span>
+            <span class="color-hex">#9575CD</span>
+          </li>
+          <li class="mdui-color-deep-purple-400">
+            <span class="color-class">mdui-color-deep-purple-400</span>
+            <span class="color-hex">#7E57C2</span>
+          </li>
+          <li class="mdui-color-deep-purple-500">
+            <span class="color-class">mdui-color-deep-purple-500</span>
+            <span class="color-hex">#673AB7</span>
+          </li>
+          <li class="mdui-color-deep-purple-600">
+            <span class="color-class">mdui-color-deep-purple-600</span>
+            <span class="color-hex">#5E35B1</span>
+          </li>
+          <li class="mdui-color-deep-purple-700">
+            <span class="color-class">mdui-color-deep-purple-700</span>
+            <span class="color-hex">#512DA8</span>
+          </li>
+          <li class="mdui-color-deep-purple-800">
+            <span class="color-class">mdui-color-deep-purple-800</span>
+            <span class="color-hex">#4527A0</span>
+          </li>
+          <li class="mdui-color-deep-purple-900">
+            <span class="color-class">mdui-color-deep-purple-900</span>
+            <span class="color-hex">#311B92</span>
+          </li>
+          <a id="accent-color-deep-purple" class="anchor-accent-color"></a>
+          <li class="mdui-color-deep-purple-accent main-color color-divider">
+            <span class="color-name">purple（强调色）</span>
+            <span class="color-class">mdui-color-deep-purple-accent</span>
+            <span class="color-hex">#7C4DFF</span>
+          </li>
+          <li class="mdui-color-deep-purple-a100">
+            <span class="color-class">mdui-color-deep-purple-a100</span>
+            <span class="color-hex">#B388FF</span>
+          </li>
+          <li class="mdui-color-deep-purple-a200">
+            <span class="color-class">mdui-color-deep-purple-a200</span>
+            <span class="color-hex">#7C4DFF</span>
+          </li>
+          <li class="mdui-color-deep-purple-a400">
+            <span class="color-class">mdui-color-deep-purple-a400</span>
+            <span class="color-hex">#651FFF</span>
+          </li>
+          <li class="mdui-color-deep-purple-a700">
+            <span class="color-class">mdui-color-deep-purple-a700</span>
+            <span class="color-hex">#6200EA</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-indigo" class="anchor-primary-color"></a>
+          <li class="mdui-color-indigo main-color">
+            <span class="color-name">indigo（主色）</span>
+            <span class="color-class">mdui-color-indigo</span>
+            <span class="color-hex">#3F51B5</span>
+          </li>
+          <li class="mdui-color-indigo-50">
+            <span class="color-class">mdui-color-indigo-50</span>
+            <span class="color-hex">#E8EAF6</span>
+          </li>
+          <li class="mdui-color-indigo-100">
+            <span class="color-class">mdui-color-indigo-100</span>
+            <span class="color-hex">#C5CAE9</span>
+          </li>
+          <li class="mdui-color-indigo-200">
+            <span class="color-class">mdui-color-indigo-200</span>
+            <span class="color-hex">#9FA8DA</span>
+          </li>
+          <li class="mdui-color-indigo-300">
+            <span class="color-class">mdui-color-indigo-300</span>
+            <span class="color-hex">#7986CB</span>
+          </li>
+          <li class="mdui-color-indigo-400">
+            <span class="color-class">mdui-color-indigo-400</span>
+            <span class="color-hex">#5C6BC0</span>
+          </li>
+          <li class="mdui-color-indigo-500">
+            <span class="color-class">mdui-color-indigo-500</span>
+            <span class="color-hex">#3F51B5</span>
+          </li>
+          <li class="mdui-color-indigo-600">
+            <span class="color-class">mdui-color-indigo-600</span>
+            <span class="color-hex">#3949AB</span>
+          </li>
+          <li class="mdui-color-indigo-700">
+            <span class="color-class">mdui-color-indigo-700</span>
+            <span class="color-hex">#303F9F</span>
+          </li>
+          <li class="mdui-color-indigo-800">
+            <span class="color-class">mdui-color-indigo-800</span>
+            <span class="color-hex">#283593</span>
+          </li>
+          <li class="mdui-color-indigo-900">
+            <span class="color-class">mdui-color-indigo-900</span>
+            <span class="color-hex">#1A237E</span>
+          </li>
+          <a id="accent-color-indigo" class="anchor-accent-color"></a>
+          <li class="mdui-color-indigo-accent main-color color-divider">
+            <span class="color-name">indigo（强调色）</span>
+            <span class="color-class">mdui-color-indigo-accent</span>
+            <span class="color-hex">#536DFE</span>
+          </li>
+          <li class="mdui-color-indigo-a100">
+            <span class="color-class">mdui-color-indigo-a100</span>
+            <span class="color-hex">#8C9EFF</span>
+          </li>
+          <li class="mdui-color-indigo-a200">
+            <span class="color-class">mdui-color-indigo-a200</span>
+            <span class="color-hex">#536DFE</span>
+          </li>
+          <li class="mdui-color-indigo-a400">
+            <span class="color-class">mdui-color-indigo-a400</span>
+            <span class="color-hex">#3D5AFE</span>
+          </li>
+          <li class="mdui-color-indigo-a700">
+            <span class="color-class">mdui-color-indigo-a700</span>
+            <span class="color-hex">#304FFE</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-blue" class="anchor-primary-color"></a>
+          <li class="mdui-color-blue main-color">
+            <span class="color-name">blue（主色）</span>
+            <span class="color-class">mdui-color-blue</span>
+            <span class="color-hex">#2196F3</span>
+          </li>
+          <li class="mdui-color-blue-50">
+            <span class="color-class">mdui-color-blue-50</span>
+            <span class="color-hex">#E3F2FD</span>
+          </li>
+          <li class="mdui-color-blue-100">
+            <span class="color-class">mdui-color-blue-100</span>
+            <span class="color-hex">#BBDEFB</span>
+          </li>
+          <li class="mdui-color-blue-200">
+            <span class="color-class">mdui-color-blue-200</span>
+            <span class="color-hex">#90CAF9</span>
+          </li>
+          <li class="mdui-color-blue-300">
+            <span class="color-class">mdui-color-blue-300</span>
+            <span class="color-hex">#64B5F6</span>
+          </li>
+          <li class="mdui-color-blue-400">
+            <span class="color-class">mdui-color-blue-400</span>
+            <span class="color-hex">#42A5F5</span>
+          </li>
+          <li class="mdui-color-blue-500">
+            <span class="color-class">mdui-color-blue-500</span>
+            <span class="color-hex">#2196F3</span>
+          </li>
+          <li class="mdui-color-blue-600">
+            <span class="color-class">mdui-color-blue-600</span>
+            <span class="color-hex">#1E88E5</span>
+          </li>
+          <li class="mdui-color-blue-700">
+            <span class="color-class">mdui-color-blue-700</span>
+            <span class="color-hex">#1976D2</span>
+          </li>
+          <li class="mdui-color-blue-800">
+            <span class="color-class">mdui-color-blue-800</span>
+            <span class="color-hex">#1565C0</span>
+          </li>
+          <li class="mdui-color-blue-900">
+            <span class="color-class">mdui-color-blue-900</span>
+            <span class="color-hex">#0D47A1</span>
+          </li>
+          <a id="accent-color-blue" class="anchor-accent-color"></a>
+          <li class="mdui-color-blue-accent main-color color-divider">
+            <span class="color-name">blue（强调色）</span>
+            <span class="color-class">mdui-color-blue-accent</span>
+            <span class="color-hex">#448AFF</span>
+          </li>
+          <li class="mdui-color-blue-a100">
+            <span class="color-class">mdui-color-blue-a100</span>
+            <span class="color-hex">#82B1FF</span>
+          </li>
+          <li class="mdui-color-blue-a200">
+            <span class="color-class">mdui-color-blue-a200</span>
+            <span class="color-hex">#448AFF</span>
+          </li>
+          <li class="mdui-color-blue-a400">
+            <span class="color-class">mdui-color-blue-a400</span>
+            <span class="color-hex">#2979FF</span>
+          </li>
+          <li class="mdui-color-blue-a700">
+            <span class="color-class">mdui-color-blue-a700</span>
+            <span class="color-hex">#2962FF</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-light-blue" class="anchor-primary-color"></a>
+          <li class="mdui-color-light-blue main-color">
+            <span class="color-name">light-blue（主色）</span>
+            <span class="color-class">mdui-color-light-blue</span>
+            <span class="color-hex">#03A9F4</span>
+          </li>
+          <li class="mdui-color-light-blue-50">
+            <span class="color-class">mdui-color-light-blue-50</span>
+            <span class="color-hex">#E1F5FE</span>
+          </li>
+          <li class="mdui-color-light-blue-100">
+            <span class="color-class">mdui-color-light-blue-100</span>
+            <span class="color-hex">#B3E5FC</span>
+          </li>
+          <li class="mdui-color-light-blue-200">
+            <span class="color-class">mdui-color-light-blue-200</span>
+            <span class="color-hex">#81D4FA</span>
+          </li>
+          <li class="mdui-color-light-blue-300">
+            <span class="color-class">mdui-color-light-blue-300</span>
+            <span class="color-hex">#4FC3F7</span>
+          </li>
+          <li class="mdui-color-light-blue-400">
+            <span class="color-class">mdui-color-light-blue-400</span>
+            <span class="color-hex">#29B6F6</span>
+          </li>
+          <li class="mdui-color-light-blue-500">
+            <span class="color-class">mdui-color-light-blue-500</span>
+            <span class="color-hex">#03A9F4</span>
+          </li>
+          <li class="mdui-color-light-blue-600">
+            <span class="color-class">mdui-color-light-blue-600</span>
+            <span class="color-hex">#039BE5</span>
+          </li>
+          <li class="mdui-color-light-blue-700">
+            <span class="color-class">mdui-color-light-blue-700</span>
+            <span class="color-hex">#0288D1</span>
+          </li>
+          <li class="mdui-color-light-blue-800">
+            <span class="color-class">mdui-color-light-blue-800</span>
+            <span class="color-hex">#0277BD</span>
+          </li>
+          <li class="mdui-color-light-blue-900">
+            <span class="color-class">mdui-color-light-blue-900</span>
+            <span class="color-hex">#01579B</span>
+          </li>
+          <a id="accent-color-light-blue" class="anchor-accent-color"></a>
+          <li class="mdui-color-light-blue-accent main-color color-divider">
+            <span class="color-name">light-blue（强调色）</span>
+            <span class="color-class">mdui-color-light-blue-accent</span>
+            <span class="color-hex">#40C4FF</span>
+          </li>
+          <li class="mdui-color-light-blue-a100">
+            <span class="color-class">mdui-color-light-blue-a100</span>
+            <span class="color-hex">#80D8FF</span>
+          </li>
+          <li class="mdui-color-light-blue-a200">
+            <span class="color-class">mdui-color-light-blue-a200</span>
+            <span class="color-hex">#40C4FF</span>
+          </li>
+          <li class="mdui-color-light-blue-a400">
+            <span class="color-class">mdui-color-light-blue-a400</span>
+            <span class="color-hex">#00B0FF</span>
+          </li>
+          <li class="mdui-color-light-blue-a700">
+            <span class="color-class">mdui-color-light-blue-a700</span>
+            <span class="color-hex">#0091EA</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-cyan" class="anchor-primary-color"></a>
+          <li class="mdui-color-cyan main-color">
+            <span class="color-name">cyan（主色）</span>
+            <span class="color-class">mdui-color-cyan</span>
+            <span class="color-hex">#00BCD4</span>
+          </li>
+          <li class="mdui-color-cyan-50">
+            <span class="color-class">mdui-color-cyan-50</span>
+            <span class="color-hex">#E0F7FA</span>
+          </li>
+          <li class="mdui-color-cyan-100">
+            <span class="color-class">mdui-color-cyan-100</span>
+            <span class="color-hex">#B2EBF2</span>
+          </li>
+          <li class="mdui-color-cyan-200">
+            <span class="color-class">mdui-color-cyan-200</span>
+            <span class="color-hex">#80DEEA</span>
+          </li>
+          <li class="mdui-color-cyan-300">
+            <span class="color-class">mdui-color-cyan-300</span>
+            <span class="color-hex">#4DD0E1</span>
+          </li>
+          <li class="mdui-color-cyan-400">
+            <span class="color-class">mdui-color-cyan-400</span>
+            <span class="color-hex">#26C6DA</span>
+          </li>
+          <li class="mdui-color-cyan-500">
+            <span class="color-class">mdui-color-cyan-500</span>
+            <span class="color-hex">#00BCD4</span>
+          </li>
+          <li class="mdui-color-cyan-600">
+            <span class="color-class">mdui-color-cyan-600</span>
+            <span class="color-hex">#00ACC1</span>
+          </li>
+          <li class="mdui-color-cyan-700">
+            <span class="color-class">mdui-color-cyan-700</span>
+            <span class="color-hex">#0097A7</span>
+          </li>
+          <li class="mdui-color-cyan-800">
+            <span class="color-class">mdui-color-cyan-800</span>
+            <span class="color-hex">#00838F</span>
+          </li>
+          <li class="mdui-color-cyan-900">
+            <span class="color-class">mdui-color-cyan-900</span>
+            <span class="color-hex">#006064</span>
+          </li>
+          <a id="accent-color-cyan" class="anchor-accent-color"></a>
+          <li class="mdui-color-cyan-accent main-color color-divider">
+            <span class="color-name">cyan（强调色）</span>
+            <span class="color-class">mdui-color-cyan-accent</span>
+            <span class="color-hex">#18FFFF</span>
+          </li>
+          <li class="mdui-color-cyan-a100">
+            <span class="color-class">mdui-color-cyan-a100</span>
+            <span class="color-hex">#84FFFF</span>
+          </li>
+          <li class="mdui-color-cyan-a200">
+            <span class="color-class">mdui-color-cyan-a200</span>
+            <span class="color-hex">#18FFFF</span>
+          </li>
+          <li class="mdui-color-cyan-a400">
+            <span class="color-class">mdui-color-cyan-a400</span>
+            <span class="color-hex">#00E5FF</span>
+          </li>
+          <li class="mdui-color-cyan-a700">
+            <span class="color-class">mdui-color-cyan-a700</span>
+            <span class="color-hex">#00B8D4</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-teal" class="anchor-primary-color"></a>
+          <li class="mdui-color-teal main-color">
+            <span class="color-name">teal（主色）</span>
+            <span class="color-class">mdui-color-teal</span>
+            <span class="color-hex">#009688</span>
+          </li>
+          <li class="mdui-color-teal-50">
+            <span class="color-class">mdui-color-teal-50</span>
+            <span class="color-hex">#E0F2F1</span>
+          </li>
+          <li class="mdui-color-teal-100">
+            <span class="color-class">mdui-color-teal-100</span>
+            <span class="color-hex">#B2DFDB</span>
+          </li>
+          <li class="mdui-color-teal-200">
+            <span class="color-class">mdui-color-teal-200</span>
+            <span class="color-hex">#80CBC4</span>
+          </li>
+          <li class="mdui-color-teal-300">
+            <span class="color-class">mdui-color-teal-300</span>
+            <span class="color-hex">#4DB6AC</span>
+          </li>
+          <li class="mdui-color-teal-400">
+            <span class="color-class">mdui-color-teal-400</span>
+            <span class="color-hex">#26A69A</span>
+          </li>
+          <li class="mdui-color-teal-500">
+            <span class="color-class">mdui-color-teal-500</span>
+            <span class="color-hex">#009688</span>
+          </li>
+          <li class="mdui-color-teal-600">
+            <span class="color-class">mdui-color-teal-600</span>
+            <span class="color-hex">#00897B</span>
+          </li>
+          <li class="mdui-color-teal-700">
+            <span class="color-class">mdui-color-teal-700</span>
+            <span class="color-hex">#00796B</span>
+          </li>
+          <li class="mdui-color-teal-800">
+            <span class="color-class">mdui-color-teal-800</span>
+            <span class="color-hex">#00695C</span>
+          </li>
+          <li class="mdui-color-teal-900">
+            <span class="color-class">mdui-color-teal-900</span>
+            <span class="color-hex">#004D40</span>
+          </li>
+          <a id="accent-color-teal" class="anchor-accent-color"></a>
+          <li class="mdui-color-teal-accent main-color color-divider">
+            <span class="color-name">teal（强调色）</span>
+            <span class="color-class">mdui-color-teal-accent</span>
+            <span class="color-hex">#64FFDA</span>
+          </li>
+          <li class="mdui-color-teal-a100">
+            <span class="color-class">mdui-color-teal-a100</span>
+            <span class="color-hex">#A7FFEB</span>
+          </li>
+          <li class="mdui-color-teal-a200">
+            <span class="color-class">mdui-color-teal-a200</span>
+            <span class="color-hex">#64FFDA</span>
+          </li>
+          <li class="mdui-color-teal-a400">
+            <span class="color-class">mdui-color-teal-a400</span>
+            <span class="color-hex">#1DE9B6</span>
+          </li>
+          <li class="mdui-color-teal-a700">
+            <span class="color-class">mdui-color-teal-a700</span>
+            <span class="color-hex">#00BFA5</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-green" class="anchor-primary-color"></a>
+          <li class="mdui-color-green main-color">
+            <span class="color-name">green（主色）</span>
+            <span class="color-class">mdui-color-green</span>
+            <span class="color-hex">#4CAF50</span>
+          </li>
+          <li class="mdui-color-green-50">
+            <span class="color-class">mdui-color-green-50</span>
+            <span class="color-hex">#E8F5E9</span>
+          </li>
+          <li class="mdui-color-green-100">
+            <span class="color-class">mdui-color-green-100</span>
+            <span class="color-hex">#C8E6C9</span>
+          </li>
+          <li class="mdui-color-green-200">
+            <span class="color-class">mdui-color-green-200</span>
+            <span class="color-hex">#A5D6A7</span>
+          </li>
+          <li class="mdui-color-green-300">
+            <span class="color-class">mdui-color-green-300</span>
+            <span class="color-hex">#81C784</span>
+          </li>
+          <li class="mdui-color-green-400">
+            <span class="color-class">mdui-color-green-400</span>
+            <span class="color-hex">#66BB6A</span>
+          </li>
+          <li class="mdui-color-green-500">
+            <span class="color-class">mdui-color-green-500</span>
+            <span class="color-hex">#4CAF50</span>
+          </li>
+          <li class="mdui-color-green-600">
+            <span class="color-class">mdui-color-green-600</span>
+            <span class="color-hex">#43A047</span>
+          </li>
+          <li class="mdui-color-green-700">
+            <span class="color-class">mdui-color-green-700</span>
+            <span class="color-hex">#388E3C</span>
+          </li>
+          <li class="mdui-color-green-800">
+            <span class="color-class">mdui-color-green-800</span>
+            <span class="color-hex">#2E7D32</span>
+          </li>
+          <li class="mdui-color-green-900">
+            <span class="color-class">mdui-color-green-900</span>
+            <span class="color-hex">#1B5E20</span>
+          </li>
+          <a id="accent-color-green" class="anchor-accent-color"></a>
+          <li class="mdui-color-green-accent main-color color-divider">
+            <span class="color-name">green（强调色）</span>
+            <span class="color-class">mdui-color-green-accent</span>
+            <span class="color-hex">#69F0AE</span>
+          </li>
+          <li class="mdui-color-green-a100">
+            <span class="color-class">mdui-color-green-a100</span>
+            <span class="color-hex">#B9F6CA</span>
+          </li>
+          <li class="mdui-color-green-a200">
+            <span class="color-class">mdui-color-green-a200</span>
+            <span class="color-hex">#69F0AE</span>
+          </li>
+          <li class="mdui-color-green-a400">
+            <span class="color-class">mdui-color-green-a400</span>
+            <span class="color-hex">#00E676</span>
+          </li>
+          <li class="mdui-color-green-a700">
+            <span class="color-class">mdui-color-green-a700</span>
+            <span class="color-hex">#00C853</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-light-green" class="anchor-primary-color"></a>
+          <li class="mdui-color-light-green main-color">
+            <span class="color-name">light-green（主色）</span>
+            <span class="color-class">mdui-color-light-green</span>
+            <span class="color-hex">#8BC34A</span>
+          </li>
+          <li class="mdui-color-light-green-50">
+            <span class="color-class">mdui-color-light-green-50</span>
+            <span class="color-hex">#F1F8E9</span>
+          </li>
+          <li class="mdui-color-light-green-100">
+            <span class="color-class">mdui-color-light-green-100</span>
+            <span class="color-hex">#DCEDC8</span>
+          </li>
+          <li class="mdui-color-light-green-200">
+            <span class="color-class">mdui-color-light-green-200</span>
+            <span class="color-hex">#C5E1A5</span>
+          </li>
+          <li class="mdui-color-light-green-300">
+            <span class="color-class">mdui-color-light-green-300</span>
+            <span class="color-hex">#AED581</span>
+          </li>
+          <li class="mdui-color-light-green-400">
+            <span class="color-class">mdui-color-light-green-400</span>
+            <span class="color-hex">#9CCC65</span>
+          </li>
+          <li class="mdui-color-light-green-500">
+            <span class="color-class">mdui-color-light-green-500</span>
+            <span class="color-hex">#8BC34A</span>
+          </li>
+          <li class="mdui-color-light-green-600">
+            <span class="color-class">mdui-color-light-green-600</span>
+            <span class="color-hex">#7CB342</span>
+          </li>
+          <li class="mdui-color-light-green-700">
+            <span class="color-class">mdui-color-light-green-700</span>
+            <span class="color-hex">#689F38</span>
+          </li>
+          <li class="mdui-color-light-green-800">
+            <span class="color-class">mdui-color-light-green-800</span>
+            <span class="color-hex">#558B2F</span>
+          </li>
+          <li class="mdui-color-light-green-900">
+            <span class="color-class">mdui-color-light-green-900</span>
+            <span class="color-hex">#33691E</span>
+          </li>
+          <a id="accent-color-light-green" class="anchor-accent-color"></a>
+          <li class="mdui-color-light-green-accent main-color color-divider">
+            <span class="color-name">light-green（强调色）</span>
+            <span class="color-class">mdui-color-light-green-accent</span>
+            <span class="color-hex">#B2FF59</span>
+          </li>
+          <li class="mdui-color-light-green-a100">
+            <span class="color-class">mdui-color-light-green-a100</span>
+            <span class="color-hex">#CCFF90</span>
+          </li>
+          <li class="mdui-color-light-green-a200">
+            <span class="color-class">mdui-color-light-green-a200</span>
+            <span class="color-hex">#B2FF59</span>
+          </li>
+          <li class="mdui-color-light-green-a400">
+            <span class="color-class">mdui-color-light-green-a400</span>
+            <span class="color-hex">#76FF03</span>
+          </li>
+          <li class="mdui-color-light-green-a700">
+            <span class="color-class">mdui-color-light-green-a700</span>
+            <span class="color-hex">#64DD17</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-lime" class="anchor-primary-color"></a>
+          <li class="mdui-color-lime main-color">
+            <span class="color-name">lime（主色）</span>
+            <span class="color-class">mdui-color-lime</span>
+            <span class="color-hex">#CDDC39</span>
+          </li>
+          <li class="mdui-color-lime-50">
+            <span class="color-class">mdui-color-lime-50</span>
+            <span class="color-hex">#F9FBE7</span>
+          </li>
+          <li class="mdui-color-lime-100">
+            <span class="color-class">mdui-color-lime-100</span>
+            <span class="color-hex">#F0F4C3</span>
+          </li>
+          <li class="mdui-color-lime-200">
+            <span class="color-class">mdui-color-lime-200</span>
+            <span class="color-hex">#E6EE9C</span>
+          </li>
+          <li class="mdui-color-lime-300">
+            <span class="color-class">mdui-color-lime-300</span>
+            <span class="color-hex">#DCE775</span>
+          </li>
+          <li class="mdui-color-lime-400">
+            <span class="color-class">mdui-color-lime-400</span>
+            <span class="color-hex">#D4E157</span>
+          </li>
+          <li class="mdui-color-lime-500">
+            <span class="color-class">mdui-color-lime-500</span>
+            <span class="color-hex">#CDDC39</span>
+          </li>
+          <li class="mdui-color-lime-600">
+            <span class="color-class">mdui-color-lime-600</span>
+            <span class="color-hex">#C0CA33</span>
+          </li>
+          <li class="mdui-color-lime-700">
+            <span class="color-class">mdui-color-lime-700</span>
+            <span class="color-hex">#AFB42B</span>
+          </li>
+          <li class="mdui-color-lime-800">
+            <span class="color-class">mdui-color-lime-800</span>
+            <span class="color-hex">#9E9D24</span>
+          </li>
+          <li class="mdui-color-lime-900">
+            <span class="color-class">mdui-color-lime-900</span>
+            <span class="color-hex">#827717</span>
+          </li>
+          <a id="accent-color-lime" class="anchor-accent-color"></a>
+          <li class="mdui-color-lime-accent main-color color-divider">
+            <span class="color-name">lime（强调色）</span>
+            <span class="color-class">mdui-color-lime-accent</span>
+            <span class="color-hex">#EEFF41</span>
+          </li>
+          <li class="mdui-color-lime-a100">
+            <span class="color-class">mdui-color-lime-a100</span>
+            <span class="color-hex">#F4FF81</span>
+          </li>
+          <li class="mdui-color-lime-a200">
+            <span class="color-class">mdui-color-lime-a200</span>
+            <span class="color-hex">#EEFF41</span>
+          </li>
+          <li class="mdui-color-lime-a400">
+            <span class="color-class">mdui-color-lime-a400</span>
+            <span class="color-hex">#C6FF00</span>
+          </li>
+          <li class="mdui-color-lime-a700">
+            <span class="color-class">mdui-color-lime-a700</span>
+            <span class="color-hex">#AEEA00</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-yellow" class="anchor-primary-color"></a>
+          <li class="mdui-color-yellow main-color">
+            <span class="color-name">yellow（主色）</span>
+            <span class="color-class">mdui-color-yellow</span>
+            <span class="color-hex">#FFEB3B</span>
+          </li>
+          <li class="mdui-color-yellow-50">
+            <span class="color-class">mdui-color-yellow-50</span>
+            <span class="color-hex">#FFFDE7</span>
+          </li>
+          <li class="mdui-color-yellow-100">
+            <span class="color-class">mdui-color-yellow-100</span>
+            <span class="color-hex">#FFF9C4</span>
+          </li>
+          <li class="mdui-color-yellow-200">
+            <span class="color-class">mdui-color-yellow-200</span>
+            <span class="color-hex">#FFF59D</span>
+          </li>
+          <li class="mdui-color-yellow-300">
+            <span class="color-class">mdui-color-yellow-300</span>
+            <span class="color-hex">#FFF176</span>
+          </li>
+          <li class="mdui-color-yellow-400">
+            <span class="color-class">mdui-color-yellow-400</span>
+            <span class="color-hex">#FFEE58</span>
+          </li>
+          <li class="mdui-color-yellow-500">
+            <span class="color-class">mdui-color-yellow-500</span>
+            <span class="color-hex">#FFEB3B</span>
+          </li>
+          <li class="mdui-color-yellow-600">
+            <span class="color-class">mdui-color-yellow-600</span>
+            <span class="color-hex">#FDD835</span>
+          </li>
+          <li class="mdui-color-yellow-700">
+            <span class="color-class">mdui-color-yellow-700</span>
+            <span class="color-hex">#FBC02D</span>
+          </li>
+          <li class="mdui-color-yellow-800">
+            <span class="color-class">mdui-color-yellow-800</span>
+            <span class="color-hex">#F9A825</span>
+          </li>
+          <li class="mdui-color-yellow-900">
+            <span class="color-class">mdui-color-yellow-900</span>
+            <span class="color-hex">#F57F17</span>
+          </li>
+          <a id="accent-color-yellow" class="anchor-accent-color"></a>
+          <li class="mdui-color-yellow-accent main-color color-divider">
+            <span class="color-name">yellow（强调色）</span>
+            <span class="color-class">mdui-color-yellow-accent</span>
+            <span class="color-hex">#FFFF00</span>
+          </li>
+          <li class="mdui-color-yellow-a100">
+            <span class="color-class">mdui-color-yellow-a100</span>
+            <span class="color-hex">#FFFF8D</span>
+          </li>
+          <li class="mdui-color-yellow-a200">
+            <span class="color-class">mdui-color-yellow-a200</span>
+            <span class="color-hex">#FFFF00</span>
+          </li>
+          <li class="mdui-color-yellow-a400">
+            <span class="color-class">mdui-color-yellow-a400</span>
+            <span class="color-hex">#FFEA00</span>
+          </li>
+          <li class="mdui-color-yellow-a700">
+            <span class="color-class">mdui-color-yellow-a700</span>
+            <span class="color-hex">#FFD600</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-amber" class="anchor-primary-color"></a>
+          <li class="mdui-color-amber main-color">
+            <span class="color-name">amber（主色）</span>
+            <span class="color-class">mdui-color-amber</span>
+            <span class="color-hex">#FFC107</span>
+          </li>
+          <li class="mdui-color-amber-50">
+            <span class="color-class">mdui-color-amber-50</span>
+            <span class="color-hex">#FFF8E1</span>
+          </li>
+          <li class="mdui-color-amber-100">
+            <span class="color-class">mdui-color-amber-100</span>
+            <span class="color-hex">#FFECB3</span>
+          </li>
+          <li class="mdui-color-amber-200">
+            <span class="color-class">mdui-color-amber-200</span>
+            <span class="color-hex">#FFE082</span>
+          </li>
+          <li class="mdui-color-amber-300">
+            <span class="color-class">mdui-color-amber-300</span>
+            <span class="color-hex">#FFD54F</span>
+          </li>
+          <li class="mdui-color-amber-400">
+            <span class="color-class">mdui-color-amber-400</span>
+            <span class="color-hex">#FFCA28</span>
+          </li>
+          <li class="mdui-color-amber-500">
+            <span class="color-class">mdui-color-amber-500</span>
+            <span class="color-hex">#FFC107</span>
+          </li>
+          <li class="mdui-color-amber-600">
+            <span class="color-class">mdui-color-amber-600</span>
+            <span class="color-hex">#FFB300</span>
+          </li>
+          <li class="mdui-color-amber-700">
+            <span class="color-class">mdui-color-amber-700</span>
+            <span class="color-hex">#FFA000</span>
+          </li>
+          <li class="mdui-color-amber-800">
+            <span class="color-class">mdui-color-amber-800</span>
+            <span class="color-hex">#FF8F00</span>
+          </li>
+          <li class="mdui-color-amber-900">
+            <span class="color-class">mdui-color-amber-900</span>
+            <span class="color-hex">#FF6F00</span>
+          </li>
+          <a id="accent-color-amber" class="anchor-accent-color"></a>
+          <li class="mdui-color-amber-accent main-color color-divider">
+            <span class="color-name">amber（强调色）</span>
+            <span class="color-class">mdui-color-amber-accent</span>
+            <span class="color-hex">#FFD740</span>
+          </li>
+          <li class="mdui-color-amber-a100">
+            <span class="color-class">mdui-color-amber-a100</span>
+            <span class="color-hex">#FFE57F</span>
+          </li>
+          <li class="mdui-color-amber-a200">
+            <span class="color-class">mdui-color-amber-a200</span>
+            <span class="color-hex">#FFD740</span>
+          </li>
+          <li class="mdui-color-amber-a400">
+            <span class="color-class">mdui-color-amber-a400</span>
+            <span class="color-hex">#FFC400</span>
+          </li>
+          <li class="mdui-color-amber-a700">
+            <span class="color-class">mdui-color-amber-a700</span>
+            <span class="color-hex">#FFAB00</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-orange" class="anchor-primary-color"></a>
+          <li class="mdui-color-orange main-color">
+            <span class="color-name">orange（主色）</span>
+            <span class="color-class">mdui-color-orange</span>
+            <span class="color-hex">#FF9800</span>
+          </li>
+          <li class="mdui-color-orange-50">
+            <span class="color-class">mdui-color-orange-50</span>
+            <span class="color-hex">#FFF3E0</span>
+          </li>
+          <li class="mdui-color-orange-100">
+            <span class="color-class">mdui-color-orange-100</span>
+            <span class="color-hex">#FFE0B2</span>
+          </li>
+          <li class="mdui-color-orange-200">
+            <span class="color-class">mdui-color-orange-200</span>
+            <span class="color-hex">#FFCC80</span>
+          </li>
+          <li class="mdui-color-orange-300">
+            <span class="color-class">mdui-color-orange-300</span>
+            <span class="color-hex">#FFB74D</span>
+          </li>
+          <li class="mdui-color-orange-400">
+            <span class="color-class">mdui-color-orange-400</span>
+            <span class="color-hex">#FFA726</span>
+          </li>
+          <li class="mdui-color-orange-500">
+            <span class="color-class">mdui-color-orange-500</span>
+            <span class="color-hex">#FF9800</span>
+          </li>
+          <li class="mdui-color-orange-600">
+            <span class="color-class">mdui-color-orange-600</span>
+            <span class="color-hex">#FB8C00</span>
+          </li>
+          <li class="mdui-color-orange-700">
+            <span class="color-class">mdui-color-orange-700</span>
+            <span class="color-hex">#F57C00</span>
+          </li>
+          <li class="mdui-color-orange-800">
+            <span class="color-class">mdui-color-orange-800</span>
+            <span class="color-hex">#EF6C00</span>
+          </li>
+          <li class="mdui-color-orange-900">
+            <span class="color-class">mdui-color-orange-900</span>
+            <span class="color-hex">#E65100</span>
+          </li>
+          <a id="accent-color-orange" class="anchor-accent-color"></a>
+          <li class="mdui-color-orange-accent main-color color-divider">
+            <span class="color-name">orange（强调色）</span>
+            <span class="color-class">mdui-color-orange-accent</span>
+            <span class="color-hex">#FFAB40</span>
+          </li>
+          <li class="mdui-color-orange-a100">
+            <span class="color-class">mdui-color-orange-a100</span>
+            <span class="color-hex">#FFD180</span>
+          </li>
+          <li class="mdui-color-orange-a200">
+            <span class="color-class">mdui-color-orange-a200</span>
+            <span class="color-hex">#FFAB40</span>
+          </li>
+          <li class="mdui-color-orange-a400">
+            <span class="color-class">mdui-color-orange-a400</span>
+            <span class="color-hex">#FF9100</span>
+          </li>
+          <li class="mdui-color-orange-a700">
+            <span class="color-class">mdui-color-orange-a700</span>
+            <span class="color-hex">#FF6D00</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-deep-orange" class="anchor-primary-color"></a>
+          <li class="mdui-color-deep-orange main-color">
+            <span class="color-name">deep-orange（主色）</span>
+            <span class="color-class">mdui-color-deep-orange</span>
+            <span class="color-hex">#FF5722</span>
+          </li>
+          <li class="mdui-color-deep-orange-50">
+            <span class="color-class">mdui-color-deep-orange-50</span>
+            <span class="color-hex">#FBE9E7</span>
+          </li>
+          <li class="mdui-color-deep-orange-100">
+            <span class="color-class">mdui-color-deep-orange-100</span>
+            <span class="color-hex">#FFCCBC</span>
+          </li>
+          <li class="mdui-color-deep-orange-200">
+            <span class="color-class">mdui-color-deep-orange-200</span>
+            <span class="color-hex">#FFAB91</span>
+          </li>
+          <li class="mdui-color-deep-orange-300">
+            <span class="color-class">mdui-color-deep-orange-300</span>
+            <span class="color-hex">#FF8A65</span>
+          </li>
+          <li class="mdui-color-deep-orange-400">
+            <span class="color-class">mdui-color-deep-orange-400</span>
+            <span class="color-hex">#FF7043</span>
+          </li>
+          <li class="mdui-color-deep-orange-500">
+            <span class="color-class">mdui-color-deep-orange-500</span>
+            <span class="color-hex">#FF5722</span>
+          </li>
+          <li class="mdui-color-deep-orange-600">
+            <span class="color-class">mdui-color-deep-orange-600</span>
+            <span class="color-hex">#F4511E</span>
+          </li>
+          <li class="mdui-color-deep-orange-700">
+            <span class="color-class">mdui-color-deep-orange-700</span>
+            <span class="color-hex">#E64A19</span>
+          </li>
+          <li class="mdui-color-deep-orange-800">
+            <span class="color-class">mdui-color-deep-orange-800</span>
+            <span class="color-hex">#D84315</span>
+          </li>
+          <li class="mdui-color-deep-orange-900">
+            <span class="color-class">mdui-color-deep-orange-900</span>
+            <span class="color-hex">#BF360C</span>
+          </li>
+          <a id="accent-color-deep-orange" class="anchor-accent-color"></a>
+          <li class="mdui-color-deep-orange-accent main-color color-divider">
+            <span class="color-name">deep-orange（强调色）</span>
+            <span class="color-class">mdui-color-deep-orange-accent</span>
+            <span class="color-hex">#FF6E40</span>
+          </li>
+          <li class="mdui-color-deep-orange-a100">
+            <span class="color-class">mdui-color-deep-orange-a100</span>
+            <span class="color-hex">#FF9E80</span>
+          </li>
+          <li class="mdui-color-deep-orange-a200">
+            <span class="color-class">mdui-color-deep-orange-a200</span>
+            <span class="color-hex">#FF6E40</span>
+          </li>
+          <li class="mdui-color-deep-orange-a400">
+            <span class="color-class">mdui-color-deep-orange-a400</span>
+            <span class="color-hex">#FF3D00</span>
+          </li>
+          <li class="mdui-color-deep-orange-a700">
+            <span class="color-class">mdui-color-deep-orange-a700</span>
+            <span class="color-hex">#DD2C00</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-brown" class="anchor-primary-color"></a>
+          <li class="mdui-color-brown main-color">
+            <span class="color-name">Brown</span>
+            <span class="color-class">mdui-color-brown</span>
+            <span class="color-hex">#795548</span>
+          </li>
+          <li class="mdui-color-brown-50">
+            <span class="color-class">mdui-color-brown-50</span>
+            <span class="color-hex">#EFEBE9</span>
+          </li>
+          <li class="mdui-color-brown-100">
+            <span class="color-class">mdui-color-brown-100</span>
+            <span class="color-hex">#D7CCC8</span>
+          </li>
+          <li class="mdui-color-brown-200">
+            <span class="color-class">mdui-color-brown-200</span>
+            <span class="color-hex">#BCAAA4</span>
+          </li>
+          <li class="mdui-color-brown-300">
+            <span class="color-class">mdui-color-brown-300</span>
+            <span class="color-hex">#A1887F</span>
+          </li>
+          <li class="mdui-color-brown-400">
+            <span class="color-class">mdui-color-brown-400</span>
+            <span class="color-hex">#8D6E63</span>
+          </li>
+          <li class="mdui-color-brown-500">
+            <span class="color-class">mdui-color-brown-500</span>
+            <span class="color-hex">#795548</span>
+          </li>
+          <li class="mdui-color-brown-600">
+            <span class="color-class">mdui-color-brown-600</span>
+            <span class="color-hex">#6D4C41</span>
+          </li>
+          <li class="mdui-color-brown-700">
+            <span class="color-class">mdui-color-brown-700</span>
+            <span class="color-hex">#5D4037</span>
+          </li>
+          <li class="mdui-color-brown-800">
+            <span class="color-class">mdui-color-brown-800</span>
+            <span class="color-hex">#4E342E</span>
+          </li>
+          <li class="mdui-color-brown-900">
+            <span class="color-class">mdui-color-brown-900</span>
+            <span class="color-hex">#3E2723</span>
+          </li>
+          <li class="main-color color-divider">
+            <span class="color-name">&nbsp;</span>
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-grey" class="anchor-primary-color"></a>
+          <li class="mdui-color-grey main-color">
+            <span class="color-name">Grey</span>
+            <span class="color-class">mdui-color-grey</span>
+            <span class="color-hex">#9E9E9E</span>
+          </li>
+          <li class="mdui-color-grey-50">
+            <span class="color-class">mdui-color-grey-50</span>
+            <span class="color-hex">#FAFAFA</span>
+          </li>
+          <li class="mdui-color-grey-100">
+            <span class="color-class">mdui-color-grey-100</span>
+            <span class="color-hex">#F5F5F5</span>
+          </li>
+          <li class="mdui-color-grey-200">
+            <span class="color-class">mdui-color-grey-200</span>
+            <span class="color-hex">#EEEEEE</span>
+          </li>
+          <li class="mdui-color-grey-300">
+            <span class="color-class">mdui-color-grey-300</span>
+            <span class="color-hex">#E0E0E0</span>
+          </li>
+          <li class="mdui-color-grey-400">
+            <span class="color-class">mdui-color-grey-400</span>
+            <span class="color-hex">#BDBDBD</span>
+          </li>
+          <li class="mdui-color-grey-500">
+            <span class="color-class">mdui-color-grey-500</span>
+            <span class="color-hex">#9E9E9E</span>
+          </li>
+          <li class="mdui-color-grey-600">
+            <span class="color-class">mdui-color-grey-600</span>
+            <span class="color-hex">#757575</span>
+          </li>
+          <li class="mdui-color-grey-700">
+            <span class="color-class">mdui-color-grey-700</span>
+            <span class="color-hex">#616161</span>
+          </li>
+          <li class="mdui-color-grey-800">
+            <span class="color-class">mdui-color-grey-800</span>
+            <span class="color-hex">#424242</span>
+          </li>
+          <li class="mdui-color-grey-900">
+            <span class="color-class">mdui-color-grey-900</span>
+            <span class="color-hex">#212121</span>
+          </li>
+          <li class="main-color color-divider">
+            <span class="color-name">&nbsp;</span>
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="primary-color-blue-grey" class="anchor-primary-color"></a>
+          <li class="mdui-color-blue-grey main-color">
+            <span class="color-name">Blue Grey</span>
+            <span class="color-class">mdui-color-blue-grey</span>
+            <span class="color-hex">#607D8B</span>
+          </li>
+          <li class="mdui-color-blue-grey-50">
+            <span class="color-class">mdui-color-blue-grey-50</span>
+            <span class="color-hex">#ECEFF1</span>
+          </li>
+          <li class="mdui-color-blue-grey-100">
+            <span class="color-class">mdui-color-blue-grey-100</span>
+            <span class="color-hex">#CFD8DC</span>
+          </li>
+          <li class="mdui-color-blue-grey-200">
+            <span class="color-class">mdui-color-blue-grey-200</span>
+            <span class="color-hex">#B0BEC5</span>
+          </li>
+          <li class="mdui-color-blue-grey-300">
+            <span class="color-class">mdui-color-blue-grey-300</span>
+            <span class="color-hex">#90A4AE</span>
+          </li>
+          <li class="mdui-color-blue-grey-400">
+            <span class="color-class">mdui-color-blue-grey-400</span>
+            <span class="color-hex">#78909C</span>
+          </li>
+          <li class="mdui-color-blue-grey-500">
+            <span class="color-class">mdui-color-blue-grey-500</span>
+            <span class="color-hex">#607D8B</span>
+          </li>
+          <li class="mdui-color-blue-grey-600">
+            <span class="color-class">mdui-color-blue-grey-600</span>
+            <span class="color-hex">#546E7A</span>
+          </li>
+          <li class="mdui-color-blue-grey-700">
+            <span class="color-class">mdui-color-blue-grey-700</span>
+            <span class="color-hex">#455A64</span>
+          </li>
+          <li class="mdui-color-blue-grey-800">
+            <span class="color-class">mdui-color-blue-grey-800</span>
+            <span class="color-hex">#37474F</span>
+          </li>
+          <li class="mdui-color-blue-grey-900">
+            <span class="color-class">mdui-color-blue-grey-900</span>
+            <span class="color-hex">#263238</span>
+          </li>
+          <li class="main-color color-divider">
+            <span class="color-name">&nbsp;</span>
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+          <li class="">
+            <span class="color-class">&nbsp;</span>
+            <span class="color-hex">&nbsp;</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col">
+        <ul class="color-palette">
+          <a id="color-black" class="anchor-primary-color"></a>
+          <a id="color-white" class="anchor-primary-color"></a>
+          <li class="mdui-color-black">
+            <span class="color-class">mdui-color-black</span>
+            <span class="color-hex">#000000</span>
+          </li>
+          <li class="mdui-color-white">
+            <span class="color-class">mdui-color-white</span>
+            <span class="color-hex">#FFFFFF</span>
+          </li>
+          <li class="mdui-color-transparent">
+            <span class="color-class">mdui-color-transparent</span>
+            <span class="color-hex">transparent</span>
+          </li>
+        </ul>
+      </div>
+      <div class="mdui-col-sm-6 mdui-col-md-4 mdui-col-xl-3">
+        <ul class="color-palette">
+        </ul>
+      </div>
+      <div class="mdui-col-sm-6 mdui-col-md-4 mdui-col-xl-3">
+        <ul class="color-palette">
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+
+      <h4 class="doc-article-title">设置主题 <a class="doc-anchor" id="class-theme"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-theme-primary-<span mdui-tooltip="{content: '19 种主色中的一种'}">[color]</span></code></td>
+              <td>设置主题中的主色</td>
+              <td>添加到 <code>&lt;body&gt;</code> 元素上</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-theme-accent-<span mdui-tooltip="{content: '16 种强调色中的一种'}">[color]</span></code></td>
+              <td>设置主题中的强调色</td>
+              <td>添加到 <code>&lt;body&gt;</code> 元素上</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-theme-layout-dark</code></td>
+              <td>设置为深色主题</td>
+              <td>添加到 <code>&lt;body&gt;</code> 元素上</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">背景色 <a class="doc-anchor" id="class-background"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-color-<span mdui-tooltip="{content: '19 种主色中的一种'}">[color]</span></code></td>
+              <td>设置指定主色的背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-<span mdui-tooltip="{content: '16 种强调色中的一种'}">[color]</span>-accent</code></td>
+              <td>设置指定强调色的背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-<span mdui-tooltip="{content: '主色或强调色名'}">[color]</span>-<span mdui-tooltip="{content: '主色或强调色的饱和度'}">[degree]</span></code></td>
+              <td>设置指定颜色和饱和度的背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-theme</code></td>
+              <td>根据 body 中定义的主色主题设置背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-theme-accent</code></td>
+              <td>根据 body 中定义的强调色主题设置背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-theme-<span mdui-tooltip="{content: '主色或强调色的饱和度'}">[degree]</span></code></td>
+              <td>根据 body 中定义的主色或强调色主题设置指定饱和度的背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-black</code></td>
+              <td>设置纯黑背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-white</code></td>
+              <td>设置纯白背景色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-color-transparent</code></td>
+              <td>设置透明背景色</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">文本色 <a class="doc-anchor" id="class-text"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-text-color-<span mdui-tooltip="{content: '19 种主色中的一种'}">[color]</span></code></td>
+              <td>设置指定主色的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-<span mdui-tooltip="{content: '16 种强调色中的一种'}">[color]</span>-accent</code></td>
+              <td>设置指定强调色的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-<span mdui-tooltip="{content: '主色或强调色'}">[color]</span>-<span mdui-tooltip="{content: '主色或强调色的饱和度'}">[degree]</span></code></td>
+              <td>设置指定颜色和饱和度的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme</code></td>
+              <td>根据 body 中的主色主题设置文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-accent</code></td>
+              <td>根据 body 中的强调色主题设置文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-<span mdui-tooltip="{content: '主色或强调色的饱和度'}">[degree]</span></code></td>
+              <td>根据 body 中的主色或强调色设置指定饱和度的文本色</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>深色文本色，用在浅色背景中：</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-text-color-black</code></td>
+              <td>设置纯黑文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-black-text</code></td>
+              <td>设置主文本的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-black-secondary</code></td>
+              <td>设置副文本的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-black-disabled</code></td>
+              <td>设置禁用状态的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-black-divider</code></td>
+              <td>设置分割线的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-black-icon</code></td>
+              <td>设置图标的颜色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-black-icon-disabled</code></td>
+              <td>设置禁用状态的图标颜色</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>浅色文本色，用在深色背景中：</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-text-color-white</code></td>
+              <td>设置纯白文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-white-text</code></td>
+              <td>设置主文本的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-white-secondary</code></td>
+              <td>设置副文本的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-white-disabled</code></td>
+              <td>设置禁用状态的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-white-divider</code></td>
+              <td>设置分割线的文本色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-white-icon</code></td>
+              <td>设置图标的颜色</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-white-icon-disabled</code></td>
+              <td>设置禁用状态的图标颜色</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>根据主题色变化的深色或浅色文本色：</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-text-color-theme-text</code></td>
+              <td>设置主文本的文本色。默认为深色，深色主题下为浅色。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-secondary</code></td>
+              <td>设置副文本的文本色。默认为深色，深色主题下为浅色。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-disabled</code></td>
+              <td>设置禁用状态的文本色。默认为深色，深色主题下为浅色。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-divider</code></td>
+              <td>设置分割线的文本色。默认为深色，深色主题下为浅色。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-icon</code></td>
+              <td>设置图标的颜色。默认为深色，深色主题下为浅色。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-text-color-theme-icon-disabled</code></td>
+              <td>设置禁用状态的图标颜色。默认为深色，深色主题下为浅色。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="specs.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">规范</div>
+        </div>
+      </a>
+      
+            <a href="font.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">Roboto 字体</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>

@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>浮动操作按钮 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="fab.html" class="mdui-typo-title">浮动操作按钮</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple mdui-list-item-active">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">浮动操作按钮</h1>
+  <div class="doc-intro mdui-typo">
+    <p>浮动操作按钮是漂浮在 UI 上的一个圆形图标，可以具有动态效果，如弹出子菜单，显示、隐藏动画。</p>
+    <div class="doc-intro-module">
+      <h3>调用方式</h3>
+      <ol>
+        <li>通过自定义属性调用</li>
+        <li>通过 JavaScript 调用</li>
+      </ol>
+    </div>
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/components/buttons-floating-action-button.html" target="_blank">Material Design 设计指南：组件 - 浮动操作按钮</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="fab.html#style">样式</a>
+        <ul>
+          <li><a data-scroll href="fab.html#fab">浮动操作按钮</a></li>
+          <li><a data-scroll href="fab.html#hide">隐藏/显示动画</a></li>
+          <li><a data-scroll href="fab.html#fixed">固定到右下角</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="fab.html#dial">弹出菜单</a>
+        <ul>
+          <li><a data-scroll href="fab.html#html">HTML 结构</a></li>
+          <li><a data-scroll href="fab.html#attr">通过自定义属性调用</a></li>
+          <li><a data-scroll href="fab.html#js">通过 JavaScript 调用</a></li>
+          <li><a data-scroll href="fab.html#option">参数</a></li>
+          <li><a data-scroll href="fab.html#method">方法</a></li>
+          <li><a data-scroll href="fab.html#event">事件</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="fab.html#class">CSS 类名列表</a></li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">浮动操作按钮 <a class="doc-anchor" id="fab"></a></h4>
+      <p>给元素添加类 <code>.mdui-fab</code> 即可使其成为浮动操作按钮。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-fab mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
+        <button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;button class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab</span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;
+&lt;button class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab</span> mdui-color-theme-accent <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>再添加类 <code>.mdui-fab-mini</code> 可使其变为迷你型浮动操作按钮。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-fab mdui-fab-mini mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
+        <button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;button class=&quot;mdui-fab <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-mini</span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;
+&lt;button class=&quot;mdui-fab <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-mini</span> mdui-color-theme-accent <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">隐藏/显示动画 <a class="doc-anchor" id="hide"></a></h4>
+      <p>在浮动操作按钮上添加类 <code>.mdui-fab-hide</code> 会以动画的形式隐藏按钮，移除该类后会以动画形式显示按钮。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-fab mdui-color-theme-accent mdui-ripple" id="fab-animation"><i class="mdui-icon material-icons">&#xe145;</i></button>
+
+        <button class="mdui-btn" id="fab-animation-show">show</button>
+        <button class="mdui-btn" id="fab-animation-hide">hide</button>
+
+        <script>
+          var fab = document.getElementById('fab-animation');
+          document.getElementById('fab-animation-show').addEventListener('click', function () {
+            fab.classList.remove('mdui-fab-hide');
+          });
+          document.getElementById('fab-animation-hide').addEventListener('click', function () {
+            fab.classList.add('mdui-fab-hide');
+          });
+        </script>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;button class=&quot;mdui-fab mdui-color-theme-accent <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot; id=&quot;fab-animation&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;
+
+&lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span>&quot; id=&quot;fab-animation-show&quot;&gt;show&lt;/button&gt;
+&lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span>&quot; id=&quot;fab-animation-hide&quot;&gt;hide&lt;/button&gt;
+              
+&lt;script&gt;
+  var fab = document.getElementById('fab-animation');
+  document.getElementById('fab-animation-show').addEventListener('click', function () {
+    fab.classList.remove('<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-hide</span>');
+  });
+  document.getElementById('fab-animation-hide').addEventListener('click', function () {
+    fab.classList.add('<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-hide</span>');
+  });
+&lt;/script&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">固定到右下角 <a class="doc-anchor" id="fixed"></a></h4>
+      <p>在浮动操作按钮上添加类 <code>.mdui-fab-fixed</code> 能使按钮固定到窗口右下角。</p>
+      <pre><code class="lang-html">&lt;button class=&quot;mdui-fab <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-fixed</span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">弹出菜单 <a class="doc-anchor" id="dial"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">HTML 结构 <a class="doc-anchor" id="html"></a></h4>
+      <p>该按钮始终固定在窗口右下角。在鼠标悬浮或点击时向上弹出快速拨号菜单。</p>
+    </div>
+    <!-- 右下角的实例 -->
+    <div class="mdui-fab-wrapper" mdui-fab>
+      <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+        <i class="mdui-icon material-icons">&#xe145;</i>
+        <i class="mdui-icon mdui-fab-opened material-icons">&#xe254;</i>
+      </button>
+      <div class="mdui-fab-dial">
+        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink"><i class="mdui-icon material-icons">&#xe864;</i></button>
+        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"><i class="mdui-icon material-icons">&#xe866;</i></button>
+        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange"><i class="mdui-icon material-icons">&#xe191;</i></button>
+        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue"><i class="mdui-icon material-icons">&#xe913;</i></button>
+      </div>
+    </div>
+    <div class="mdui-typo">
+      <pre><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-wrapper</span>&quot; id=&quot;exampleFab&quot;&gt;
+  &lt;button class=&quot;mdui-fab <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span> mdui-color-theme-accent&quot;&gt;
+    &lt;!-- 默认显示的图标 --&gt;
+    &lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;
+    
+    &lt;!-- 在拨号菜单开始打开时，平滑切换到该图标，若不需要切换图标，则可以省略该元素 --&gt;
+    &lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> mdui-fab-opened <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe254;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-dial</span>&quot;&gt;
+    &lt;button class=&quot;mdui-fab mdui-fab-mini <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span> mdui-color-pink&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe864;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;mdui-fab mdui-fab-mini <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span> mdui-color-red&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe866;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;mdui-fab mdui-fab-mini <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span> mdui-color-orange&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe191;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;mdui-fab mdui-fab-mini <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span> mdui-color-blue&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe913;&lt;/i&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通过自定义属性调用 <a class="doc-anchor" id="attr"></a></h4>
+      <p>使用该方式无需编写 JavaScript 代码。只需在含 <code>.mdui-fab-wrapper</code> 的元素上添加 <code>mdui-fab="<a data-scroll href="fab.html#option">options</a>"</code> 即可激活该插件。</p>
+      <pre><code class="lang-html">&lt;div class=&quot;mdui-fab-wrapper&quot; mdui-fab=&quot;{trigger: 'hover'}&quot;&gt;
+  ......
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通过 JavaScript 调用 <a class="doc-anchor" id="js"></a></h4>
+      <p>实例化组件：</p>
+      <pre><code class="lang-js">// selector 为 CSS 选择器或 DOM 元素或 HTML 字符串
+// options 为插件的参数，见下面的参数列表
+var inst = new mdui.Fab(selector, options);</code></pre>
+    </div>
+    <a href="demo/fab/demo1.html" target="_blank" class="mdui-btn mdui-color-theme-accent">demo</a>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>trigger</code></td>
+            <td><code>string</code></td>
+            <td><code>hover</code></td>
+            <td>触发方式。
+              <ul>
+                <li><code>hover</code>：鼠标悬浮触发。</li>
+                <li><code>click</code>：点击触发。</li>
+              </ul>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">方法 <a class="doc-anchor" id="method"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>方法名</th>
+            <th>描述</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>open()</code></td>
+            <td>打开快速拨号菜单。</td>
+          </tr>
+          <tr>
+            <td><code>close()</code></td>
+            <td>关闭快速拨号菜单。</td>
+          </tr>
+          <tr>
+            <td><code>toggle()</code></td>
+            <td>切换快速拨号菜单的打开状态。</td>
+          </tr>
+          <tr>
+            <td><code>getState()</code></td>
+            <td>返回当前快速拨号菜单的打开状态。共包含四种状态（<code>opening</code>、<code>opened</code>、<code>closing</code>、<code>closed</code>）。</td>
+          </tr>
+          <tr>
+            <td><code>hide()</code></td>
+            <td>以动画的形式隐藏整个浮动操作按钮。</td>
+          </tr>
+          <tr>
+            <td><code>show()</code></td>
+            <td>以动画的形式显示整个浮动操作按钮。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">事件 <a class="doc-anchor" id="event"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>事件</th>
+            <th>描述</th>
+            <th>目标</th>
+            <th>参数</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>open.mdui.fab</code></td>
+            <td>快速拨号菜单开始打开动画时，事件将被触发。</td>
+            <td rowspan="4"><code>&lt;div class=&quot;mdui-fab-wrapper&quot;&gt;</code></td>
+            <td rowspan="4">
+              <code>event.detail.inst</code>：实例
+            </td>
+          </tr>
+          <tr>
+            <td><code>opened.mdui.fab</code></td>
+            <td>快速拨号菜单完成打开动画时，事件将被触发。</td>
+          </tr>
+          <tr>
+            <td><code>close.mdui.fab</code></td>
+            <td>快速拨号菜单开始关闭动画时，事件将被触发。</td>
+          </tr>
+          <tr>
+            <td><code>closed.mdui.fab</code></td>
+            <td>快速拨号菜单完成关闭动画时，事件将被触发。</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-fab</code></td>
+              <td>定义浮动操作按钮。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-fab-mini</code></td>
+              <td>定义迷你型浮动操作按钮。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-fab-hide</code></td>
+              <td>以动画形式隐藏浮动操作按钮。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-fab-fixed</code></td>
+              <td>将浮动操作按钮固定到右下角。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-fab-wrapper</code></td>
+              <td>带弹出菜单的浮动操作按钮的外层元素。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-fab-opened</code></td>
+              <td>带弹出菜单的浮动操作按钮打开菜单后切换到该图标。</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-fab-dial</code></td>
+              <td>带弹出菜单的浮动操作按钮的菜单外层元素。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="button.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">按钮</div>
+        </div>
+      </a>
+      
+            <a href="divider.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">分隔线</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>

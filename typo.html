@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>排版 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="typo.html" class="mdui-typo-title">排版</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple mdui-list-item-active">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">排版</h1>
+  <div class="doc-intro mdui-typo">
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/style/typography.html#typography-styles" target="_blank">Material Design 设计指南：样式 - 排版</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li><a data-scroll href="typo.html#font">字体排版</a></li>
+      <li>
+        <a data-scroll href="typo.html#typo">内容排版</a>
+        <ul>
+          <li><a data-scroll href="typo.html#title">标题</a></li>
+          <li><a data-scroll href="typo.html#inline">内联文本样式</a></li>
+          <li><a data-scroll href="typo.html#hr">水平分割线</a></li>
+          <li><a data-scroll href="typo.html#blockquote">引用</a></li>
+          <li><a data-scroll href="typo.html#pre">代码块</a></li>
+          <li><a data-scroll href="typo.html#ul">无序列表</a></li>
+          <li><a data-scroll href="typo.html#ol">有序列表</a></li>
+          <li><a data-scroll href="typo.html#demo">文章排版示例</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="typo.html#class">CSS 类名列表</a></li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">字体排版 <a class="doc-anchor" id="font"></a></h2>
+      <p>下面是一些基本的排版样式：</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo" style="word-break:break-all;word-wrap:break-word;">
+        <div class="mdui-typo-display-4 mdui-m-t-1">Display 4</div>
+        <div class="mdui-typo-display-3 mdui-m-t-1">Display 3</div>
+        <div class="mdui-typo-display-2 mdui-m-t-1">Display 2</div>
+        <div class="mdui-typo-display-1 mdui-m-t-1">Display 1</div>
+        <div class="mdui-typo-headline mdui-m-t-1">Headline</div>
+        <div class="mdui-typo-title mdui-m-t-1">Title</div>
+        <div class="mdui-typo-subheading mdui-m-t-1">Subheading</div>
+        <div class="mdui-typo-body-2 mdui-m-t-1">Body 2</div>
+        <div class="mdui-typo-body-1 mdui-m-t-1">Body 1</div>
+        <div class="mdui-typo-caption mdui-m-t-1">Caption</div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-typo-display-4&quot;&gt;Display 4&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-display-3&quot;&gt;Display 3&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-display-2&quot;&gt;Display 2&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-display-1&quot;&gt;Display 1&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-headline&quot;&gt;Headline&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-title&quot;&gt;Title&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-subheading&quot;&gt;Subheading&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-body-2&quot;&gt;Body 2&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-body-1&quot;&gt;Body 1&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-caption&quot;&gt;Caption&lt;/div&gt;</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>在上面的样式类名后添加 <code>-opacity</code> 即可使这些样式拥有适当的不透明度：</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo" style="word-break:break-all;word-wrap:break-word;">
+        <div class="mdui-typo-display-4-opacity mdui-m-t-1">Display 4</div>
+        <div class="mdui-typo-display-3-opacity mdui-m-t-1">Display 3</div>
+        <div class="mdui-typo-display-2-opacity mdui-m-t-1">Display 2</div>
+        <div class="mdui-typo-display-1-opacity mdui-m-t-1">Display 1</div>
+        <div class="mdui-typo-headline-opacity mdui-m-t-1">Headline</div>
+        <div class="mdui-typo-title-opacity mdui-m-t-1">Title</div>
+        <div class="mdui-typo-subheading-opacity mdui-m-t-1">Subheading</div>
+        <div class="mdui-typo-body-2-opacity mdui-m-t-1">Body 2</div>
+        <div class="mdui-typo-body-1-opacity mdui-m-t-1">Body 1</div>
+        <div class="mdui-typo-caption-opacity mdui-m-t-1">Caption</div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-typo-display-4-opacity&quot;&gt;Display 4&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-display-3-opacity&quot;&gt;Display 3&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-display-2-opacity&quot;&gt;Display 2&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-display-1-opacity&quot;&gt;Display 1&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-headline-opacity&quot;&gt;Headline&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-title-opacity&quot;&gt;Title&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-subheading-opacity&quot;&gt;Subheading&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-body-2-opacity&quot;&gt;Body 2&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-body-1-opacity&quot;&gt;Body 1&lt;/div&gt;
+&lt;div class=&quot;mdui-typo-caption-opacity&quot;&gt;Caption&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">内容排版 <a class="doc-anchor" id="typo"></a></h2>
+      <p>MDUI 除了使用 Normalize.css 和设置 body 元素的字体和颜色外，没有直接对其他 HTML 元素的样式做出修改。</p>
+      <p>要使元素拥有排版优化后的样式，需要在这些元素的父元素上添加类 <code>.mdui-typo</code></p>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">标题 <a class="doc-anchor" id="title"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <h1>h1 标题 heading</h1>
+          <h2>h2 标题 heading</h2>
+          <h3>h3 标题 heading</h3>
+          <h4>h4 标题 heading</h4>
+          <h5>h5 标题 heading</h5>
+          <h6>h6 标题 heading</h6>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;h1&gt;h1 标题 heading&lt;/h1&gt;
+  &lt;h2&gt;h2 标题 heading&lt;/h2&gt;
+  &lt;h3&gt;h3 标题 heading&lt;/h3&gt;
+  &lt;h4&gt;h4 标题 heading&lt;/h4&gt;
+  &lt;h5&gt;h5 标题 heading&lt;/h5&gt;
+  &lt;h6&gt;h6 标题 heading&lt;/h6&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>在标题内还可以包含 <code>small</code> 标签来标记副标题。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <h1>h1 标题 heading <small>副标题 Secondary text</small></h1>
+          <h2>h2 标题 heading <small>副标题 Secondary text</small></h2>
+          <h3>h3 标题 heading <small>副标题 Secondary text</small></h3>
+          <h4>h4 标题 heading <small>副标题 Secondary text</small></h4>
+          <h5>h5 标题 heading <small>副标题 Secondary text</small></h5>
+          <h6>h6 标题 heading <small>副标题 Secondary text</small></h6>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;h1&gt;h1 标题 heading &lt;small&gt;副标题 Secondary text&lt;/small&gt;&lt;/h1&gt;
+  &lt;h2&gt;h2 标题 heading &lt;small&gt;副标题 Secondary text&lt;/small&gt;&lt;/h2&gt;
+  &lt;h3&gt;h3 标题 heading &lt;small&gt;副标题 Secondary text&lt;/small&gt;&lt;/h3&gt;
+  &lt;h4&gt;h4 标题 heading &lt;small&gt;副标题 Secondary text&lt;/small&gt;&lt;/h4&gt;
+  &lt;h5&gt;h5 标题 heading &lt;small&gt;副标题 Secondary text&lt;/small&gt;&lt;/h5&gt;
+  &lt;h6&gt;h6 标题 heading &lt;small&gt;副标题 Secondary text&lt;/small&gt;&lt;/h6&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">内联文本样式 <a class="doc-anchor" id="inline"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <p><a href="javascript:void(0)">这是一个链接</a></p>
+          <p>使用 mark 标签来<mark>高亮文本</mark>。</p>
+          <p><del>这行文本被视为已删除文本。</del></p>
+          <p><ins>这行文本是被强势插入的元素。</ins></p>
+          <p><u>这行文本带有下划线。</u></p>
+          <p><small>这行文本字体被缩小了。</small></p>
+          <p><strong>这行文本被加粗了。</strong></p>
+          <p><em>这段文本是斜体的。</em></p>
+          <p>响应式设计缩写 <abbr title="Responsive web design">RWD</abbr></p>
+          <p>这行文本包含内联代码 <code>&lt;code&gt;</code></p>
+          <p>按下 <kbd>Esc</kbd> 可以关闭对话框</p>
+          <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;p&gt;&lt;a href=&quot;#&quot;&gt;这是一个链接&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;使用 mark 标签来&lt;mark&gt;高亮文本&lt;/mark&gt;。&lt;/p&gt;
+  &lt;p&gt;&lt;del&gt;这行文本被视为已删除文本。&lt;/del&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;ins&gt;这行文本是被强势插入的元素。&lt;/ins&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;u&gt;这行文本带有下划线。&lt;/u&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;small&gt;这行文本字体被缩小了。&lt;/small&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;这行文本被加粗了。&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;这段文本是斜体的。&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;响应式设计缩写 &lt;abbr title=&quot;Responsive web design&quot;&gt;RWD&lt;/abbr&gt;&lt;/p&gt;
+  &lt;p&gt;这行文本包含内联代码 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;&lt;/p&gt;
+  &lt;p&gt;按下 &lt;kbd&gt;Esc&lt;/kbd&gt; 可以关闭对话框&lt;/p&gt;
+  &lt;p&gt;&lt;var&gt;y&lt;/var&gt; = &lt;var&gt;m&lt;/var&gt;&lt;var&gt;x&lt;/var&gt; + &lt;var&gt;b&lt;/var&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">水平分割线 <a class="doc-anchor" id="hr"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <hr/>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;hr/&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">引用 <a class="doc-anchor" id="blockquote"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <blockquote>
+            <p>无论走到哪里，都应该记住，过去都是假的，回忆是一条没有尽头的路，一切以往的春天都不复存在，就连那最坚韧而又狂乱的爱情归根结底也不过是一种转瞬即逝的现实。</p>
+            <footer>马尔克斯 ——《百年孤独》</footer>
+          </blockquote>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;无论走到哪里，都应该记住，过去都是假的，回忆是一条没有尽头的路，一切以往的春天都不复存在，就连那最坚韧而又狂乱的爱情归根结底也不过是一种转瞬即逝的现实。&lt;/p&gt;
+    &lt;footer&gt;马尔克斯 &mdash;&mdash;《百年孤独》&lt;/footer&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">代码块 <a class="doc-anchor" id="pre"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+                <pre>window.addEventListener('load', function() {
+  FastClick.attach(document.body);
+}, false);</pre>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;pre&gt;window.addEventListener('load', function() {
+  FastClick.attach(document.body);
+}, false);&lt;/pre&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">无序列表 <a class="doc-anchor" id="ul"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <ul>
+            <li>条目 #1</li>
+            <li>条目 #2
+              <ul>
+                <li>条目 #1</li>
+                <li>条目 #2
+                  <ul>
+                    <li>条目 #1</li>
+                    <li>条目 #2</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>条目 #3</li>
+            <li>条目 #4</li>
+          </ul>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;条目 #1&lt;/li&gt;
+    &lt;li&gt;条目 #2
+      &lt;ul&gt;
+        &lt;li&gt;条目 #1&lt;/li&gt;
+        &lt;li&gt;条目 #2
+          &lt;ul&gt;
+            &lt;li&gt;条目 #1&lt;/li&gt;
+            &lt;li&gt;条目 #2&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;条目 #3&lt;/li&gt;
+    &lt;li&gt;条目 #4&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">有序列表：</h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-typo">
+          <ol>
+            <li>条目 #1</li>
+            <li>条目 #2
+              <ol>
+                <li>条目 #1</li>
+                <li>条目 #2
+                  <ol>
+                    <li>条目 #1</li>
+                    <li>条目 #2</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>条目 #3</li>
+            <li>条目 #4</li>
+          </ol>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-typo</span>&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;条目 #1&lt;/li&gt;
+    &lt;li&gt;条目 #2
+      &lt;ol&gt;
+        &lt;li&gt;条目 #1&lt;/li&gt;
+        &lt;li&gt;条目 #2
+          &lt;ol&gt;
+            &lt;li&gt;条目 #1&lt;/li&gt;
+            &lt;li&gt;条目 #2&lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;条目 #3&lt;/li&gt;
+    &lt;li&gt;条目 #4&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">文章排版示例 <a class="doc-anchor" id="demo"></a></h4>
+      <p>为文章内容的父容器添加 <code>.mdui-typo</code> 类，就能为整篇文章添加预定的样式。</p>
+    </div>
+    <div class="mdui-typo">
+      <h3>中文文章排版实例：论语学而篇第一</h3>
+      <p>
+        <small><b>作者：</b><abbr title="名丘，字仲尼">孔子</abbr>（
+          <time>前551年9月28日－前479年4月11日</time>
+          ）
+        </small>
+      </p>
+      <h4>本篇引语</h4>
+      <p>《学而》是《论语》第一篇的篇名。《论语》中各篇一般都是以第一章的前二三个字作为该篇的篇名。《学而》一篇包括16章，内容涉及诸多方面。其中重点是「吾日三省吾身」；「节用而爱人，使民以时」；「礼之用，和为贵」以及仁、孝、信等道德范畴。 </p>
+      <h4>原文</h4>
+      <p>子曰：「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知，而不愠，不亦君子乎？」 </p>
+      <h4>译文</h4>
+      <p>孔子说：「学了又时常温习和练习，不是很愉快吗？有志同道合的人从远方来，不是很令人高兴的吗？人家不了解我，我也不怨恨、恼怒，不也是一个有德的君子吗？」 </p>
+      <h4>评析</h4>
+      <p>宋代著名学者<u>朱熹</u>对此章评价极高，说它是「入道之门，积德之基」。本章这三句话是人们非常熟悉的。历来的解释都是：学了以后，又时常温习和练习，不也高兴吗等等。三句话，一句一个意思，前后句子也没有什么连贯性。但也有人认为这样解释不符合原义，指出这里的「学」不是指学习，而是指学说或主张；「时」不能解为时常，而是时代或社会的意思，「习」不是温习，而是使用，引申为采用。而且，这三句话不是孤立的，而是前后相互连贯的。这三句的意思是：自己的学说，要是被社会采用了，那就太高兴了；退一步说，要是没有被社会所采用，可是很多朋友赞同<abbr title="张燕婴">我</abbr>的学说，纷纷到我这里来讨论问题，我也感到快乐；再退一步说，即使社会不采用，人们也不理解我，我也不怨恨，这样做，不也就是君子吗？（见《齐鲁学刊》1986年第6期文）这种解释可以自圆其说，而且也有一定的道理，供读者在理解本章内容时参考。</p>
+      <p>此外，在对「人不知，而不愠」一句的解释中，也有人认为，「人不知」的后面没有宾语，人家不知道什么呢？当时因为孔子有说话的特定环境，他不需要说出知道什么，别人就可以理解了，却给后人留下一个谜。有人说，这一句是接上一句说的，从远方来的朋友向我求教，我告诉他，他还不懂，我却不怨恨。这样，「人不知」就是「人家不知道我所讲述的」了。这样的解释似乎有些牵强。</p>
+      <p>总之，本章提出以学习为乐事，做到人不知而不愠，反映出孔子学而不厌、诲人不倦、注重修养、严格要求自己的主张。这些思想主张在《论语》书中多处可见，有助于对第一章内容的深入了解。</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h3>英文文章排版实例</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+        type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+        Ipsum.</p>
+      <blockquote>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </blockquote>
+      <h4>The standard Lorem Ipsum passage, used since the 1500s</h4>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+      <h4>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h4>
+      <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+        velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+        ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+        vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+      <h4>List style in action</h4>
+      <ul>
+        <li>If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as
+          your brother and hope as your sentry.
+          <p>如果你希望成功，当以恒心为良友，以经验为参谋，以谨慎为兄弟，以希望为哨兵。</p>
+        </li>
+        <li>Sometimes one pays most for the things one gets for nothing.
+          <p>有时候一个人为不花钱得到的东西付出的代价最高。</p>
+        </li>
+        <li>Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things
+          easily.
+          <p>只有有耐心圆满完成简单工作的人，才能够轻而易举的完成困难的事。</p>
+        </li>
+      </ul>
+      <h4>You may want to create a perfect <code>&lt;hr /&gt;</code> line, despite the fact that there will never have one
+      </h4>
+      <hr/>
+      <p><abbr title="法国作家罗切福考尔德">La Racheforcauld</abbr> said:
+        <mark>"Few things are impossible in themselves; and it is often for want of will, rather than of means, that man fails
+          to succeed".
+        </mark>
+        You just need to follow the browser's behavior, and set a right <code>margin</code> to it。it will works nice as the
+        demo you're watching now. The following code is the best way to render typo in Chinese:
+      </p>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-typo-display-4</code></td>
+              <td>Display 4 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-3</code></td>
+              <td>Display 3 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-2</code></td>
+              <td>Display 2 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-1</code></td>
+              <td>Display 1 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-headline</code></td>
+              <td>Headline 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-title</code></td>
+              <td>Title 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-subheading</code></td>
+              <td>Subheading 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-body-2</code></td>
+              <td>Body 2 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-body-1</code></td>
+              <td>Body 1 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-caption</code></td>
+              <td>Caption 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-4-opacity</code></td>
+              <td>带不透明度的 Display 4 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-3-opacity</code></td>
+              <td>带不透明度的 Display 3 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-2-opacity</code></td>
+              <td>带不透明度的 Display 2 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-display-1-opacity</code></td>
+              <td>带不透明度的 Display 1 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-headline-opacity</code></td>
+              <td>带不透明度的 Headline 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-title-opacity</code></td>
+              <td>带不透明度的 Title 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-subheading-opacity</code></td>
+              <td>带不透明度的 Subheading 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-body-2-opacity</code></td>
+              <td>带不透明度的 Body 2 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-body-1-opacity</code></td>
+              <td>带不透明度的 Body 1 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo-caption-opacity</code></td>
+              <td>带不透明度的 Caption 样式</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-typo</code></td>
+              <td>为该元素内的元素赋予排版后的样式</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="grid.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">网格布局</div>
+        </div>
+      </a>
+      
+            <a href="icon.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">图标</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>

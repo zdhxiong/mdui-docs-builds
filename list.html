@@ -1,0 +1,1487 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>列表 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.1.1/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="list.html" class="mdui-typo-title">列表</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple mdui-list-item-active">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">列表</h1>
+  <div class="doc-intro mdui-typo">
+    <p>列表以垂直排列的方式显示多行条目。每行条目都可以包含图标、头像、文本等内容。</p>
+    <div class="doc-intro-module">
+      <h3>调用方式</h3>
+      <p>列表组件使用纯 CSS 编写，只需编写 HTML 代码即可生效。</p>
+    </div>
+    <div class="doc-intro-module">
+      <h3>色彩</h3>
+      <p>背景色：透明背景。</p>
+      <p>文字颜色：在亮色主题下为黑色，在深色主题下为白色。</p>
+    </div>
+    <div class="doc-intro-module">
+      <h3>相关阅读</h3>
+      <p><a href="http://www.mdui.org/design/components/lists.html" target="_blank">Material Design 设计指南：组件 - 列表</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="list.html#style">样式</a>
+        <ul>
+          <li><a data-scroll href="list.html#text">纯文本</a></li>
+          <li><a data-scroll href="list.html#icon">图标</a></li>
+          <li><a data-scroll href="list.html#avatar">头像</a></li>
+          <li><a data-scroll href="list.html#multiline">多行文本</a></li>
+          <li><a data-scroll href="list.html#divider">分隔线</a></li>
+          <li><a data-scroll href="list.html#subheader">副标题</a></li>
+          <li><a data-scroll href="list.html#dense">密集型列表</a></li>
+          <li><a data-scroll href="list.html#active">激活状态</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="list.html#class">CSS 类名列表</a></li>
+      <li>
+        <a data-scroll href="list.html#demo">更多示例</a>
+        <ul>
+          <li><a data-scroll href="list.html#file-list">文件列表</a></li>
+          <li><a data-scroll href="list.html#phone-list">通讯录</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">样式 <a class="doc-anchor" id="style"></a></h2>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">纯文本 <a class="doc-anchor" id="text"></a></h4>
+      <p>这是一个最简单的列表。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">Inbox</li>
+          <li class="mdui-list-item mdui-ripple">Starred</li>
+          <li class="mdui-list-item mdui-ripple">Send mail</li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list</span>&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Starred&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Send mail&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>使用链接作为列表条目。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <div class="mdui-list" style="max-width: 360px;">
+          <a href="list.html#" class="mdui-list-item mdui-ripple">Inbox</a>
+          <a href="list.html#" class="mdui-list-item mdui-ripple">Starred</a>
+          <a href="list.html#" class="mdui-list-item mdui-ripple">Send mail</a>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list</span>&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Inbox&lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Starred&lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Send mail&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">图标 <a class="doc-anchor" id="icon"></a></h4>
+      <p>列表可以包含图标。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe168;</i>
+            <div class="mdui-list-item-content">Inbox</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe163;</i>
+            <div class="mdui-list-item-content">Outbox</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe872;</i>
+            <div class="mdui-list-item-content">Trash</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe000;</i>
+            <div class="mdui-list-item-content">Spam</div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe168;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe163;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe872;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe000;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>图标可以在列表右侧。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo4.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Inbox</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe168;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Outbox</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe163;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Trash</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe872;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Spam</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe000;</i>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe168;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe163;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe872;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span> <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe000;&lt;/i&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>用空图标进行占位。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo5.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe168;</i>
+            <div class="mdui-list-item-content">Inbox</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe163;</i>
+            <div class="mdui-list-item-content">Outbox</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon"></i>
+            <div class="mdui-list-item-content">Trash</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon"></i>
+            <div class="mdui-list-item-content">Spam</div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe168;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe163;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span>&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-icon</span>&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">头像 <a class="doc-anchor" id="avatar"></a></h4>
+      <p>列表可以包含头像。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo6.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+            <div class="mdui-list-item-content">Brendan Lim</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+            <div class="mdui-list-item-content">me, Scott, Jennifer</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+            <div class="mdui-list-item-content">Grace Ng</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar4.jpg"/></div>
+            <div class="mdui-list-item-content">Kerem Suer</div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar4.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>头像可以在列表右侧。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo7.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Brendan Lim</div>
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">me, Scott, Jennifer</div>
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Grace Ng</div>
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">Kerem Suer</div>
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar4.jpg"/></div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+    &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-avatar</span>&quot;&gt;&lt;img src=&quot;avatar4.jpg&quot;/&gt;&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>同时包含头像和图标。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo8.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+            <div class="mdui-list-item-content">Brendan Lim</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ca;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+            <div class="mdui-list-item-content">me, Scott, Jennifer</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ca;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+            <div class="mdui-list-item-content">Grace Ng</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ca;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar4.jpg"/></div>
+            <div class="mdui-list-item-content">Kerem Suer</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ca;</i>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0ca;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0ca;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0ca;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar4.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0ca;&lt;/i&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <p>用图标代替头像。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo19.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons">&#xe2c7;</i>
+            <div class="mdui-list-item-content">Photos</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons">&#xe2c7;</i>
+            <div class="mdui-list-item-content">Recipes</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons">&#xe85d;</i>
+            <div class="mdui-list-item-content">Work</div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe2c7;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Photos&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe2c7;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Recipes&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe85d;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Work&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">多行文本 <a class="doc-anchor" id="multiline"></a></h4>
+      <p>每一个列表条目最多可包含 3 行文本，如果有超过 3 行的文本，就应该使用 <a href="card.html">卡片</a> 代替。</p>
+      <p>默认不限制文本的高度，即使文本高度超过了 3 行，也会照常显示出来。可以在 <code>.mdui-list-item-title</code> 和 <code>.mdui-list-item-text</code> 上添加类来限制文本的高度：</p>
+      <ul>
+        <li>添加类 <code>.mdui-list-item-one-line</code> 限制文本占一行高度</li>
+        <li>添加类 <code>.mdui-list-item-two-line</code> 限制文本占两行高度</li>
+        <li>添加类 <code>.mdui-list-item-three-line</code> 限制文本占三行高度</li>
+      </ul>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo9.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title mdui-list-item-one-line">Multiline item</div>
+              <div class="mdui-list-item-text mdui-list-item-two-line">You've got to get enough sleep. Other travelling salesmen live a life of luxury. You've got to get enough sleep. Other travelling salesmen live a life of luxury.</div>
+            </div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title mdui-list-item-one-line">Multiline item</div>
+              <div class="mdui-list-item-text mdui-list-item-two-line">You've got to get enough sleep. Other travelling salesmen live a life of luxury. You've got to get enough sleep. Other travelling salesmen live a life of luxury.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-title</span> <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-one-line</span>&quot;&gt;Multiline item&lt;/div&gt;
+      &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-text</span> <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-two-line</span>&quot;&gt;You've got to get enough sleep. Other travelling salesmen live a life of luxury. You've got to get enough sleep. Other travelling salesmen live a life of luxury.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-title</span> <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-one-line</span>&quot;&gt;Multiline item&lt;/div&gt;
+      &lt;div class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-text</span> <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-two-line</span>&quot;&gt;You've got to get enough sleep. Other travelling salesmen live a life of luxury. You've got to get enough sleep. Other travelling salesmen live a life of luxury.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">分隔线 <a class="doc-anchor" id="divider"></a></h4>
+      <p>列表中的分隔线上下会有 8px 的间距。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo10.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">Inbox</li>
+          <li class="mdui-list-item mdui-ripple">Starred</li>
+          <li class="mdui-divider"></li>
+          <li class="mdui-list-item mdui-ripple">All mail</li>
+          <li class="mdui-list-item mdui-ripple">Trash</li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Starred&lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html"><span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-divider</span></a></span>&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;All mail&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Trash&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>去除分隔线的上下边距。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo11.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Brunch this weekend?</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">All Connors</span> - I'll be in your neighborhood ...</div>
+            </div>
+          </li>
+          <li class="mdui-divider-inset mdui-m-y-0"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Summer BBQ</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">to Alex, Scott, Jennifer</span> - Wish I could ...</div>
+            </div>
+          </li>
+          <li class="mdui-divider-inset mdui-m-y-0"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Oui oui</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">Sandra Adams</span> - Do you have Paris reco ...</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Brunch this weekend?&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;All Connors&lt;/span&gt; - I'll be in your neighborhood ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html">mdui-divider-inset</a></span> <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-m-y-0</span>&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="http://mdui.dev/ripple">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Summer BBQ&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;to Alex, Scott, Jennifer&lt;/span&gt; - Wish I could ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html">mdui-divider-inset</a></span> <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-m-y-0</span>&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Oui oui&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;Sandra Adams&lt;/span&gt; - Do you have Paris reco ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">副标题 <a class="doc-anchor" id="subheader"></a></h4>
+      <p>在列表中使用副标题时，会自动在副标题上方添加分割线。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo12.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-subheader">Mail</li>
+          <li class="mdui-list-item mdui-ripple">Inbox</li>
+          <li class="mdui-list-item mdui-ripple">Sent</li>
+          <li class="mdui-subheader">Work</li>
+          <li class="mdui-list-item mdui-ripple">Family</li>
+          <li class="mdui-list-item mdui-ripple">Friends</li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-subheader</span>&quot;&gt;Mail&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Sent&lt;/li&gt;
+  &lt;li class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-subheader</span>&quot;&gt;Work&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Family&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Friends&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>内凹型副标题</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo13.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-subheader-inset">Friends</li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+            <div class="mdui-list-item-content">Brendan Lim</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+            <div class="mdui-list-item-content">me, Scott, Jennifer</div>
+          </li>
+          <li class="mdui-subheader-inset">Familay</li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+            <div class="mdui-list-item-content">Grace Ng</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar4.jpg"/></div>
+            <div class="mdui-list-item-content">Kerem Suer</div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-subheader-inset</span>&quot;&gt;Friends&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Brendan Lim&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;me, Scott, Jennifer&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-subheader-inset</span>&quot;&gt;Familay&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Grace Ng&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar4.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Kerem Suer&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">密集型列表 <a class="doc-anchor" id="dense"></a></h4>
+      <p>密集型列表的各个元素会更紧凑。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo14.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list mdui-list-dense" style="max-width: 360px;">
+          <li class="mdui-subheader-inset">Friends</li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe168;</i>
+            <div class="mdui-list-item-content">Inbox</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe163;</i>
+            <div class="mdui-list-item-content">Outbox</div>
+          </li>
+          <li class="mdui-subheader-inset">Familay</li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe872;</i>
+            <div class="mdui-list-item-content">Trash</div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe000;</i>
+            <div class="mdui-list-item-content">Spam</div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-dense</span>&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe168;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Inbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe163;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Outbox&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe872;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Trash&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe000;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;Spam&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <p>另一个密集型列表的示例。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo15.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list mdui-list-dense" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Brunch this weekend?</div>
+              <div class="mdui-list-item-text mdui-list-item-two-line"><span class="mdui-text-color-theme-text">All Connors</span> - I'll be in your neighborhood doing errands this weekend. Do you want ...</div>
+            </div>
+          </li>
+          <li class="mdui-divider-inset mdui-m-y-0"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Summer BBQ</div>
+              <div class="mdui-list-item-text mdui-list-item-two-line"><span class="mdui-text-color-theme-text">to Alex, Scott, Jennifer</span> - Wish I could come, but I'm out of town this weekend.</div>
+            </div>
+          </li>
+          <li class="mdui-divider-inset mdui-m-y-0"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Oui oui</div>
+              <div class="mdui-list-item-text mdui-list-item-two-line"><span class="mdui-text-color-theme-text">Sandra Adams</span> - Do you have Paris recommendations? Have you ever been?</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-dense</span>&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Brunch this weekend?&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;All Connors&lt;/span&gt; - I'll be in your neighborhood doing errands this weekend. Do you want ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html">mdui-divider-inset</a></span> mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Summer BBQ&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;to Alex, Scott, Jennifer&lt;/span&gt; - Wish I could come, but I'm out of town this weekend.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html">mdui-divider-inset</a></span> mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Oui oui&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-two-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;Sandra Adams&lt;/span&gt; - Do you have Paris recommendations? Have you ever been?&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">激活状态 <a class="doc-anchor" id="active"></a></h4>
+      <p>激活状态的条目会添加背景色，并加粗文本。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo16.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-list-item-active mdui-ripple">Inbox</li>
+          <li class="mdui-list-item mdui-ripple">Starred</li>
+          <li class="mdui-list-item mdui-ripple">Send mail</li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-active</span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Inbox&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Starred&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;Send mail&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo17.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-list-item-active mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar1.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Brunch this weekend?</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">All Connors</span> - I'll be in your neighborhood ...</div>
+            </div>
+          </li>
+          <li class="mdui-divider-inset mdui-m-y-0"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar2.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Summer BBQ</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">to Alex, Scott, Jennifer</span> - Wish I could ...</div>
+            </div>
+          </li>
+          <li class="mdui-divider-inset mdui-m-y-0"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="assets/docs/img/avatar3.jpg"/></div>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Oui oui</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text">Sandra Adams</span> - Do you have Paris reco ...</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-list-item-active</span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar1.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Brunch this weekend?&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;All Connors&lt;/span&gt; - I'll be in your neighborhood ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html">mdui-divider-inset</a></span> mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar2.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Summer BBQ&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;to Alex, Scott, Jennifer&lt;/span&gt; - Wish I could ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;<span class="mdui-typo"><a href="divider.html">mdui-divider-inset</a></span> mdui-m-y-0&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;div class=&quot;mdui-list-item-avatar&quot;&gt;&lt;img src=&quot;avatar3.jpg&quot;/&gt;&lt;/div&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Oui oui&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text mdui-list-item-one-line&quot;&gt;&lt;span class=&quot;mdui-text-color-theme-text&quot;&gt;Sandra Adams&lt;/span&gt; - Do you have Paris reco ...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>类名</th>
+              <th>效果</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-list</code></td>
+              <td>定义列表</td>
+              <td>必须</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-dense</code></td>
+              <td>定义密集型列表</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item</code></td>
+              <td>定义列表条目</td>
+              <td>必须</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-active</code></td>
+              <td>设置列表条目为激活状态</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-icon</code></td>
+              <td>定义列表条目中的图标</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-avatar</code></td>
+              <td>定义列表条目中的头像</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-content</code></td>
+              <td>定义列表条目的内容</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-title</code></td>
+              <td>定义列表条目中的内容中的标题</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-text</code></td>
+              <td>定义列表条目的内容中的副文本</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-one-line</code></td>
+              <td>设置文本占一行高度</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-two-line</code></td>
+              <td>设置文本占两行高度</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>.mdui-list-item-three-line</code></td>
+              <td>设置文本占三行高度</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">更多示例 <a class="doc-anchor" id="demo"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">文件列表 <a class="doc-anchor" id="file-list"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo18.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-subheader-inset">Folders</li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons">&#xe2c7;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Photos</div>
+              <div class="mdui-list-item-text">Jan 9, 2014</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400">&#xe88e;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons">&#xe2c7;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Recipes</div>
+              <div class="mdui-list-item-text">Jan 17, 2014</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400">&#xe88e;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons">&#xe2c7;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Work</div>
+              <div class="mdui-list-item-text">Jan 28, 2014</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400">&#xe88e;</i>
+          </li>
+          <li class="mdui-subheader-inset">Files</li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-blue mdui-text-color-white">&#xe85d;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Photos</div>
+              <div class="mdui-list-item-text">Jan 9, 2014</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400">&#xe88e;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-avatar mdui-icon material-icons mdui-color-yellow-600 mdui-text-color-white">&#xe85c;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">Kitchen remodel</div>
+              <div class="mdui-list-item-text">Jan 10, 2014</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-400">&#xe88e;</i>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-subheader-inset&quot;&gt;Folders&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe2c7;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Photos&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 9, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe88e;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe2c7;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Recipes&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 17, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-text-color-grey-400&quot;&gt;&amp;#xe88e;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe2c7;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Work&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 28, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-text-color-grey-400&quot;&gt;&amp;#xe88e;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-subheader-inset&quot;&gt;Files&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-color-blue mdui-text-color-white&quot;&gt;&amp;#xe85d;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Photos&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 9, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-text-color-grey-400&quot;&gt;&amp;#xe88e;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-avatar <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-color-yellow-600 mdui-text-color-white&quot;&gt;&amp;#xe85c;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;Kitchen remodel&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Jan 10, 2014&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-text-color-grey-400&quot;&gt;&amp;#xe88e;&lt;/i&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">通讯录 <a class="doc-anchor" id="phone-list"></a></h4>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="demo/list/demo20.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <ul class="mdui-list" style="max-width: 360px;">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo">&#xe0cd;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">(650) 555-1234</div>
+              <div class="mdui-list-item-text">Mobile</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ca;</i>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon"></i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">(323) 555-6789</div>
+              <div class="mdui-list-item-text">Work</div>
+            </div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ca;</i>
+          </li>
+          <li class="mdui-divider"></li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo">&#xe0be;</i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">aliconnors@example.com</div>
+              <div class="mdui-list-item-text">Personal</div>
+            </div>
+          </li>
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon"></i>
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">ali_connors@example.com</div>
+              <div class="mdui-list-item-text">Work</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;ul class=&quot;mdui-list&quot;&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-text-color-indigo&quot;&gt;&amp;#xe0cd;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;(650) 555-1234&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Mobile&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0ca;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;(323) 555-6789&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Work&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe0ca;&lt;/i&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-divider&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon <span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span> mdui-text-color-indigo&quot;&gt;&amp;#xe0be;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;aliconnors@example.com&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Personal&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mdui-list-item <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;
+    &lt;i class=&quot;mdui-list-item-icon&quot;&gt;&lt;/i&gt;
+    &lt;div class=&quot;mdui-list-item-content&quot;&gt;
+      &lt;div class=&quot;mdui-list-item-title&quot;&gt;ali_connors@example.com&lt;/div&gt;
+      &lt;div class=&quot;mdui-list-item-text&quot;&gt;Work&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="slider.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">滑块</div>
+        </div>
+      </a>
+      
+            <a href="list_control.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">列表控制</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.1.1/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script>
