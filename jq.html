@@ -1,0 +1,1679 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>JavaScript 工具库 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<header class="mdui-appbar mdui-appbar-fixed">
+  <div class="mdui-toolbar mdui-color-theme">
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+          <a href="jq.html" class="mdui-typo-title">JavaScript 工具库</a>
+        <div class="mdui-toolbar-spacer"></div>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<div class="mdui-drawer" id="main-drawer">
+  <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+    <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <div class="mdui-list-item-content">开始使用</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
+        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
+        <a href="jq.html" class="mdui-list-item mdui-ripple mdui-list-item-active">JavaScript 工具库</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <div class="mdui-list-item-content">样式</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
+        <a href="font.html" class="mdui-list-item mdui-ripple ">字体</a>
+        <a href="grid.html" class="mdui-list-item mdui-ripple ">网格布局</a>
+        <a href="typo.html" class="mdui-list-item mdui-ripple ">排版</a>
+        <a href="icon.html" class="mdui-list-item mdui-ripple ">图标</a>
+        <a href="media.html" class="mdui-list-item mdui-ripple ">媒体</a>
+        <a href="helper.html" class="mdui-list-item mdui-ripple ">辅助类</a>
+        <a href="shadow.html" class="mdui-list-item mdui-ripple ">阴影</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <div class="mdui-list-item-content">组件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
+        <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
+        <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
+        <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
+        <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
+        <a href="selection_control.html" class="mdui-list-item mdui-ripple ">选择控件</a>
+        <a href="slider.html" class="mdui-list-item mdui-ripple ">滑块</a>
+        <a href="list.html" class="mdui-list-item mdui-ripple ">列表</a>
+        <a href="list_control.html" class="mdui-list-item mdui-ripple ">列表控制</a>
+        <a href="grid_list.html" class="mdui-list-item mdui-ripple ">网格列表</a>
+        <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab 选项卡</a>
+        <a href="toolbar.html" class="mdui-list-item mdui-ripple ">工具栏</a>
+        <a href="appbar.html" class="mdui-list-item mdui-ripple ">应用栏</a>
+        <a href="drawer.html" class="mdui-list-item mdui-ripple ">抽屉式导航</a>
+        <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">底部导航栏</a>
+        <a href="card.html" class="mdui-list-item mdui-ripple ">卡片</a>
+        <a href="chip.html" class="mdui-list-item mdui-ripple ">纸片</a>
+        <a href="tooltip.html" class="mdui-list-item mdui-ripple ">工具提示</a>
+        <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+        <a href="table.html" class="mdui-list-item mdui-ripple ">表格</a>
+        <a href="dialog.html" class="mdui-list-item mdui-ripple ">对话框</a>
+        <a href="menu.html" class="mdui-list-item mdui-ripple ">菜单</a>
+        <a href="progress.html" class="mdui-list-item mdui-ripple ">进度指示器</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <div class="mdui-list-item-content">JavaScript 插件</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+        <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+      </div>
+    </div>
+
+    <div class="mdui-collapse-item ">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <div class="mdui-list-item-content">资源</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list">
+        <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a id="anchor-top"></a>
+<div class="mdui-container doc-container doc-no-cover">
+    <h1 class="doc-title mdui-text-color-theme">JavaScript 工具库</h1>
+    <div class="doc-intro mdui-typo">
+        <p>要求版本 >= 0.2.0</p>
+        <p>MDUI 内置了一个轻量的 JavaScript 工具库，它拥有和 jQuery 类似的 api 和 jQuery 风格的链式调用，但体积仅为 jQuery 的八分之一。</p>
+        <p>你可以通过 <code>mdui.JQ</code> 来调用该库，但最好把 <code>mdui.JQ</code> 存储到一个简短的变量中以方便调用，为了避免和其他库冲突，推荐使用 <code>$$</code>。
+        </p>
+        <pre><code class="lang-js">var $$ = mdui.JQ;</code></pre>
+        <p>在后面的文档中，都使用 <code>$$</code> 来表示 <code>mdui.JQ</code>。</p>
+    </div>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li>
+                <a data-scroll href="jq.html#jq">mdui.JQ</a>
+                <ul>
+                    <li><a data-scroll href="jq.html#jq-core">核心</a></li>
+                    <li><a data-scroll href="jq.html#jq-plugin">插件编写</a></li>
+                    <li><a data-scroll href="jq.html#jq-url">URL</a></li>
+                    <li><a data-scroll href="jq.html#jq-array">数组和对象操作</a></li>
+                    <li><a data-scroll href="jq.html#jq-type">数据类型判断</a></li>
+                    <li><a data-scroll href="jq.html#jq-obj">对象访问</a></li>
+                    <li><a data-scroll href="jq.html#jq-class">CSS 类</a></li>
+                    <li><a data-scroll href="jq.html#jq-attr">节点属性</a></li>
+                    <li><a data-scroll href="jq.html#jq-data">数据存储</a></li>
+                    <li><a data-scroll href="jq.html#jq-style">样式</a></li>
+                    <li><a data-scroll href="jq.html#jq-selector">查找节点</a></li>
+                    <li><a data-scroll href="jq.html#jq-dom">节点操作</a></li>
+                    <li><a data-scroll href="jq.html#jq-form">表单</a></li>
+                    <li><a data-scroll href="jq.html#jq-event">事件</a></li>
+                </ul>
+            </li>
+            <li><a data-scroll href="jq.html#jq-other">更多常用方法</a></li>
+        </ul>
+    </nav>
+
+    <div class="doc-chapter">
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">mdui.JQ <a class="doc-anchor" id="jq"></a></h2>
+        </div>
+
+        <div class="mdui-typo">
+            <h4 class="doc-article-title">核心 <a class="doc-anchor" id="jq-core"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>$$()</code></td>
+                        <td>
+                            <p>该方法有多种用法：</p>
+                            <p>可以传入一个 CSS 选择器作为参数，返回包含匹配元素的 JQ 对象。该方法是通过 querySelectorAll 实现的。</p>
+                            <pre><code class="lang-js">$$('.mdui-table')</code></pre>
+
+                            <p>可以传入 DOM 元素、DOM 元素数组、NodeList、JQ 对象，返回包含指定元素的 JQ 对象。</p>
+                            <pre><code class="lang-js">$$(document)</code></pre>
+
+                            <p>可以传入 HTML 字符串，返回包含根据 HTML 创建的 DOM 的 JQ 对象。</p>
+                            <pre><code class="lang-js">$$('&lt;div id=&quot;wrapper&quot;&gt;&lt;span id=&quot;inner&quot;&gt;&lt;/span&gt;&lt;/div&gt;')</code></pre>
+
+                            <p>可以传入一个函数，在 DOM 加载完毕后会调用该函数。</p>
+                            <pre><code class="lang-js">$$(function () { console.log('DOM Loaded') })</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">插件编写 <a class="doc-anchor" id="jq-plugin"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>$$.extend()</code></td>
+                        <td>
+                            <p>如果只传入一个对象，该对象中的属性将合并到 JQ 对象中，相当于在 JQ 的命名空间下添加新的功能。</p>
+                            <pre><code class="lang-js">$$.extend({
+  customFunc: function () {}
+})
+
+// 然后就可以这样调用自定义方法了
+$$.customFunc()
+</code></pre>
+                            <p>如果传入了两个或更多个对象，所有对象的属性都添加到第一个对象，并返回合并后的对象。</p>
+                            <pre><code class="lang-js">var object = $$.extend(
+  { key1: val1 },
+  { key2: val2 },
+  { key3: val3 }
+);
+
+// 此时第一个对象和返回值都是 { key1: val1, key2: val2, key3: val3 }</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.fn.extend()</code></td>
+                        <td>
+                            <p>在 JQ 的原型链上扩展方法。</p>
+                            <pre><code class="lang-js">$$.fn.extend({
+  customFunc: function () {}
+})
+
+// 然后就可以这样使用扩展的方法了
+$$(document).customFunc()</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">URL <a class="doc-anchor" id="jq-url"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>$$.param()</code></td>
+                        <td>
+                            <p>将数组或对象序列化。</p>
+                            <pre><code class="lang-js">$$.param({width:1680, height:1050})
+// width=1680&amp;height=1050
+
+$$.param({foo: {one: 1,two: 2 } })
+// foo[one]=1&amp;foo[two]=2
+
+$$.param({ids:[1,2,3] })
+// ids[]=1&amp;ids[]=2&amp;ids[]=3</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">数组对象操作 <a class="doc-anchor" id="jq-array"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>$$.each()</code></td>
+                        <td>
+                            <p>遍历数组或对象</p>
+                            <pre><code class="lang-js">$$.each(['a', 'b', 'c'], function (i, value) {
+    console.log(i + ':' + value);
+})
+
+// 结果：
+// 0:a
+// 1:b
+// 2:c</code></pre>
+                            <pre><code class="lang-js">$$.each({'name': 'mdui', 'lang': 'zh'}, function (i, value) {
+    console.log(i + ':' + value);
+})
+
+// 结果
+// name:mdui
+// lang:zh</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.merge()</code></td>
+                        <td>
+                            <p>合并两个数组，合并的结果会替换第一个数组的内容，并返回合并的结果。</p>
+                            <pre><code class="lang-js">var first = ['a', 'b', 'c'];
+var second = ['c', 'd', 'e'];
+var result = $$.merge(first, second);
+console.log(first); // ['a', 'b', 'c', 'c', 'd', 'e']
+console.log(result); // ['a', 'b', 'c', 'c', 'd', 'e']</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.unique()</code></td>
+                        <td>
+                            <p>删除数组中的重复元素。可以是 DOM 元素数组、字符串数组、数字数组。返回去重后的数组。</p>
+                            <pre><code class="lang-js">var result = $$.unique([1,2,12,3,2,1,2,1,1,1,1]);
+console.log(result); // [1, 2, 12, 3]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.map()</code></td>
+                        <td>
+                            <p>遍历数组或对象，通过函数返回一个新的数组或对象，<code>null</code> 和 <code>undefined</code> 将被过滤掉。</p>
+                            <pre><code class="lang-js">var result = $$.map(['a', 'b', 'c'], function (value, key) {
+    return i + value;
+});
+console.log(result); // ['0a', '1b', '2c']</code></pre>
+                            <pre><code class="lang-js">var result = $$.map([1, 2, 3], function (value, key) {
+    return [value, value + 1];
+});
+console.log(result); // [1, 2, 2, 3, 3, 4]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.contains()</code></td>
+                        <td>
+                            <p>判断父节点是否包含子节点，返回布尔值。</p>
+                            <pre><code class="lang-js">$$.contains(document, document.body); // true
+$$.contains(document.body, document); // false</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">数据类型判断 <a class="doc-anchor" id="jq-type"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.is()</code></td>
+                        <td>
+                            <p>根据 CSS 选择器、DOM 元素、或 JQ 对象来检测匹配的元素集合，至少有一个元素匹配则返回 true，否则返回 false。</p>
+                            <pre><code class="lang-js">$$('.box').is('.box'); // true
+$$('.box').is('.boxss'); // false
+$$('.box').is($$('.box')[0]); // true</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">对象访问 <a class="doc-anchor" id="jq-obj"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.length</code></td>
+                        <td>
+                            <p>返回 JQ 对象中元素的数量。</p>
+                            <pre><code class="lang-js">$$('body').length; // 1</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.each()</code></td>
+                        <td>
+                            <p>遍历一个 JQ 对象，为每一个匹配元素执行一个函数。如果函数返回 false，则结束遍历。</p>
+                            <p>函数的第一个参数为元素的索引号，第二个参数为当前元素。函数的 this 关键字指向当前元素。</p>
+                            <pre><code class="lang-js">$$('img').each(function(i, element) {
+    this.src = 'test' + i + '.jpg';
+});</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.map()</code></td>
+                        <td>
+                            <p>遍历一个 JQ 对象，为对象的每个元素都调用一个函数，生成一个包含函数返回值的新的 JQ 对象。<code>null</code> 和 <code>undefined</code> 会被过滤掉。</p>
+                            <p>函数的第一个参数为元素的索引号，第二个参数为当前元素。函数的 this 关键字指向当前元素。</p>
+                            <pre><code class="lang-js">var result = $$('input.checked').map(function (i, element) {
+    return $$(this).val();
+});
+
+// result 为匹配元素的值组成的 JQ 对象</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.eq()</code></td>
+                        <td>
+                            <p>返回 JQ 对象中指定索引号的元素的 JQ 对象。</p>
+                            <pre><code class="lang-js">$$('div').eq(0); // 返回第一个元素的 JQ 对象
+$$('div').eq(-1); // 返回最后一个元素的 JQ 对象
+$$('div').eq(-2); // 返回倒数第二个元素的 JQ 对象</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.first()</code></td>
+                        <td>
+                            <p>返回 JQ 对象中第一个元素的 JQ 对象。</p>
+                            <pre><code class="lang-js">$$('div').first(); // 返回第一个 div 的 JQ 对象</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.last()</code></td>
+                        <td>
+                            <p>返回 JQ 对象中最后一个元素的 JQ 对象。</p>
+                            <pre><code class="lang-js">$$('div').last(); // 返回最后一个 div 的 JQ 对象</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.get()</code></td>
+                        <td>
+                            <p>返回 JQ 对象中指定索引号的 DOM 元素。若没有指定索引号，则返回 JQ 对象中所有 DOM 元素组成的数组。</p>
+                            <pre><code class="lang-js">$$('div').get(); // 返回所有 div 元素组成的数组
+$$('div').get(0); // 返回第一个 div 元素
+$$('div').get(-1); // 返回最后一个 div 元素</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.index()</code></td>
+                        <td>
+                            <p>如果没有传入参数，则返回 JQ 对象中第一个元素相对于同辈元素的索引值。</p>
+                            <p>如果传入了一个 CSS 选择器作为参数，则返回 JQ 对象中第一个元素相对与 CSS 选择器匹配元素的索引值。</p>
+                            <p>如果传入了一个 DOM 元素，则返回该 DOM 元素在 JQ 对象中的索引值。</p>
+                            <pre><code class="lang-html">&lt;div id=&quot;child&quot;&gt;
+    &lt;div id=&quot;child1&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;child2&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;child3&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;child4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            <pre><code class="lang-js">$$('#child3').index(); // 2
+$$('#child3').index('#child div'); // 2
+$$('#child div').index($$('#child3').get(0); // 2</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.slice()</code></td>
+                        <td>
+                            <p>返回一个 JQ 对象的子集。</p>
+                            <p>子集为从 start 开始的元素。如果传入了 end 参数，则提取从 start 到不包含 end 位置的元素。</p>
+                            <pre><code class="lang-js">$$('div').slice(3); // 返回对象中第三个（包含第三个）之后的所有元素
+$$('div').slice(3, 5); // 返回对象中第三个到第五个（包含第三个，不包含第五个）之间的元素</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.filter()</code></td>
+                        <td>
+                            <p>从 JQ 对象中筛选出与指定表达式匹配的元素的 JQ 对象。参数可以是 CSS 选择器、JQ 对象、DOM 元素、函数。</p>
+                            <p>参数为函数时，函数的第一个参数为当前元素在 JQ 对象中的索引号，第二个参数为当前元素，this 关键字指向当前元素。函数返回 true 时，该元素会被保留，返回 false 时，该元素会被去除。</p>
+                            <pre><code class="lang-js">// 筛选出所有含 .box 类的 div 元素的 JQ 对象
+$$('div').filter('.box');
+
+// 筛选出所有已选中选项的 JQ 对象
+$$('#select option').filter(function (idx, element) {
+    return element.selected;
+});</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.not()</code></td>
+                        <td>
+                            <p>从 JQ 对象中筛选出与指定表达式不匹配的元素的 JQ 对象。参数可以是 CSS 选择器、JQ 对象、DOM 元素、函数。</p>
+                            <p>参数为函数时，函数的第一个参数为当前元素在 JQ 对象中的索引号，第二个参数为当前元素，this 关键字指向当前元素。函数返回 true 时，该元素会被去除，返回 false 时，该元素会被保留。</p>
+                            <pre><code class="lang-js">// 筛选出所有不含 .box 类的 div 元素的 JQ 对象
+$$('div').filter('.box');
+
+// 筛选出所有未选中选项的 JQ 对象
+$$('#select option').filter(function (idx, element) {
+    return element.selected;
+});</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">CSS 类 <a class="doc-anchor" id="jq-class"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.hasClass()</code></td>
+                        <td>
+                            <p>判断 JQ 对象中的第一个元素是否含有指定 CSS 类。</p>
+                            <pre><code class="lang-js">$$('div').hasClass('item')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.addClass()</code></td>
+                        <td>
+                            <p>为元素添加 CSS 类，多个类名之间可以用空格分隔。</p>
+                            <pre><code class="lang-js">$$('div').addClass('item')</code></pre>
+                            <pre><code class="lang-js">$$('div').addClass('item1 item2')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.removeClass()</code></td>
+                        <td>
+                            <p>移除元素上的 CSS 类，多个类名之间可以用空格分隔。</p>
+                            <pre><code class="lang-js">$$('div').removeClass('item')</code></pre>
+                            <pre><code class="lang-js">$$('div').removeClass('item1 item2')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.toggleClass()</code></td>
+                        <td>
+                            <p>元素上的 CSS 类，有则删除，无则添加。多个类名之间可以用空格分隔。</p>
+                            <pre><code class="lang-js">$$('div').toggleClass('item')</code></pre>
+                            <pre><code class="lang-js">$$('div').toggleClass('item1 item2')</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">节点属性 <a class="doc-anchor" id="jq-attr"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.prop()</code></td>
+                        <td>
+                            <p>获取或设置选中元素的属性值。</p>
+                            <pre><code class="lang-js">// 获取第一个元素的属性值
+$$('input[type="checkbox"]').prop('checked');
+
+// 设置所有选中元素的属性值
+$$('input[type="checkbox"]').prop('checked', true);
+
+// 同时设置元素的多个属性值
+$$('input').prop({
+  checked: false,
+  disabled: true
+})</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.removeProp()</code></td>
+                        <td>
+                            <p>删除选中元素指定的属性值。</p>
+                            <pre><code class="lang-js">$$('input').removeProp('disabled')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.attr()</code></td>
+                        <td>
+                            <p>获取或设置选中元素的属性值。</p>
+                            <pre><code class="lang-js">// 获取第一个元素的属性值
+$$('div').attr('username');
+
+// 设置所有选中元素的属性值
+$$('div').attr('username', 'mdui');
+
+// 同时设置元素的多个属性值
+$$('div').prop({
+  username: 'mdui',
+  lastname: 'test'
+})</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.removeAttr()</code></td>
+                        <td>
+                            <p>删除选中元素的指定属性值。</p>
+                            <pre><code class="lang-js">$$('div').removeAttr('username')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.val()</code></td>
+                        <td>
+                            <p>获取或设置选中元素的值。</p>
+                            <pre><code class="lang-js">// 获取选中的第一个元素的值
+$$('#input').val()
+
+// 设置选中元素的值
+$$('#input').val('input value')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.text()</code></td>
+                        <td>
+                            <p>获取或设置选中元素的文本内容。</p>
+                            <pre><code class="lang-js">// 获取选中的第一个元素的文本内容
+$$('#box').text()
+
+// 设置选中元素的文本内容
+$$('#box').text('text content')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.html()</code></td>
+                        <td>
+                            <p>获取或设置选中元素的 HTML 内容。</p>
+                            <pre><code class="lang-js">// 获取选中的第一个元素的 HTML 内容
+$$('#box').html()
+
+// 设置选中元素的 HTML
+$$('#box').html('html content')</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">数据存储 <a class="doc-anchor" id="jq-data"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>$$.data()</code></td>
+                        <td>
+                            <p>在 DOM 元素上读取或存储数据。</p>
+                            <pre><code class="lang-js">var dom = document.getElementById('box');
+
+// 在 DOM 元素上存储一个字符串
+$$.data(dom, 'key', 'value');
+
+// 在 DOM 上存储一个对象
+$$.data(dom, 'obj', {test: 'test'});
+
+// 在 DOM 上同时存储多个数据
+$$.data(dom, {
+    key1: 'value1',
+    key2: {
+        test: 'test'
+    }
+});
+
+// 获取 DOM 上存储的所有数据
+$$.data(dom);
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.removeData()</code></td>
+                        <td>
+                            <p>删除 DOM 上存储的数据。</p>
+                            <pre><code class="lang-js">// 删除 DOM 上存储的键名为 key 的数据
+$$.removeData(dom, 'key');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.data()</code></td>
+                        <td>
+                            <p>在当前 JQ 对象的元素上存储数据。</p>
+                            <pre><code class="lang-js">// 在 .box 元素上存储一个字符串
+$$('.box').data('key', 'value');
+
+// 在 .box 元素上存储一个对象
+$$('.box').data('obj', {
+    test: 'test'
+});
+
+// 在 .box 元素上同时存储多个数据
+$$('.box').data({
+    key1: 'value1',
+    key2: {
+        test: 'test'
+    }
+});
+
+// 获取 .box 上存储的所有数据
+$$('.box').data();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.removeData()</code></td>
+                        <td>
+                            <p>删除 JQ 对象的元素上存储的数据。</p>
+                            <pre><code class="lang-js">// 删除 .box 元素上存储的键名为 key 的数据
+$$('.box').removeData('key');</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">样式 <a class="doc-anchor" id="jq-style"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.css()</code></td>
+                        <td>
+                            <p>获取 JQ 对象中的第一个元素的样式值，或者设置每一个元素的样式。</p>
+                            <pre><code class="lang-js">// 获取元素样式值
+$$('#box').css('color')
+
+// 设置元素的样式值
+$$('#box').css('color', 'red')
+
+// 同时设置多个样式值
+$$('#box').css({
+  'color': 'red',
+  'background-color': 'white'
+})</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.width()</code></td>
+                        <td>
+                            <p>如果没有传入参数，则获取 JQ 对象中第一个元素的宽度。</p>
+                            <p>如果传入了参数，则设置 JQ 对象中所有元素的宽度，如果参数是个数字或数字字符串，会自动添加 px 作为单位。</p>
+                            <p>该方法获取的值默认不包含内边距和外边距，当 box-sizing:border-box 时，会包含内边距。</p>
+                            <pre><code class="lang-js">$$('.box').width();
+$$('.box').width(10);
+$$('.box').width('20%')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.height()</code></td>
+                        <td>
+                            <p>如果没有传入参数，则获取 JQ 对象中第一个元素的高度。</p>
+                            <p>如果传入了参数，则设置 JQ 对象中所有元素的高度，如果参数是个数字或数字字符串，会自动添加 px 作为单位。</p>
+                            <p>该方法获取的值默认不包含内边距和外边距，当 box-sizing:border-box 时，会包含内边距。</p>
+                            <pre><code class="lang-js">$$('.box').height();
+$$('.box').height(10);
+$$('.box').height('20%');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.innerWidth()</code></td>
+                        <td>
+                            <p>获取元素的宽度，包含内边距。</p>
+                            <pre><code class="lang-js">$$('.box').innerWidth();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.innerHeight()</code></td>
+                        <td>
+                            <p>获取元素的高度，包含内边距。</p>
+                            <pre><code class="lang-js">$$('.box').innerHeight();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.hide()</code></td>
+                        <td>
+                            <p>隐藏 JQ 对象中的所有元素。</p>
+                            <pre><code class="lang-js">$$('.box').hide();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.show()</code></td>
+                        <td>
+                            <p>恢复 JQ 对象中的所有元素的显示状态。</p>
+                            <pre><code class="lang-js">$$('.box').show();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.toggle()</code></td>
+                        <td>
+                            <p>切换 JQ 对象中所有元素的显示状态。</p>
+                            <pre><code class="lang-js">$$('.box').toggle();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.offset()</code></td>
+                        <td>
+                            <p>获取元素相对于 document 的偏移，以及元素的宽度和高度。</p>
+                            <pre><code class="lang-js">$$('.box').offset();
+// {
+//     top: 20,
+//     left: 30,
+//     width: 200,
+//     height: 100
+// }</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.offsetParent()</code></td>
+                        <td>
+                            <p>返回 JQ 对象中第一个元素的用于定位的父元素的 JQ 对象。即父元素中第一个 position 为 relative 或 absolute 的元素。</p>
+                            <pre><code class="lang-js">$$('.box').offsetParent()</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.position()</code></td>
+                        <td>
+                            <p>获取元素相对于父元素的偏移，以及宽度和高度。</p>
+                            <pre><code class="lang-js">$$('.box').position();
+// {
+//     top: 20,
+//     left: 30,
+//     width: 100,
+//     height: 200
+// }</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">查找节点 <a class="doc-anchor" id="jq-selector"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.find()</code></td>
+                        <td>
+                            <p>根据 CSS 选择器找到指定的后代节点的集合。</p>
+                            <pre><code class="lang-js">// 找到 #box 的后代节点中，包含 .box 的节点集合
+$$('#box').find('.box')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.children()</code></td>
+                        <td>
+                            <p>获取匹配元素的直接子元素，可以使用 CSS 选择器作为参数进行过滤。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 找到 #box 的所有直接子元素
+$$('#box').children()
+
+// 找到 #box 的所有直接子元素中，包含 .box 的元素集合
+$$('#box').children('.box')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.has()</code></td>
+                        <td>
+                            <p>对匹配元素的子元素，按传入的参数进行过滤，返回过滤后的元素的 JQ 对象。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 给含有 ul 的 li 加上背景色
+$$('li').has('ul').css('background-color', 'red');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.parent()</code></td>
+                        <td>
+                            <p>返回匹配的直接父元素的 JQ 对象。</p>
+                            <p>如果没有传入参数，则直接返回直接父元素的 JQ 对象。如果传入了参数，仅返回和参数匹配的直接父元素的 JQ 对象。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素的直接父元素
+$$('.box').parent();
+
+// 返回 .box 元素的直接父元素中含有 .parent 类的元素
+$$('.box').parent('.parent');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.parents()</code></td>
+                        <td>
+                            <p>返回匹配的所有祖先元素的 JQ 对象。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 span 元素的所有祖先元素
+$$('span').parents();
+
+// 返回 span 元素的所有是 p 元素的祖先元素
+$$('span').parents('p');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.parentsUntil()</code></td>
+                        <td>
+                            <p>查找当前元素的所有父辈元素，直到遇到匹配的那个元素为止。</p>
+                            <p>返回的 JQ 对象里包含了下面所有找到的父辈元素，但不包含参数匹配到的元素。</p>
+                            <pre><code class="lang-js">// 查找 .item 元素的所有父辈元素，直到遇到 .parent 元素
+$$('.item').parentsUntil('.parent');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.prev()</code></td>
+                        <td>
+                            <p>获取当前元素的前一个同辈元素的 JQ 对象。可以使用参数进行过滤。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素的前一个元素
+$$('.box').prev();
+
+// 获取 .box 元素的前一个 div 元素
+$$('.box').prev('div');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.prevAll()</code></td>
+                        <td>
+                            <p>获取当前元素前面的所有同辈元素的 JQ 对象。可以使用参数进行过滤。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素前面的所有同辈元素
+$$('.box').prevAll();
+
+// 返回 .box 元素前面的所有含 .selected 的同辈元素
+$$('.box').prevAll('.selected');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.prevUntil()</code></td>
+                        <td>
+                            <p>获取当前元素前面所有的同辈元素，直到遇到匹配元素，不包含匹配元素。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素前所有的同辈元素，直到遇到 .until 元素
+$$('.box').prevUntil('.until');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.next()</code></td>
+                        <td>
+                            <p>获取当前元素的后一个同辈元素的 JQ 对象。可以使用参数进行过滤。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素的后一个元素
+$$('.box').next();
+
+// 获取 .box 元素的后一个 div 元素
+$$('.box').next('div');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.nextAll()</code></td>
+                        <td>
+                            <p>获取当前元素后面的所有同辈元素的 JQ 对象。可以使用参数进行过滤。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素后面的所有同辈元素
+$$('.box').nextAll();
+
+// 返回 .box 元素后面的所有含 .selected 的同辈元素
+$$('.box').nextAll('.selected');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.nextUntil()</code></td>
+                        <td>
+                            <p>获取当前元素后面所有的同辈元素，直到遇到匹配元素，不包含匹配元素。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 返回 .box 元素后所有的同辈元素，直到遇到 .until 元素
+$$('.box').nextUntil('.until');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.closest()</code></td>
+                        <td>
+                            <p>从当前元素向上逐级匹配，返回最先匹配到的元素。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 获取 .box 元素的父元素中最近的 .parent 元素
+$$('.box').closest('.parent');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.siblings()</code></td>
+                        <td>
+                            <p>获取当前元素的所有同辈元素。可以使用参数进行过滤。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 获取 .box 元素的所有同辈元素
+$$('.box').siblings();
+
+// 获取 .box 元素的所有同辈元素中含 .selected 的元素
+$$('.box').siblings('.selected');</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.add()</code></td>
+                        <td>
+                            <p>添加元素到当前 JQ 对象中。</p>
+                            <p>参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// 把含 .selected 的元素添加到当前 JQ 对象中
+$$('.box').add('.selected');</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">节点操作 <a class="doc-anchor" id="jq-dom"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.empty()</code></td>
+                        <td>
+                            <p>从 DOM 中移除选中元素的所有子节点。</p>
+                            <pre><code class="lang-js">$$('.box').empty();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.remove()</code></td>
+                        <td>
+                            <p>从 DOM 中移除所有选中的元素。</p>
+                            <pre><code class="lang-js">$$('.box').remove();</code></pre>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><code>.prepend()</code></td>
+                        <td>
+                            <p>在选中元素内部的前面插入指定内容。</p>
+                            <p>传入的参数可以是 字符串、HTML、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// HTML 代码
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('p').prepend('&lt;b&gt;Hello&lt;/b&gt;');
+
+// 结果
+[ &lt;p&gt;&lt;b&gt;Hello&lt;/b&gt;I would like to say: &lt;/p&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.prependTo()</code></td>
+                        <td>
+                            <p>把选中元素添加到另一个指定元素的内部的前面。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// HTML 代码
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('&lt;p&gt;Hello&lt;/p&gt;').prependTo('p');
+
+// 结果
+[ &lt;p&gt;&lt;p&gt;Hello&lt;/p&gt;I would like to say: &lt;/p&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.append()</code></td>
+                        <td>
+                            <p>在选中元素内部的后面插入指定内容。</p>
+                            <p>传入的参数可以是 字符串、HTML、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// HTML 代码
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('p').append('&lt;b&gt;Hello&lt;/b&gt;');
+
+// 结果
+[ &lt;p&gt;I would like to say: &lt;b&gt;Hello&lt;/b&gt;&lt;/p&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.appendTo()</code></td>
+                        <td>
+                            <p>把选中元素插入到另一个指定元素的内部的后面。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList。</p>
+                            <pre><code class="lang-js">// HTML 代码
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('&lt;p&gt;Hello&lt;/p&gt;').appendTo('p')
+
+// 结果
+[ &lt;p&gt;I would like to say: &lt;p&gt;Hello&lt;/p&gt;&lt;/p&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.after()</code></td>
+                        <td>
+                            <p>在选中元素的后面插入内容。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList、HTML 字符串</p>
+                            <pre><code class="lang-js">// HTML 代码
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('p').after('&lt;b&gt;Hello&lt;/b&gt;')
+
+// 结果
+[ &lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.insertAfter()</code></td>
+                        <td>
+                            <p>把选中元素插入到指定元素的后面。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList、HTML 字符串</p>
+                            <pre><code class="lang-js">// HTML 代码
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('&lt;b&gt;Hello&lt;/b&gt;').insertAfter('p');
+
+// 结果
+[ &lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.before()</code></td>
+                        <td>
+                            <p>在选中元素前面插入内容。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList、HTML 字符串</p>
+                            <pre><code class="lang-js">// HTML
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('p').before('&lt;b&gt;Hello&lt;/b&gt;');
+
+// 结果
+[ &lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.insertBefore()</code></td>
+                        <td>
+                            <p>把选中元素插入到指定元素前面。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList、HTML 字符串</p>
+                            <pre><code class="lang-js">// HTML
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js 代码
+$$('p').insertBefore('&lt;b&gt;Hello&lt;/b&gt;');
+
+// 结果
+[ &lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt; ]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.replaceWith()</code></td>
+                        <td>
+                            <p>用新元素替换选中元素。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList、HTML 字符串</p>
+                            <pre><code class="lang-js">$$('.box').replaceWith('&lt;p&gt;Hello&lt;/p&gt;');
+// 用 &lt;p&gt;Hello&lt;/p&gt; 替换所有的 .box 元素 </code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.replaceAll()</code></td>
+                        <td>
+                            <p>用选中元素替换指定元素。</p>
+                            <p>传入的参数可以是 CSS 选择器、JQ 对象、DOM 元素、DOM 元素数组、NodeList</p>
+                            <pre><code class="lang-js">$$('.new').replaceAll('.box');
+// 用 .new 元素替换所有 .box 元素</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.clone()</code></td>
+                        <td>
+                            <p>通过深度克隆来复制集合中的所有元素。</p>
+                            <p>通过原生 cloneNode 方法深度克隆来复制集合中的所有元素。此方法不会有数据和事件处理程序复制到新的元素。这点和jquery中利用一个参数来确定是否复制数据和事件处理不相同。</p>
+                            <pre><code class="lang-js">$$('body').append($("#box").clone())</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">表单 <a class="doc-anchor" id="jq-form"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.serializeArray()</code></td>
+                        <td>
+                            <p>把表单元素的值组合成由 name 和 value 的键值对组成的数组。</p>
+                            <pre><code class="lang-js">$$('form').serializeArray();
+// [{"name":"golang","value":"456"},{"name":"name","value":"mdui"},{"name":"password","value":""}]</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.serialize()</code></td>
+                        <td>
+                            <p>将表单元素数组或者对象序列化。</p>
+                            <pre><code class="lang-js">$$('form').serialize();
+// golang=456&name=mdui&password=</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="doc-article-title">事件 <a class="doc-anchor" id="jq-event"></a></h4>
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.on()</code></td>
+                        <td>
+                            <p>为每个匹配元素的特定事件绑定事件处理函数。</p>
+                            <pre><code class="lang-js">// 绑定点击事件
+$$('.box').on('click', function (e) {
+    console.log('点击了 .box 元素');
+});
+
+// 绑定多个事件
+$$('.box').on('click focus', function (e) {
+    console.log('click 和 focus 事件都会触发该函数');
+});
+
+// 事件委托
+$$(document).on('click', '.box', function (e) {
+    console.log('点击 .box 时会触发该函数');
+});
+
+// 同时绑定多个事件和事件处理函数
+$$('.box').on({
+    'click': function (e) {
+        console.log('触发了 click 事件');
+     },
+    'focus': function (e) {
+        console.log('触发了 focus 事件');
+    }
+});
+
+// 传入事件参数
+$$('.box').on('click', {key1: 'value1', key2: 'value2'}, function (e) {
+    console.log('点击了 .box 元素，并为事件处理函数传入了参数');
+});</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.one()</code></td>
+                        <td>
+                            <p>为每个匹配元素的特定事件绑定事件处理函数。但事件只会触发一次。</p>
+                            <p>该方法的用法和 <code>.on()</code> 相同，所以不再举例了。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.off()</code></td>
+                        <td>
+                            <p>从每个匹配的元素中解除绑定的事件。</p>
+                            <pre><code class="lang-js">// 解除绑定的指定事件
+$$('.box').off('click');
+
+// 同时解除多个绑定的事件
+$$('.box').off('click focus');
+
+// 解除绑定的指定事件处理函数
+$$('.box').off('click', callback);
+
+// 解除通过事件委托绑定的事件
+$$(document).off('click', '.box');
+
+// 解除通过事件委托绑定的指定事件处理函数
+$$(document).off('click', '.box', callback);</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.trigger()</code></td>
+                        <td>
+                            <p>触发指定的事件</p>
+                            <pre><code class="lang-js">// 触发指定的事件
+$$('.box').trigger('click');
+
+// 触发事件时传入参数
+$$('.box').trigger('click', {key1: 'value1', key2: 'value2'});</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.ready()</code></td>
+                        <td>
+                            <p>DOM 加载完毕，<code>DOMContentLoaded</code> 事件触发时触发。</p>
+                            <pre><code class="lang-js">$$(document).ready(function () {
+    console.log('当前页面 DOM 已加载完毕');
+});
+
+// 它还有另一种写法，和 .ready() 方法效果一样
+$$(function () {
+    console.log('当前页面 DOM 已加载完毕');
+});</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">更多常用方法 <a class="doc-anchor" id="jq-other"></a></h2>
+        </div>
+
+        <div class="mdui-typo">
+            <div class="mdui-table-fluid">
+                <table class="mdui-table">
+                    <tbody>
+                    <tr>
+                        <td><code>.reflow()</code></td>
+                        <td>
+                            <p>重绘当前元素。</p>
+                            <pre><code class="lang-js">$$('.box').reflow();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.transition()</code></td>
+                        <td>
+                            <p>设置当前元素的 transition-duration 属性。</p>
+                            <pre><code class="lang-js">$$('.box').transition();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.transitionEnd()</code></td>
+                        <td>
+                            <p>在当前元素上添加 transitionend 事件回调。</p>
+                            <pre><code class="lang-js">$$('.box').transitionEnd(function () {
+    console.log('.box 元素的 transitionend 事件已触发');
+})</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.transform()</code></td>
+                        <td>
+                            <p>设置当前元素的 transform 属性。</p>
+                            <pre><code class="lang-js">$$('.box').transform('rotate(90deg)')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>.transformOrigin()</code></td>
+                        <td>
+                            <p>设置当前元素的 transform-origin 属性。</p>
+                            <pre><code class="lang-js">$$('.box').transformOrigin('top center')</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.showOverlay()</code></td>
+                        <td>
+                            <p>显示遮罩层。可以传入一个整数参数，表示遮罩层的 z-index 样式，默认为 2000.</p>
+                            <pre><code class="lang-js">$$.showOverlay();</code></pre>
+                            <button id="demo-jq-showoverlay" class="mdui-btn mdui-color-theme-accent mdui-ripple">显示遮罩，2 秒后自动隐藏</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.hideOverlay()</code></td>
+                        <td>
+                            <p>隐藏遮罩层。</p>
+                            <p>如果调用了多次 $$.showOverlay() 来显示遮罩层，则也需要调用相同次数的 $$.hideOverlay() 才能隐藏遮罩层。可以通过传入参数 true 来强制隐藏遮罩层。</p>
+                            <pre><code class="lang-js">$$.hideOverlay();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.lockScreen()</code></td>
+                        <td>
+                            <p>锁定屏幕。</p>
+                            <pre><code class="lang-js">$$.lockScreen();</code></pre>
+                            <button id="demo-jq-lockscreen" class="mdui-btn mdui-color-theme-accent mdui-ripple">锁定屏幕，2 秒后自动解除锁定</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.unlockScreen()</code></td>
+                        <td>
+                            <p>解锁屏幕。</p>
+                            <p>如果调用了多次 $$.lockScreen() 来显示遮罩层，则也需要调用相同次数的 $$.unlockScreen() 才能隐藏遮罩层。可以通过传入参数 true 来强制隐藏遮罩层。</p>
+                            <pre><code class="lang-js">$$.unlockScreen();</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.throttle()</code></td>
+                        <td>
+                            <p>函数节流。</p>
+                            <p>第一个参数是执行的函数，第二个参数是延迟时间。</p>
+                            <pre><code class="lang-js">$$.throttle(function () {
+    console.log('这个函数最多 100ms 执行一次');
+}, 100)</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$$.guid()</code></td>
+                        <td>
+                            <p>生成一个全局唯一的 ID。</p>
+                            <pre><code class="lang-js">$$.guid();</code></pre>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="specs.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">规范</div>
+        </div>
+      </a>
+      
+            <a href="color.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">颜色与主题</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">设置文档主题</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">主题色</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">主色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">强调色</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/docs/js/docs.js"></script><script>
+    mdui.JQ('#demo-jq-showoverlay').on('click', function () {
+      mdui.JQ.showOverlay();
+      setTimeout(function () {
+        mdui.JQ.hideOverlay();
+      }, 2000);
+    });
+
+    mdui.JQ('#demo-jq-lockscreen').on('click', function () {
+      mdui.JQ.lockScreen();
+      setTimeout(function () {
+        mdui.JQ.unlockScreen();
+      }, 2000);
+    });
+</script>
