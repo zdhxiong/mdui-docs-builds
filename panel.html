@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
@@ -8,7 +8,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>可扩展面板 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
@@ -21,7 +21,7 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
@@ -190,7 +190,7 @@
       <p>这个示例包含了所有可以包含的 HTML 元素。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel" mdui-panel>
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">
@@ -321,7 +321,7 @@
       <p>上例中的部分元素并不是必须的，下面的示例只包含必须的 HTML 元素。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel" mdui-panel>
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">First</div>
@@ -404,7 +404,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-panel-item&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-item-open</code> 即可使该面板项处于默认打开状态。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel" mdui-panel>
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">First</div>
@@ -487,7 +487,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-gapless</code> 即可移除打开的面板和其他面板之间的间距。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo4.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel mdui-panel-gapless" mdui-panel>
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">First</div>
@@ -570,7 +570,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-panel-popout</code> 即可使打开的面板有弹出效果。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo5.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel mdui-panel-popout" mdui-panel>
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">First</div>
@@ -653,7 +653,7 @@
       <p>可扩展面板可以互相嵌套。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo6.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel" mdui-panel>
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">First</div>
@@ -802,7 +802,7 @@
       <p>使用该方式无需编写 JavaScript 代码。只需在 <code>&lt;div class=&quot;mdui-panel&quot;&gt;&lt;/div&gt;</code> 元素上添加 <code>mdui-panel="<a data-scroll href="panel.html#option">options</a>"</code> 属性即可激活该插件。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="panel/demo7.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-panel" mdui-panel="{accordion: true}">
           <div class="mdui-panel-item">
             <div class="mdui-panel-item-header">First</div>
@@ -883,7 +883,7 @@
 // options 为插件的参数，见下面的参数列表
 var inst = new mdui.Panel(selector, options);</code></pre>
     </div>
-    <a href="demo/panel/demo1.html" target="_blank" class="mdui-btn mdui-color-theme-accent">DEMO</a>
+    <a href="panel/demo8.html" target="_blank" class="mdui-btn mdui-color-theme-accent">运行</a>
 
     <div class="mdui-typo">
       <h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
@@ -1373,5 +1373,5 @@ var inst = new mdui.Panel(selector, options);</code></pre>
 <script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
 <script src="assets/docs/js/docs.js"></script>

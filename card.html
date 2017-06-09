@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
@@ -8,7 +8,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>卡片 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
@@ -21,7 +21,7 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
@@ -175,7 +175,7 @@
       <p>下面是一个卡片的完整 HTML 结构，包含了所有卡片中预定义样式的元素。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -247,7 +247,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-card-media&quot;&gt;&lt;/div&gt;</code> 中添加 <code>&lt;div class=&quot;mdui-card-media-covered&quot;&gt;&lt;/div&gt;</code>，并把需要覆盖在媒体元素上的内容放到该元素中。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -286,7 +286,7 @@
     </div>
 
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -328,7 +328,7 @@
       <p>在 <code>.mdui-card-media-covered</code> 上添加类 <code>.mdui-card-media-covered-top</code> 使覆盖层位于媒体元素顶部。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo4.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -370,7 +370,7 @@
       <p>在 <code>.mdui-card-media-covered</code> 上添加类 <code>.mdui-card-media-covered-transparent</code> 使覆盖层拥有透明背景。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo5.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -412,7 +412,7 @@
       <p>在 <code>.mdui-card-media-covered</code> 上添加类 <code>.mdui-card-media-covered-gradient</code> 使覆盖层拥有渐变背景。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo6.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -455,7 +455,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-card-actions&quot;&gt;&lt;/div&gt;</code> 上添加类 <code>.mdui-card-actions-stacked</code>，就能将按钮设置为竖直排列。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="card/demo7.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card">
@@ -879,5 +879,5 @@
 <script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
 <script src="assets/docs/js/docs.js"></script>

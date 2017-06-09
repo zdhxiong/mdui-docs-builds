@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
@@ -8,7 +8,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>颜色和主题 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
@@ -21,7 +21,7 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
@@ -216,7 +216,8 @@
   <div class="doc-chapter">
     <div class="mdui-typo">
       <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">主色和强调色 <a class="doc-anchor" id="color"></a></h2>
-      <p>Material Design 中的颜色分为主色（Primary）和强调色（Accent）。</p>
+      <p>Material Design 中的颜色分为主色（Primary）和强调色（Accent），每种颜色有多种不同的饱和度。</p>
+      <p>后面文档的 CSS 类名中，用 <code>[color]</code> 表示颜色名，<code>[degree]</code> 表示饱和度。</p>
     </div>
 
     <div class="mdui-typo">
@@ -406,7 +407,7 @@
         </div>
       </div>
       <p></p>
-      <p>强调色每种颜色都有 4 中饱和度：</p>
+      <p>强调色每种颜色都有 4 种饱和度：</p>
       <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-6">
         <div class="mdui-col">
           <span class="doc-color-circle mdui-color-theme-a100 mdui-m-r-2"></span>a100
@@ -435,7 +436,7 @@
       </p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="color/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-lg-4">
           <div class="mdui-col">
             <div class="mdui-color-blue-200 doc-box-padding">mdui-color-blue-200</div>
@@ -471,7 +472,7 @@
       </ul>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="color/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-text-color-blue-900 doc-box-padding">mdui-text-color-blue-900</div>
         <div class="mdui-text-color-blue doc-box-padding">mdui-text-color-blue</div>
         <div class="mdui-text-color-blue-a200 doc-box-padding">mdui-text-color-blue-a200</div>
@@ -2651,5 +2652,5 @@
 <script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
 <script src="assets/docs/js/docs.js"></script>

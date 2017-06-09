@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
@@ -8,7 +8,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>阴影 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
@@ -21,7 +21,7 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
@@ -172,7 +172,7 @@
       <p>在任何元素上添加类 <code>.mdui-hoverable</code>，就能在鼠标悬浮时使阴影加深。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="shadow/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-row">
           <div class="mdui-col-sm-6 mdui-col-md-4">
             <div class="mdui-card mdui-hoverable">
@@ -196,6 +196,34 @@
     &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;action 2&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS 类名列表 <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>类名</th>
+            <th>效果</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>.mdui-shadow-0</code></td>
+            <td>移除阴影</td>
+          </tr>
+          <tr>
+            <td><code>.mdui-shadow-[1-24]</code></td>
+            <td>添加不同深度的阴影</td>
+          </tr>
+          <tr>
+            <td><code>.mdui-hoverable</code></td>
+            <td>鼠标悬浮时加深阴影</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
   </div>
@@ -510,7 +538,7 @@
 <script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
 <script src="assets/docs/js/docs.js"></script>
 <script>
   // 拖动滑块改变阴影

@@ -1,5 +1,5 @@
 /*!
- * LiveEditor (http://www.mdui.org)
+ * LiveEditor (https://www.mdui.org)
  * Copyright 2016-2016 zdhxiong
  */
 

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
@@ -8,7 +8,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>浮动操作按钮 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
@@ -21,7 +21,7 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
@@ -189,7 +189,7 @@
       <p>给元素添加类 <code>.mdui-fab</code> 即可使其成为浮动操作按钮。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="fab/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-fab mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
         <button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
       </div>
@@ -201,7 +201,7 @@
       <p>再添加类 <code>.mdui-fab-mini</code> 可使其变为迷你型浮动操作按钮。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="fab/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-fab mdui-fab-mini mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
         <button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
       </div>
@@ -214,7 +214,7 @@
       <p>在浮动操作按钮上添加类 <code>.mdui-fab-hide</code> 会以动画的形式隐藏按钮，移除该类后会以动画形式显示按钮。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="fab/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-fab mdui-color-theme-accent mdui-ripple" id="fab-animation"><i class="mdui-icon material-icons">&#xe145;</i></button>
 
         <button class="mdui-btn" id="fab-animation-show">show</button>
@@ -250,6 +250,7 @@
       <h4 class="doc-article-title">固定到右下角 <a class="doc-anchor" id="fixed"></a></h4>
       <p>在浮动操作按钮上添加类 <code>.mdui-fab-fixed</code> 能使按钮固定到窗口右下角。</p>
       <pre><code class="lang-html">&lt;button class=&quot;mdui-fab <span class="doc-example-code-required" mdui-tooltip="{content: 'Required Class'}">mdui-fab-fixed</span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;&lt;i class=&quot;<span class="mdui-typo"><a href="icon.html">mdui-icon</a></span> <span class="mdui-typo"><a href="material_icon.html">material-icons</a></span>&quot;&gt;&amp;#xe145;&lt;/i&gt;&lt;/button&gt;</code></pre>
+      <a href="fab/demo4.html" target="_blank" class="mdui-btn mdui-color-theme-accent">运行</a>
     </div>
 
 
@@ -307,7 +308,7 @@
 // options 为插件的参数，见下面的参数列表
 var inst = new mdui.Fab(selector, options);</code></pre>
     </div>
-    <a href="demo/fab/demo1.html" target="_blank" class="mdui-btn mdui-color-theme-accent">demo</a>
+    <a href="fab/demo5.html" target="_blank" class="mdui-btn mdui-color-theme-accent">运行</a>
 
     <div class="mdui-typo">
       <h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
@@ -772,5 +773,5 @@ var inst = new mdui.Fab(selector, options);</code></pre>
 <script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
 <script src="assets/docs/js/docs.js"></script>

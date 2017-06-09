@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
@@ -8,7 +8,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>Tab 选项卡 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
@@ -21,7 +21,7 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink ">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
@@ -193,7 +193,7 @@
       <p>下面是一个标准选项卡。在手机上时会占据 100% 的宽度，每一个选项宽度都相等；在平板/PC 上会左对齐。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab" mdui-tab>
           <a href="tab.html#example1-tab1" class="mdui-ripple">web</a>
           <a href="tab.html#example1-tab2" class="mdui-ripple">shopping</a>
@@ -219,7 +219,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-tab&quot;&gt;</code> 上添加类 <code>.mdui-tab-scrollable</code> 使选项卡可以横向滚动，用于选项较多的场景。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab mdui-tab-scrollable" mdui-tab>
           <a href="tab.html#example2-tab1" class="mdui-ripple">web</a>
           <a href="tab.html#example2-tab2" class="mdui-ripple">shopping</a>
@@ -252,7 +252,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-tab&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-tab-centered</code> 可使选项卡在平板/PC 上居中对齐。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab mdui-tab-centered" mdui-tab>
           <a href="tab.html#example3-tab1" class="mdui-ripple">web</a>
           <a href="tab.html#example3-tab2" class="mdui-ripple">shopping</a>
@@ -271,7 +271,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-tab&quot;&gt;&lt;/div&gt;</code> 元素上添加类 <code>.mdui-tab-full-width</code> 可以使选项卡始终占据 100% 的宽度，且每个选项卡宽度相等。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo4.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab mdui-tab-full-width" mdui-tab>
           <a href="tab.html#example4-tab1" class="mdui-ripple">web</a>
           <a href="tab.html#example4-tab2" class="mdui-ripple">shopping</a>
@@ -289,7 +289,7 @@
       <h4 class="doc-article-title">含图标 <a class="doc-anchor" id="icon"></a></h4>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo5.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab" mdui-tab>
           <a href="tab.html#example5-tab1" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe0cd;</i></a>
           <a href="tab.html#example5-tab2" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe87d;</i></a>
@@ -313,7 +313,7 @@
       <h4 class="doc-article-title">含图标和文本 <a class="doc-anchor" id="icon-text"></a></h4>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo6.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab" mdui-tab>
           <a href="tab.html#example6-tab1" class="mdui-ripple">
             <i class="mdui-icon material-icons">&#xe0cd;</i>
@@ -350,7 +350,7 @@
       <p>在 <code>&lt;div class=&quot;mdui-tab&quot;&gt;&lt;/div&gt;</code> 的元素上添加类 <code>.mdui-color-[<span mdui-tooltip="{content: '颜色名'}">color</span>]</code> 即可为选项卡赋予背景色。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo7.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab mdui-color-theme" mdui-tab>
           <a href="tab.html#example7-tab1" class="mdui-ripple mdui-ripple-white">
             <i class="mdui-icon material-icons">&#xe0cd;</i>
@@ -387,7 +387,7 @@
       <p>在 <code>&lt;a&gt;</code> 元素上添加类 <code>.mdui-tab-active</code> 可以使该选项处于默认激活状态。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo8.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab" mdui-tab>
           <a href="tab.html#example8-tab1" class="mdui-ripple">web</a>
           <a href="tab.html#example8-tab2" class="mdui-tab-active mdui-ripple">shopping</a>
@@ -406,7 +406,7 @@
       <p>在 <code>&lt;a&gt;</code> 元素上添加 <code>disabled</code> 属性可以禁用该选项。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="tab/demo9.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <div class="mdui-tab" mdui-tab>
           <a href="tab.html#example9-tab1" class="mdui-ripple">web</a>
           <a href="tab.html#example9-tab2" class="mdui-ripple" disabled>shopping</a>
@@ -441,7 +441,7 @@
 // options 为插件的参数，见下面的参数列表
 var inst = new mdui.Tab(selector, options);</code></pre>
     </div>
-    <a href="demo/tab/demo1.html" target="_blank" class="mdui-btn mdui-color-theme-accent">demo</a>
+    <a href="tab/demo10.html" target="_blank" class="mdui-btn mdui-color-theme-accent">运行</a>
 
     <div class="mdui-typo">
       <h4 class="doc-article-title">参数 <a class="doc-anchor" id="option"></a></h4>
@@ -902,5 +902,5 @@ var inst = new mdui.Tab(selector, options);</code></pre>
 <script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
 <script src="assets/docs/js/docs.js"></script>
