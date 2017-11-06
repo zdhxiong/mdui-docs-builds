@@ -8,27 +8,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>对话框 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.2.1/css/mdui.min.css"/>
-  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/github-gist.css"/>
-  <link rel="stylesheet" href="assets/highlight-9.11.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.3.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.12.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.12.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
-  <script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?33d719afc3e48d8a2fbdd886b164d2e4";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script></head>
+</head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
-    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
     <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
           <a href="dialog.html" class="mdui-typo-title">对话框</a>
         <div class="mdui-toolbar-spacer"></div>
-    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">&#xe3b7;</i></span>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
     <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
         <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
@@ -46,9 +38,9 @@
   <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe569;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
         <div class="mdui-list-item-content">开始使用</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
         <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
@@ -60,9 +52,9 @@
 
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">layers</i>
         <div class="mdui-list-item-content">样式</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
         <a href="color.html" class="mdui-list-item mdui-ripple ">颜色与主题</a>
@@ -78,14 +70,15 @@
 
     <div class="mdui-collapse-item mdui-collapse-item-open">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">&#xe1bd;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">widgets</i>
         <div class="mdui-list-item-content">组件</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
         <a href="ripple.html" class="mdui-list-item mdui-ripple ">涟漪动画效果</a>
         <a href="button.html" class="mdui-list-item mdui-ripple ">按钮</a>
         <a href="fab.html" class="mdui-list-item mdui-ripple ">浮动操作按钮</a>
+        <a href="select.html" class="mdui-list-item mdui-ripple ">下拉选择</a>
         <a href="divider.html" class="mdui-list-item mdui-ripple ">分隔线</a>
         <a href="panel.html" class="mdui-list-item mdui-ripple ">可扩展面板</a>
         <a href="textfield.html" class="mdui-list-item mdui-ripple ">文本框</a>
@@ -112,9 +105,9 @@
 
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">&#xe8eb;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">view_carousel</i>
         <div class="mdui-list-item-content">JavaScript 插件</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
         <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
@@ -124,9 +117,9 @@
 
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">&#xe54c;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">local_mall</i>
         <div class="mdui-list-item-content">资源</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
         <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material 图标</a>
@@ -136,6 +129,7 @@
 </div>
 
 <a id="anchor-top"></a>
+
 <div class="mdui-container doc-container">
   <h1 class="doc-title mdui-text-color-theme">对话框</h1>
   <div class="doc-intro mdui-typo">
@@ -202,7 +196,7 @@
       <p>这是一个标准的对话框。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo1.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-1'}">open</button>
 
         <div class="mdui-dialog" id="example-1">
@@ -229,7 +223,7 @@
       <p>这个对话框不含标题栏。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo2.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#exampleNoTitle'}">open</button>
 
         <div class="mdui-dialog" id="exampleNoTitle">
@@ -254,7 +248,7 @@
       <p>对话框底部的按钮默认水平排列。只需在 <code>&lt;div class=&quot;mdui-dialog-actions&quot;&gt;&lt;/div&gt;</code> 上添加类 <code>.mdui-dialog-actions-stacked</code> 即可将按钮设置为竖直排列。</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo3.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-2'}">open</button>
 
         <div class="mdui-dialog" id="example-2">
@@ -285,7 +279,7 @@
       </p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo4.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo4.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-3'}">open</button>
 
         <div class="mdui-dialog" id="example-3">
@@ -319,7 +313,7 @@
       <p>下面例子中在对话框中放了一个 Tab 选项卡：</p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo5.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo5.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-4'}">open</button>
 
         <div class="mdui-dialog" id="example-4">
@@ -404,7 +398,7 @@
       <p><p>使用该方式无需编写 JavaScript 代码。只需在一个起控制作用的元素<small>（例如：按钮）</small>上添加 <code>mdui-dialog="<a href="dialog.html#option" data-scroll>options</a>"</code> 属性即可。通过自定义属性调用时，需要额外添加一个 <code>target</code> 参数，用于指定被控制的对话框，它的值为被控制的对话框的 CSS 选择器。</p></p>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo6.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo6.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-dialog="{target: '#exampleDialog'}">open</button>
 
         <div class="mdui-dialog" id="exampleDialog">
@@ -623,7 +617,7 @@ var inst = new mdui.Dialog(selector, options);</code></pre>
       <pre><code class="lang-js">mdui.dialog(options)</code></pre>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo8.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo8.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-dialog">open</button>
       </div>
       <pre class="doc-example-code"><code class="lang-js">mdui.dialog({
@@ -790,7 +784,7 @@ var inst = new mdui.Dialog(selector, options);</code></pre>
       <pre><code class="lang-js">mdui.alert(text, title, onConfirm, options)</code></pre>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo9.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo9.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-1">demo1</button>
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-2">demo2</button>
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-3">demo3</button>
@@ -866,7 +860,7 @@ mdui.alert('content', function(){
       <pre><code class="lang-js">mdui.confirm(text, title, onConfirm, onCancel, options)</code></pre>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo10.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo10.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-1">demo1</button>
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-2">demo2</button>
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-3">demo3</button>
@@ -963,7 +957,7 @@ mdui.confirm('content', 'title',
       <pre><code class="lang-js">mdui.prompt(label, title, onConfirm, onCancel, options)</code></pre>
     </div>
     <div class="doc-example">
-      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">&#xe86f;</i></a><a href="dialog/demo11.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">&#xe037;</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo11.html" target="_blank" mdui-tooltip="{content: '在线调试'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-1">demo1</button>
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-2">demo2</button>
         <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-3">demo3</button>
@@ -1126,7 +1120,7 @@ mdui.prompt('请输入文本', 'title',
     <div class="mdui-row">
             <a href="table.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
         <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">&#xe5c4;</i>
+          <i class="mdui-icon material-icons">arrow_back</i>
           <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
           <div class="doc-footer-nav-chapter mdui-hidden-xs-down">表格</div>
         </div>
@@ -1134,7 +1128,7 @@ mdui.prompt('请输入文本', 'title',
       
             <a href="menu.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
         <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">&#xe5c8;</i>
+          <i class="mdui-icon material-icons">arrow_forward</i>
           <span class="doc-footer-nav-direction">Next</span>
           <div class="doc-footer-nav-chapter">菜单</div>
         </div>
@@ -1426,21 +1420,24 @@ mdui.prompt('请输入文本', 'title',
   </div>
 </div>
 
-<script src="assets/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="assets/smooth-scroll-11.1.0/smooth-scroll.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
-<script src="assets/highlight-9.11.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.2.1/js/mdui.min.js"></script>
+<script src="assets/highlight-9.12.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.3.0/js/mdui.min.js"></script>
+<script>var $$ = mdui.JQ;</script>
 <script src="assets/docs/js/docs.js"></script>
+
+
 <script>
 
   // 自定义内容的示例
   var tab = new mdui.Tab('#example4-tab');
-  $('#example-4').on('open.mdui.dialog', function () {
+  $$('#example-4').on('open.mdui.dialog', function () {
     tab.handleUpdate();
   });
 
   // mdui.dialog() 示例
-  $('#example-dialog').on('click', function(){
+  $$('#example-dialog').on('click', function(){
     mdui.dialog({
       title: 'title',
       content: 'content',
@@ -1459,30 +1456,30 @@ mdui.prompt('请输入文本', 'title',
   });
 
   // mdui.alert() 示例
-  $('#example-alert-1').on('click', function(){
+  $$('#example-alert-1').on('click', function(){
     mdui.alert('content');
   });
-  $('#example-alert-2').on('click', function(){
+  $$('#example-alert-2').on('click', function(){
     mdui.alert('content', 'title');
   });
-  $('#example-alert-3').on('click', function(){
+  $$('#example-alert-3').on('click', function(){
     mdui.alert('content', 'title', function(inst){
       mdui.alert('点击了确认按钮');
     });
   });
-  $('#example-alert-4').on('click', function(){
+  $$('#example-alert-4').on('click', function(){
     mdui.alert('content', function(){
       mdui.alert('点击了确认按钮');
     });
   });
 
   // mdui.confirm() 示例
-  $('#example-confirm-1').on('click', function(){
+  $$('#example-confirm-1').on('click', function(){
     mdui.confirm('content', function(){
       mdui.alert('点击了确认按钮');
     });
   });
-  $('#example-confirm-2').on('click', function(){
+  $$('#example-confirm-2').on('click', function(){
     mdui.confirm('content',
       function(){
         mdui.alert('点击了确认按钮');
@@ -1492,12 +1489,12 @@ mdui.prompt('请输入文本', 'title',
       }
     );
   });
-  $('#example-confirm-3').on('click', function(){
+  $$('#example-confirm-3').on('click', function(){
     mdui.confirm('content', 'title', function(){
       mdui.alert('点击了确认按钮');
     });
   });
-  $('#example-confirm-4').on('click', function(){
+  $$('#example-confirm-4').on('click', function(){
     mdui.confirm('content', 'title',
       function(){
         mdui.alert('点击了确认按钮');
@@ -1509,7 +1506,7 @@ mdui.prompt('请输入文本', 'title',
   });
 
   // mdui.prompt 实例
-  $('#example-prompt-1').on('click', function () {
+  $$('#example-prompt-1').on('click', function () {
     mdui.prompt('这是一个单行文本框',
       function (value) {
         mdui.alert('你输入了：' + value + '，点击了确认按钮');
@@ -1519,7 +1516,7 @@ mdui.prompt('请输入文本', 'title',
       }
     );
   });
-  $('#example-prompt-2').on('click', function () {
+  $$('#example-prompt-2').on('click', function () {
     mdui.prompt('这是一个多行文本框',
       function (value) {
         mdui.alert('你输入了：' + value + '，点击了确认按钮');
@@ -1532,7 +1529,7 @@ mdui.prompt('请输入文本', 'title',
       }
     );
   });
-  $('#example-prompt-3').on('click', function () {
+  $$('#example-prompt-3').on('click', function () {
     mdui.prompt('请输入文本', 'title',
       function (value) {
         mdui.alert('你输入了：' + value + '，点击了确认按钮');
