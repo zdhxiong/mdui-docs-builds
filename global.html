@@ -7,18 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <title>规范 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.3.0/css/mdui.min.css"/>
+  <title>JavaScript 全局方法 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.4.0/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.12.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.12.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  
+
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
     <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
-          <a href="specs.html" class="mdui-typo-title">规范</a>
+          <a href="global.html" class="mdui-typo-title">JavaScript 全局方法</a>
         <div class="mdui-toolbar-spacer"></div>
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
     <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
@@ -43,10 +45,10 @@
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="download.html" class="mdui-list-item mdui-ripple ">安装</a>
         <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
-        <a href="specs.html" class="mdui-list-item mdui-ripple mdui-list-item-active">规范</a>
         <a href="jq.html" class="mdui-list-item mdui-ripple ">JavaScript 工具库</a>
+        <a href="global.html" class="mdui-list-item mdui-ripple mdui-list-item-active">JavaScript 全局方法</a>
       </div>
     </div>
 
@@ -131,42 +133,48 @@
 <a id="anchor-top"></a>
 
 <div class="mdui-container doc-container">
-  <h1 class="doc-title mdui-text-color-theme">规范</h1>
+  <h1 class="doc-title mdui-text-color-theme">JavaScript 全局方法</h1>
 
   <nav class="doc-toc mdui-text-color-theme">
     <ul>
-      <li><a data-scroll href="specs.html#css">HTML / CSS 规范</a></li>
-      <li><a data-scroll href="specs.html#js">JavaScript 规范</a></li>
+      <li><a data-scroll href="global.html#mutation">mdui.mutation()</a></li>
     </ul>
   </nav>
 
   <div class="doc-chapter">
     <div class="mdui-typo">
-      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">HTML / CSS 规范 <a class="doc-anchor" id="css"></a></h2>
-      <p>MDUI 中的 CSS 类名全部以 <code>mdui-</code> 作为前缀。</p>
-      <p>组件的命名为 <code>mdui-{组件名}</code>。组件的子元素命名为 <code>mdui-{组件名}-{子元素名}</code></p>
-      <p>例如一个对话框的结构为：</p>
-      <pre><code class="lang-html">&lt;div class=&quot;<span class="mdui-typo"><a href="dialog.html">mdui-dialog</a></span>&quot;&gt;
-  &lt;div class=&quot;mdui-dialog-title&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;mdui-dialog-content&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">mdui.mutation() <a class="doc-anchor" id="mutation"></a></h2>
+      <p>MDUI 中部分组件的初始化方式为在 DOM 加载完毕后执行初始化函数，这导致动态生成组件时，组件无法自动初始化。MDUI 提供了 <code>mdui.mutation()</code> 方法来解决这个问题。</p>
     </div>
 
     <div class="mdui-typo">
-      <h2 class="doc-chapter-title mdui-text-color-theme">JavaScript 规范 <a class="doc-anchor" id="js"></a></h2>
-      <p>MDUI 中大部分组件都需要使用 JavaScript 进行初始化。初始化方式包括下面三种情况：</p>
-      <ol>
-        <li>使用事件委托，在触发事件时初始化。
-          <p>这类组件只需编写 HTML 即可，无需额外代码。</p>
-        </li>
-        <li>使用自定义属性初始化。
-          <p>在组件上添加自定义属性 <code>mdui-{组件名}</code> 即可在页面加载完后自动初始化。也可以为自定义属性传入参数：<code>mdui-{组件名}="{key1: 'val1', key2: 'val2'}"</code></p>
-        </li>
-        <li>使用 JavaScript 初始化。
-          <p>使用方法通常为 <code>var inst = new mdui.{组件名}();</code>，该方法返回组件实例。然后可以调用实例的方法 <code>inst.method()</code>。</p>
-        </li>
-      </ol>
+      <h4 class="doc-article-title">mdui.mutation()</h4>
+      <p>调用该方法后，将初始化页面中所有未初始化的组件。</p>
+      <pre><code class="lang-js">var html = 
+  '&lt;select class=&quot;mdui-select&quot; mdui-select&gt;' +
+  '  &lt;option value=&quot;1&quot;&gt;State 1&lt;/option&gt;' +
+  '  &lt;option value=&quot;2&quot;&gt;State 2&lt;/option&gt;' +
+  '  &lt;option value=&quot;3&quot;&gt;State 3&lt;/option&gt;' +
+  '&lt;/select&gt;';
+
+// 动态添加了一个 Select 组件，但通过自定义属性调用时，该组件无法自动初始化
+$$('body').append(html);
+
+// 调用该方法，将初始化页面中所有未初始化的组件。
+mdui.mutation();
+</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.mutation(selector, apiInit)</h4>
+      <p>如果为 <code>mdui.mutation()</code> 方法传入了两个参数，则可用于初始化你自行编写的组件。第一个参数为 CSS 选择器，第二个参数是初始化函数。</p>
+      <p>调用 <code>mdui.mutation(selector, apiInit)</code> 时，会将 CSS 选择器和初始化函数绑定，并执行 <code>$$(selector).each(apiInit)</code> 调用初始化函数。</p>
+      <p>等到下次调用 <code>mdui.mutation()</code> 时，若 CSS 选择器对应的组件未初始化，则会自动调用初始化函数。</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">$$(selector).mutation()</h4>
+      <p>若需要初始化指定元素内的组件，可以调用 <code>$$(selector).mutation()</code>，该方法初始化了 selector 及其子元素中未初始化的组件。</p>
     </div>
 
   </div>
@@ -177,19 +185,19 @@
 <div class="doc-footer-nav mdui-color-theme">
   <div class="mdui-container">
     <div class="mdui-row">
-            <a href="compatibility.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+            <a href="jq.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">arrow_back</i>
           <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
-          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">兼容性</div>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">JavaScript 工具库</div>
         </div>
       </a>
       
-            <a href="jq.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+            <a href="color.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">arrow_forward</i>
           <span class="doc-footer-nav-direction">Next</span>
-          <div class="doc-footer-nav-chapter">JavaScript 工具库</div>
+          <div class="doc-footer-nav-chapter">颜色与主题</div>
         </div>
       </a>
           </div>
@@ -482,7 +490,7 @@
 <script src="assets/smooth-scroll-11.1.0/smooth-scroll.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.12.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.3.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.4.0/js/mdui.min.js"></script>
 <script>var $$ = mdui.JQ;</script>
 <script src="assets/docs/js/docs.js"></script>
 

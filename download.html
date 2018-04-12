@@ -7,18 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <title>获取 MDUI - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.3.0/css/mdui.min.css"/>
+  <title>安装 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.4.0/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.12.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.12.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  
+
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
     <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
-          <a href="download.html" class="mdui-typo-title">获取 MDUI</a>
+          <a href="download.html" class="mdui-typo-title">安装</a>
         <div class="mdui-toolbar-spacer"></div>
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
     <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
@@ -43,10 +45,10 @@
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a href="download.html" class="mdui-list-item mdui-ripple mdui-list-item-active">获取 MDUI</a>
+        <a href="download.html" class="mdui-list-item mdui-ripple mdui-list-item-active">安装</a>
         <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
-        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
         <a href="jq.html" class="mdui-list-item mdui-ripple ">JavaScript 工具库</a>
+        <a href="global.html" class="mdui-list-item mdui-ripple ">JavaScript 全局方法</a>
       </div>
     </div>
 
@@ -131,23 +133,33 @@
 <a id="anchor-top"></a>
 
 <div class="mdui-container doc-container doc-no-cover">
-  <h1 class="doc-title mdui-text-color-theme">获取 MDUI</h1>
+  <h1 class="doc-title mdui-text-color-theme">安装</h1>
   <div class="doc-intro mdui-typo">
-    <p>我们提供了多种方式来获取 MDUI。</p>
+    <p>我们提供了多种方式来获取 MDUI，且支持 CommonJS、AMD 模块规范。</p>
   </div>
 
   <nav class="doc-toc mdui-text-color-theme">
     <ul>
-      <li><a data-scroll href="download.html#download">下载文件</a></li>
-      <li><a data-scroll href="download.html#cdn">CDN</a></li>
-      <li><a data-scroll href="download.html#bower">Bower</a></li>
-      <li><a data-scroll href="download.html#npm">NPM</a></li>
+      <li>
+        <a data-scroll href="download.html#install">获取 MDUI</a>
+        <ul>
+          <li><a data-scroll href="download.html#download">下载文件</a></li>
+          <li><a data-scroll href="download.html#cdn">CDN</a></li>
+          <li><a data-scroll href="download.html#bower">Bower</a></li>
+          <li><a data-scroll href="download.html#npm">NPM</a></li>
+        </ul>
+      </li>
       <!--<li><a data-scroll href="#custom">在线定制</a></li>-->
-      <li><a data-scroll href="download.html#build">从源代码构建</a></li>
+      <li><a data-scroll href="download.html#build">自定义构建</a></li>
+      <li><a data-scroll href="download.html"></a></li>
     </ul>
   </nav>
 
   <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">获取 MDUI <a class="doc-anchor" id="install"></a></h2>
+    </div>
+
     <div class="mdui-typo">
       <h4 class="doc-article-title">下载文件 <a class="doc-anchor" id="download"></a></h4>
       <p>你可以直接从 MDUI 官网下载打包后的文件，其中包含了压缩过的和未压缩过的 CSS 和 JavaScript 文件，以及 Roboto 字体文件和 Material Icons 图标文件。</p>
@@ -158,11 +170,11 @@
     <div class="mdui-typo">
       <h4 class="doc-article-title">CDN <a class="doc-anchor" id="cdn"></a></h4>
       <p>cdnjs （国外访问速度较快）</p>
-      <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/mdui/0.3.0/css/mdui.min.css&quot;&gt;
-&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/mdui/0.3.0/js/mdui.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+      <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.0/css/mdui.min.css&quot;&gt;
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.0/js/mdui.min.js&quot;&gt;&lt;/script&gt;</code></pre>
       <p>bootcdn （国内访问速度较快）</p>
-      <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/mdui/0.3.0/css/mdui.min.css&quot;&gt;
-&lt;script src=&quot;//cdn.bootcss.com/mdui/0.3.0/js/mdui.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+      <pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/mdui/0.4.0/css/mdui.min.css&quot;&gt;
+&lt;script src=&quot;//cdn.bootcss.com/mdui/0.4.0/js/mdui.min.js&quot;&gt;&lt;/script&gt;</code></pre>
     </div>
 
     <div class="mdui-typo">
@@ -184,7 +196,7 @@
     </div>-->
 
     <div class="mdui-typo">
-      <h4 class="doc-article-title">从源代码构建 <a class="doc-anchor" id="build"></a></h4>
+      <h2 class="doc-chapter-title mdui-text-color-theme">自定义构建 <a class="doc-anchor" id="build"></a></h2>
       <p>MDUI 使用 <a href="http://gulpjs.com/" target="_blank">Gulp</a> 进行构建。从 <a href="https://github.com/zdhxiong/mdui" target="_blank">Github</a> 获得源代码后，可以执行下列 gulp 命令进行构建。</p>
       <div class="mdui-table-fluid">
         <table class="mdui-table">
@@ -549,7 +561,7 @@
 <script src="assets/smooth-scroll-11.1.0/smooth-scroll.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.12.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.3.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.4.0/js/mdui.min.js"></script>
 <script>var $$ = mdui.JQ;</script>
 <script src="assets/docs/js/docs.js"></script>
 

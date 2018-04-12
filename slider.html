@@ -8,10 +8,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
   <title>滑块 - MDUI 开发文档, Material Design 前端框架</title>
-  <link rel="stylesheet" href="assets/mdui-v0.3.0/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/mdui-v0.4.0/css/mdui.min.css"/>
   <link rel="stylesheet" href="assets/highlight-9.12.0/styles/github-gist.css"/>
   <link rel="stylesheet" href="assets/highlight-9.12.0/styles/railscasts.css"/>
   <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+  
+
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
 <header class="mdui-appbar mdui-appbar-fixed">
@@ -43,10 +45,10 @@
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a href="download.html" class="mdui-list-item mdui-ripple ">获取 MDUI</a>
+        <a href="download.html" class="mdui-list-item mdui-ripple ">安装</a>
         <a href="compatibility.html" class="mdui-list-item mdui-ripple ">兼容性</a>
-        <a href="specs.html" class="mdui-list-item mdui-ripple ">规范</a>
         <a href="jq.html" class="mdui-list-item mdui-ripple ">JavaScript 工具库</a>
+        <a href="global.html" class="mdui-list-item mdui-ripple ">JavaScript 全局方法</a>
       </div>
     </div>
 
@@ -136,7 +138,7 @@
     <p>MDUI 的滑块使用 HTML5 的 <code>&lt;input type=&quot;range&quot;/&gt;</code> 输入框实现。</p>
     <div class="doc-intro-module">
       <h3>调用方式</h3>
-      <p>滑块组件在页面加载完后会自动初始化。对于动态生成的滑块，需要调用 <code>mdui.updateSliders()</code> 进行初始化。</p>
+      <p>滑块组件在页面加载完后会自动初始化。对于动态生成的滑块，需要调用 <a href="global.html#mutation"><code>mdui.mutation()</code></a> 进行初始化。</p>
     </div>
     <div class="doc-intro-module">
       <h3>色彩</h3>
@@ -249,8 +251,8 @@
 
     <div class="mdui-typo">
       <h2 class="doc-chapter-title mdui-text-color-theme">动态生成的滑块 <a class="doc-anchor" id="dynamic"></a></h2>
-      <p>如果你的滑块组件是动态生成的，或者动态修改了滑块的值，则需要调用 <code>mdui.updateSliders()</code> 方法来重新初始化滑块组件。</p>
-      <p>该方法可以接受一个含 <code>.mdui-slider</code> 类的 CSS 选择器、或者 DOM 元素、或者 DOM 元素组成的数组作为参数，表示只重新初始化指定滑块。如果没有传入参数，将重新初始化页面中的所有滑块。</p>
+      <p>如果你的滑块组件是动态生成的，则需要调用 <a href="global.html#mutation"><code>mdui.mutation()</code></a> 进行初始化。</p>
+      <p>如果你动态修改了滑块的值，则需要调用 <code>mdui.updateSliders()</code> 方法来重新初始化滑块组件。该方法可以接受一个含 <code>.mdui-slider</code> 类的 CSS 选择器、或者 DOM 元素、或者 DOM 元素组成的数组作为参数，表示只重新初始化指定滑块。如果没有传入参数，将重新初始化页面中的所有滑块。</p>
     </div>
 
 
@@ -591,7 +593,7 @@
 <script src="assets/smooth-scroll-11.1.0/smooth-scroll.min.js"></script>
 <script src="assets/holder-2.9.4/holder.min.js"></script>
 <script src="assets/highlight-9.12.0/highlight.pack.js"></script>
-<script src="assets/mdui-v0.3.0/js/mdui.min.js"></script>
+<script src="assets/mdui-v0.4.0/js/mdui.min.js"></script>
 <script>var $$ = mdui.JQ;</script>
 <script src="assets/docs/js/docs.js"></script>
 
